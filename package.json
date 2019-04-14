@@ -1,0 +1,41 @@
+{
+  "name": "vue-dompurify-html",
+  "version": "1.0.0",
+  "description": "Safe replacement for the v-html directive",
+  "license": "MIT",
+  "author": "Thomas Gerbet",
+  "main": "dist/index.js",
+  "types": "dist/index.js.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LeSuisse/vue-dompurify-html.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LeSuisse/vue-dompurify-html/issues"
+  },
+  "homepage": "https://github.com/LeSuisse/vue-dompurify-html#readme",
+  "keywords": [
+    "vue",
+    "vue-directive",
+    "xss",
+    "dom-xss",
+    "dompurify",
+    "security",
+    "html"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "dompurify": "^1.0.10"
+  },
+  "peerDependencies": {
+    "vue": "^2.0.0"
+  },
+  "devDependencies": {
+    "typescript": "^3.4.3",
+    "vue": "^2.6.10",
+    "@types/dompurify": "0.0.32"
+  }
+}
