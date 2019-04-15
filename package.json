@@ -25,7 +25,7 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "karma start"
   },
   "dependencies": {
     "dompurify": "^1.0.10"
@@ -34,8 +34,16 @@
     "vue": "^2.0.0"
   },
   "devDependencies": {
+    "@types/dompurify": "0.0.32",
+    "@types/jasmine": "^3.3.12",
+    "@types/node": "^11.13.4",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "karma": "^4.0.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-jasmine": "^2.0.1",
+    "karma-typescript": "^4.0.0",
     "typescript": "^3.4.3",
     "vue": "^2.6.10",
-    "@types/dompurify": "0.0.32"
+    "vue-template-compiler": "^2.6.10"
   }
 }
