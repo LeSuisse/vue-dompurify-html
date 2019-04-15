@@ -6,6 +6,7 @@
   "author": "Thomas Gerbet",
   "main": "dist/index.js",
   "types": "dist/index.js.d.ts",
+  "files": ["/dist"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LeSuisse/vue-dompurify-html.git"
