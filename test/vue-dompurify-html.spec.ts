@@ -43,9 +43,9 @@ describe('VueDOMPurifyHTML Test Suite', () => {
             template: "<p v-dompurify-html:no-html=\"rawHtml\"></p>",
             props: ["rawHtml"]
         };
-        const wrapperWithoutHtml = shallowMount(componentWithHtml, {
+        const wrapperWithoutHtml = shallowMount(componentWithoutHtml, {
             propsData: {
-                rawHtml: "Hello"
+                rawHtml: "<pre>Hello</pre>"
             },
             localVue
         });
