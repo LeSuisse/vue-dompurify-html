@@ -1,8 +1,32 @@
 import { DirectiveOptions, VNodeDirective } from "vue";
 import { sanitize } from "dompurify";
 
-export const dompurifyHtmlDirective: DirectiveOptions = {
-    bind(el: HTMLElement, binding: VNodeDirective) {
-        el.innerHTML = sanitize(binding.value);
+interface MinimalDOMPurifyConfig {
+    ADD_ATTR?: string[];
+    ADD_TAGS?: string[];
+    ALLOW_DATA_ATTR?: boolean;
+    ALLOWED_ATTR?: string[];
+    ALLOWED_TAGS?: string[];
+    FORBID_ATTR?: string[];
+    FORBID_TAGS?: string[];
+    ALLOWED_URI_REGEXP?: RegExp;
+    ALLOW_UNKNOWN_PROTOCOLS?: boolean;
+    USE_PROFILES?: false | {mathMl?: boolean, svg?: boolean, svgFilters?: boolean, html?: boolean};
+}
+
+export interface DirectiveConfig {
+    [name: string]: MinimalDOMPurifyConfig;
+}
+
+export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
+    return {
+        bind(el: HTMLElement, binding: VNodeDirective) {
+            const arg = binding.arg;
+            if (arg in config) {
+                el.innerHTML = sanitize(binding.value, config[arg]);
+                return;
+            }
+            el.innerHTML = sanitize(binding.value);
+        }
     }
-};
+}

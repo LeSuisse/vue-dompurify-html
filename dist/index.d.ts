@@ -1,6 +1,6 @@
 import { VueConstructor } from 'vue';
-export { dompurifyHtmlDirective } from './dompurify-html';
+import { DirectiveConfig } from './dompurify-html';
 declare const _default: {
-    install(Vue: VueConstructor<import("vue").default>): void;
+    install(Vue: VueConstructor<import("vue").default>, config?: DirectiveConfig): void;
 };
 export default _default;

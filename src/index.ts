@@ -1,9 +1,8 @@
 import { VueConstructor } from 'vue';
-import { dompurifyHtmlDirective } from './dompurify-html';
-export { dompurifyHtmlDirective } from './dompurify-html';
+import { buildDirective, DirectiveConfig } from './dompurify-html';
 
 export default {
-    install(Vue: VueConstructor): void {
-        Vue.directive('dompurify-html', dompurifyHtmlDirective);
+    install(Vue: VueConstructor, config: DirectiveConfig = {}): void {
+        Vue.directive('dompurify-html', buildDirective(config));
     }
 };
