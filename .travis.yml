@@ -11,3 +11,4 @@ cache: npm
 
 script:
  - ./node_modules/.bin/karma start karma.conf.ts --browsers ChromeHeadlessNoSandbox
+ - npm run lint
