@@ -1,5 +1,6 @@
 import { VueConstructor } from 'vue';
-import { buildDirective, DirectiveConfig } from './dompurify-html';
+import { buildDirective, DirectiveConfig, MinimalDOMPurifyConfig } from './dompurify-html';
+export { DirectiveConfig, MinimalDOMPurifyConfig }
 
 export default {
     install(Vue: VueConstructor, config: DirectiveConfig = {}): void {

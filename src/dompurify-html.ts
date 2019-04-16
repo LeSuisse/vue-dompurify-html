@@ -1,7 +1,7 @@
 import { DirectiveOptions, VNodeDirective } from "vue";
 import { sanitize } from "dompurify";
 
-interface MinimalDOMPurifyConfig {
+export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
     ADD_TAGS?: string[];
     ALLOW_DATA_ATTR?: boolean;
