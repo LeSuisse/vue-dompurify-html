@@ -1,5 +1,5 @@
-import { DirectiveOptions } from "vue";
-interface MinimalDOMPurifyConfig {
+import { DirectiveOptions } from 'vue';
+export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
     ADD_TAGS?: string[];
     ALLOW_DATA_ATTR?: boolean;
@@ -20,4 +20,3 @@ export interface DirectiveConfig {
     [name: string]: MinimalDOMPurifyConfig;
 }
 export declare function buildDirective(config?: DirectiveConfig): DirectiveOptions;
-export {};
