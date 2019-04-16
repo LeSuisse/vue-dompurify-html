@@ -1,5 +1,6 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
 import VueDOMPurifyHTML from '../src';
+import { buildDirective } from '../src/dompurify-html';
 
 describe('VueDOMPurifyHTML Test Suite', (): void => {
     it('can be used', (): void => {
@@ -60,6 +61,24 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         const component = {
             template: '<p v-dompurify-html:donotexist="rawHtml"></p>',
+            props: ['rawHtml']
+        };
+        const wrapper = shallowMount(component, {
+            propsData: {
+                rawHtml: '<pre>Hello</pre>'
+            },
+            localVue
+        });
+
+        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+    });
+
+    it('can build the directive with the default configuration', (): void => {
+        const localVue = createLocalVue();
+        localVue.directive('my-directive', buildDirective());
+
+        const component = {
+            template: '<p v-my-directive="rawHtml"></p>',
             props: ['rawHtml']
         };
         const wrapper = shallowMount(component, {
