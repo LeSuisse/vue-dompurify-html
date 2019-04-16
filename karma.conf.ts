@@ -1,20 +1,18 @@
-module.exports = (config): void  => {
+// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
+module.exports = config => {
     config.set({
-        frameworks: ["jasmine", "karma-typescript"],
-        files: [
-            "src/**/*.ts", "test/**/*.spec.ts"
-        ],
-        exclude: [
-        ],
+        frameworks: ['jasmine', 'karma-typescript'],
+        files: ['src/**/*.ts', 'test/**/*.spec.ts'],
+        exclude: [],
         preprocessors: {
-            "**/*.ts": "karma-typescript"
+            '**/*.ts': 'karma-typescript'
         },
-        reporters: ['progress', "karma-typescript"],
+        reporters: ['progress', 'karma-typescript'],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: true,
-        browsers: ["ChromiumHeadless"],
+        browsers: ['ChromiumHeadless'],
         customLaunchers: {
             ChromeHeadlessNoSandbox: {
                 base: 'ChromeHeadless',
@@ -23,5 +21,5 @@ module.exports = (config): void  => {
         },
         singleRun: true,
         concurrency: Infinity
-    })
+    });
 };

@@ -29,8 +29,8 @@
   "scripts": {
     "build": "tsc",
     "test": "karma start",
-    "lint": "eslint --ignore-pattern 'node_modules/' '**/*.ts'",
-    "lint-fix": "eslint --ignore-pattern 'node_modules/' '**/*.ts' --fix"
+    "lint": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts'",
+    "lint-fix": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts' --fix"
   },
   "dependencies": {
     "dompurify": "^1.0.10"
@@ -46,10 +46,13 @@
     "@typescript-eslint/parser": "^1.6.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "eslint": "^5.16.0",
+    "eslint-config-prettier": "^4.1.0",
+    "eslint-plugin-prettier": "^3.0.1",
     "karma": "^4.0.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^2.0.1",
     "karma-typescript": "^4.0.0",
+    "prettier": "^1.17.0",
     "typescript": "^3.4.3",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"

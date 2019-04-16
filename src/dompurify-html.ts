@@ -1,5 +1,5 @@
-import { DirectiveOptions, VNodeDirective } from "vue";
-import { sanitize } from "dompurify";
+import { DirectiveOptions, VNodeDirective } from 'vue';
+import { sanitize } from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
@@ -11,7 +11,14 @@ export interface MinimalDOMPurifyConfig {
     FORBID_TAGS?: string[];
     ALLOWED_URI_REGEXP?: RegExp;
     ALLOW_UNKNOWN_PROTOCOLS?: boolean;
-    USE_PROFILES?: false | {mathMl?: boolean; svg?: boolean; svgFilters?: boolean; html?: boolean};
+    USE_PROFILES?:
+        | false
+        | {
+              mathMl?: boolean;
+              svg?: boolean;
+              svgFilters?: boolean;
+              html?: boolean;
+          };
 }
 
 export interface DirectiveConfig {
@@ -28,5 +35,5 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
             }
             el.innerHTML = sanitize(binding.value);
         }
-    }
+    };
 }
