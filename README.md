@@ -61,6 +61,6 @@ Your configuration keys can then be used as an argument of the directive:
 ```html
 <div id="app">
     <div v-dompurify-html="rawHtml"></div>
-    <div v-dompurify-html:svg="rawHtml"></div>
+    <div v-dompurify-html:svg="svgContent"></div>
 </div>
 ```
