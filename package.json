@@ -6,7 +6,9 @@
   "author": "Thomas Gerbet",
   "main": "dist/index.js",
   "types": "dist/index.js.d.ts",
-  "files": ["/dist"],
+  "files": [
+    "/dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LeSuisse/vue-dompurify-html.git"
@@ -26,7 +28,9 @@
   ],
   "scripts": {
     "build": "tsc",
-    "test": "karma start"
+    "test": "karma start",
+    "lint": "eslint --ignore-pattern 'node_modules/' '**/*.ts'",
+    "lint-fix": "eslint --ignore-pattern 'node_modules/' '**/*.ts' --fix"
   },
   "dependencies": {
     "dompurify": "^1.0.10"
@@ -38,7 +42,10 @@
     "@types/dompurify": "0.0.32",
     "@types/jasmine": "^3.3.12",
     "@types/node": "^11.13.4",
+    "@typescript-eslint/eslint-plugin": "^1.6.0",
+    "@typescript-eslint/parser": "^1.6.0",
     "@vue/test-utils": "^1.0.0-beta.29",
+    "eslint": "^5.16.0",
     "karma": "^4.0.1",
     "karma-chrome-launcher": "^2.2.0",
     "karma-jasmine": "^2.0.1",

@@ -1,8 +1,8 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils'
 import VueDOMPurifyHTML from "../src";
 
-describe('VueDOMPurifyHTML Test Suite', () => {
-    it('can be used', () => {
+describe('VueDOMPurifyHTML Test Suite', (): void => {
+    it('can be used', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
 
@@ -21,7 +21,7 @@ describe('VueDOMPurifyHTML Test Suite', () => {
         expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>')
     });
 
-    it('can be used with a custom config', () => {
+    it('can be used with a custom config', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {
             'no-html': {
@@ -54,7 +54,7 @@ describe('VueDOMPurifyHTML Test Suite', () => {
         expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>')
     });
 
-    it('fallback to default profile when the requested configuration does not exist', () => {
+    it('fallback to default profile when the requested configuration does not exist', (): void  => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {});
 

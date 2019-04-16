@@ -11,7 +11,7 @@ export interface MinimalDOMPurifyConfig {
     FORBID_TAGS?: string[];
     ALLOWED_URI_REGEXP?: RegExp;
     ALLOW_UNKNOWN_PROTOCOLS?: boolean;
-    USE_PROFILES?: false | {mathMl?: boolean, svg?: boolean, svgFilters?: boolean, html?: boolean};
+    USE_PROFILES?: false | {mathMl?: boolean; svg?: boolean; svgFilters?: boolean; html?: boolean};
 }
 
 export interface DirectiveConfig {
@@ -20,7 +20,7 @@ export interface DirectiveConfig {
 
 export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
     return {
-        bind(el: HTMLElement, binding: VNodeDirective) {
+        bind(el: HTMLElement, binding: VNodeDirective): void {
             const arg = binding.arg;
             if (arg in config) {
                 el.innerHTML = sanitize(binding.value, config[arg]);
