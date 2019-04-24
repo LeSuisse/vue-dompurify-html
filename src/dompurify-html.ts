@@ -1,4 +1,4 @@
-import { DirectiveOptions, VNodeDirective } from 'vue';
+import { DirectiveFunction, DirectiveOptions, VNodeDirective } from 'vue';
 import { sanitize } from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
@@ -26,14 +26,20 @@ export interface DirectiveConfig {
 }
 
 export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
-    return {
-        bind(el: HTMLElement, binding: VNodeDirective): void {
-            const arg = binding.arg;
-            if (arg in config) {
-                el.innerHTML = sanitize(binding.value, config[arg]);
-                return;
-            }
-            el.innerHTML = sanitize(binding.value);
+    const updateComponent: DirectiveFunction = function(
+        el: HTMLElement,
+        binding: VNodeDirective
+    ): void {
+        const arg = binding.arg;
+        if (arg in config) {
+            el.innerHTML = sanitize(binding.value, config[arg]);
+            return;
         }
+        el.innerHTML = sanitize(binding.value);
+    };
+
+    return {
+        inserted: updateComponent,
+        update: updateComponent
     };
 }

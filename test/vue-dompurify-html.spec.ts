@@ -20,6 +20,10 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         });
 
         expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        wrapper.setProps({
+            rawHtml: '<pre>Hello<script></script> After Update</pre>'
+        });
+        expect(wrapper.html()).toBe('<p><pre>Hello After Update</pre></p>');
     });
 
     it('can be used with a custom config', (): void => {
