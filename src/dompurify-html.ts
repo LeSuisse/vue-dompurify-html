@@ -30,6 +30,9 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
         el: HTMLElement,
         binding: VNodeDirective
     ): void {
+        if (binding.oldValue === binding.value) {
+            return;
+        }
         const arg = binding.arg;
         if (arg in config) {
             el.innerHTML = sanitize(binding.value, config[arg]);
