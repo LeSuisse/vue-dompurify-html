@@ -40,6 +40,9 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
 
     return {
         inserted: updateComponent,
-        update: updateComponent
+        update: updateComponent,
+        unbind(el): void {
+            el.innerHTML = '';
+        }
     };
 }
