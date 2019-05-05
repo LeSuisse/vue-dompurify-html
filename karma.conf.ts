@@ -8,6 +8,15 @@ module.exports = config => {
             '**/*.ts': 'karma-typescript'
         },
         reporters: ['progress', 'karma-typescript'],
+        karmaTypescriptConfig: {
+            reports: {
+                html: 'coverage',
+                lcovonly: {
+                    directory: 'coverage',
+                    filename: 'coverage.lcov'
+                }
+            }
+        },
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
