@@ -8,7 +8,7 @@ function buildDirective(config) {
             return;
         }
         var arg = binding.arg;
-        if (arg in config) {
+        if (typeof config[arg] !== 'undefined') {
             el.innerHTML = dompurify_1.sanitize(binding.value, config[arg]);
             return;
         }
