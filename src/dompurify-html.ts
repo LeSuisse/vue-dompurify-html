@@ -34,7 +34,7 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
             return;
         }
         const arg = binding.arg;
-        if (arg in config) {
+        if (typeof config[arg] !== 'undefined') {
             el.innerHTML = sanitize(binding.value, config[arg]);
             return;
         }
