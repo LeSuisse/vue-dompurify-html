@@ -3,6 +3,11 @@
 A "safe" replacement for the `v-html` directive. The HTML code is
 sanitized with [DOMPurify](https://github.com/cure53/DOMPurify) before being interpreted.
 
+This is only a small wrapper around DOMPurify to ease its usage in a Vue app.
+You should take a look at the 
+[DOMPurify Security Goals & Threat Model](https://github.com/cure53/DOMPurify/wiki/Security-Goals-&-Threat-Model)
+to understand what are the limitations and possibilities.
+
 ## Installation
 
 ```
@@ -32,7 +37,7 @@ In your template:
 </div>
 ```
 
-You can also define your DOMPurify configurations:
+You can also define your [DOMPurify configurations](https://github.com/cure53/DOMPurify#can-i-configure-dompurify):
 ```js
 import Vue from 'vue'
 import VueDOMPurifyHTML from 'vue-dompurify-html'
