@@ -5,7 +5,7 @@
   "license": "MIT",
   "author": "Thomas Gerbet",
   "main": "dist/index.js",
-  "types": "dist/index.js.d.ts",
+  "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
