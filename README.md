@@ -69,3 +69,31 @@ Your configuration keys can then be used as an argument of the directive:
     <div v-dompurify-html:svg="svgContent"></div>
 </div>
 ```
+
+Alternatively, you can define a default [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-i-configure-dompurify):
+```js
+import Vue from 'vue'
+import VueDOMPurifyHTML from 'vue-dompurify-html'
+
+Vue.use(VueDOMPurifyHTML, {
+  {
+    'default': {
+      USE_PROFILES: { html: false }
+    },
+  },
+})
+
+new Vue({
+  el: '#app',
+  data: {
+    rawHtml: '<span style="color: red">This should not be red.</span>'
+  }
+})
+```
+
+The `default` [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-i-configure-dompurify) will be used:
+```html
+<div id="app">
+    <div v-dompurify-html="rawHtml"></div>
+</div>
+```

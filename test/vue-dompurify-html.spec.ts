@@ -30,6 +30,28 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(wrapper.html()).toBe('<p><pre>Hello After Update</pre></p>');
     });
 
+    it('can be used with a default config', (): void => {
+        const localVue = createLocalVue();
+        localVue.use(VueDOMPurifyHTML, {
+            default: {
+                USE_PROFILES: { html: false }
+            }
+        });
+
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml']
+        };
+        const wrapper = shallowMount(component, {
+            propsData: {
+                rawHtml: '<pre>Hello</pre>'
+            },
+            localVue
+        });
+
+        expect(wrapper.html()).toBe('<p>Hello</p>');
+    });
+
     it('can be used with a custom config', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {
@@ -63,7 +85,43 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>');
     });
 
-    it('fallback to default profile when the requested configuration does not exist', (): void => {
+    it('can be used with a custom config when a default config is also specified', (): void => {
+        const localVue = createLocalVue();
+        localVue.use(VueDOMPurifyHTML, {
+            default: {
+                USE_PROFILES: { html: true }
+            },
+            'no-html': {
+                USE_PROFILES: { html: false }
+            }
+        });
+
+        const componentWithHtml = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml']
+        };
+        const wrapperWithHtml = shallowMount(componentWithHtml, {
+            propsData: {
+                rawHtml: '<pre>Hello</pre>'
+            },
+            localVue
+        });
+        const componentWithoutHtml = {
+            template: '<p v-dompurify-html:no-html="rawHtml"></p>',
+            props: ['rawHtml']
+        };
+        const wrapperWithoutHtml = shallowMount(componentWithoutHtml, {
+            propsData: {
+                rawHtml: '<pre>Hello</pre>'
+            },
+            localVue
+        });
+
+        expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>');
+    });
+
+    it('fallback to default (unconfigured) profile when the requested configuration does not exist', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {});
 
@@ -79,6 +137,29 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         });
 
         expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+    });
+
+    it('fallback to default configured profile when the requested configuration does not exist', (): void => {
+        const localVue = createLocalVue();
+        localVue.use(VueDOMPurifyHTML, {
+            default: {
+                USE_PROFILES: { html: false }
+            }
+        });
+
+        const component = {
+            template: '<p v-dompurify-html:donotexist="rawHtml"></p>',
+            props: ['rawHtml']
+        };
+        const wrapper = shallowMount(component, {
+            propsData: {
+                rawHtml:
+                    '<span style="color: red">This should not be red.</span>'
+            },
+            localVue
+        });
+
+        expect(wrapper.html()).toBe('<p>This should not be red.</p>');
     });
 
     it('can build the directive with the default configuration', (): void => {

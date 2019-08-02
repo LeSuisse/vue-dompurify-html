@@ -38,6 +38,10 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
             el.innerHTML = sanitize(binding.value, config[arg]);
             return;
         }
+        if (typeof config['default'] !== 'undefined') {
+            el.innerHTML = sanitize(binding.value, config['default']);
+            return;
+        }
         el.innerHTML = sanitize(binding.value);
     };
 
