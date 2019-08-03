@@ -10,6 +10,9 @@ module.exports = config => {
             configFile: 'karma.conf.ts'
         },
         tsconfigFile: 'tsconfig.json',
-        mutate: ['src/**/*.ts']
+        mutate: ['src/**/*.ts'],
+        thresholds: {
+            break: 91.3
+        }
     });
 };

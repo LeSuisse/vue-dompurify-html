@@ -29,6 +29,7 @@
   "scripts": {
     "build": "tsc",
     "test": "karma start",
+    "test-mutation": "stryker run",
     "lint": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts'",
     "lint-fix": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts' --fix"
   },
