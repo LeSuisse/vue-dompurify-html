@@ -202,11 +202,14 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             localVue
         });
 
+        const purifiedElement = wrapper.find('p');
+        expect(purifiedElement.html()).toBe('<p>Test</p>');
         expect(wrapper.html()).toBe('<div><p>Test</p></div>');
         wrapper.setProps({
             rawHtml: 'Test',
             display: false
         });
+        expect(purifiedElement.html()).toBe('<p></p>');
         expect(wrapper.html()).toBe('<div><!----></div>');
     });
 });
