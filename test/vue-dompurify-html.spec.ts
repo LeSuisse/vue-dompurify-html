@@ -166,6 +166,34 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(wrapper.html()).toBe('<p>This should not be red.</p>');
     });
 
+    it('fallback to default configured profile when the requested configuration does not exist but a named configuration have been set', (): void => {
+        const localVue = createLocalVue();
+        localVue.use(VueDOMPurifyHTML, {
+            default: {
+                USE_PROFILES: { html: false }
+            },
+            namedConfigurations: {
+                svg: {
+                    USE_PROFILES: { svg: true }
+                }
+            }
+        });
+
+        const component = {
+            template: '<p v-dompurify-html:donotexist="rawHtml"></p>',
+            props: ['rawHtml']
+        };
+        const wrapper = shallowMount(component, {
+            propsData: {
+                rawHtml:
+                    '<span style="color: red">This should not be red.</span>'
+            },
+            localVue
+        });
+
+        expect(wrapper.html()).toBe('<p>This should not be red.</p>');
+    });
+
     it('can build the directive with the default configuration', (): void => {
         const localVue = createLocalVue();
         localVue.directive('my-directive', buildDirective());
