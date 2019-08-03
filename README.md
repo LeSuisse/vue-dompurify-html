@@ -43,7 +43,7 @@ import Vue from 'vue'
 import VueDOMPurifyHTML from 'vue-dompurify-html'
 
 Vue.use(VueDOMPurifyHTML, {
-  {
+  namedConfigurations: {
     'svg': {
       USE_PROFILES: { svg: true }
     },
@@ -51,7 +51,7 @@ Vue.use(VueDOMPurifyHTML, {
       USE_PROFILES: { mathMl: true }
     },
   }
-})
+});
 
 new Vue({
   el: '#app',
@@ -76,12 +76,10 @@ import Vue from 'vue'
 import VueDOMPurifyHTML from 'vue-dompurify-html'
 
 Vue.use(VueDOMPurifyHTML, {
-  {
-    'default': {
-      USE_PROFILES: { html: false }
-    },
-  },
-})
+  default: {
+    USE_PROFILES: { html: false }
+  }
+});
 
 new Vue({
   el: '#app',

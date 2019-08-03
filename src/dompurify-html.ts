@@ -22,7 +22,8 @@ export interface MinimalDOMPurifyConfig {
 }
 
 export interface DirectiveConfig {
-    [name: string]: MinimalDOMPurifyConfig;
+    default?: MinimalDOMPurifyConfig;
+    namedConfigurations?: Record<string, MinimalDOMPurifyConfig>;
 }
 
 export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
@@ -34,12 +35,16 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
             return;
         }
         const arg = binding.arg;
-        if (typeof config[arg] !== 'undefined') {
-            el.innerHTML = sanitize(binding.value, config[arg]);
+        const namedConfigurations = config.namedConfigurations;
+        if (
+            namedConfigurations &&
+            typeof namedConfigurations[arg] !== 'undefined'
+        ) {
+            el.innerHTML = sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        if (typeof config['default'] !== 'undefined') {
-            el.innerHTML = sanitize(binding.value, config['default']);
+        if (config.default) {
+            el.innerHTML = sanitize(binding.value, config.default);
             return;
         }
         el.innerHTML = sanitize(binding.value);

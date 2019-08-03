@@ -55,8 +55,10 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
     it('can be used with a custom config', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {
-            'no-html': {
-                USE_PROFILES: { html: false }
+            namedConfigurations: {
+                'no-html': {
+                    USE_PROFILES: { html: false }
+                }
             }
         });
 
@@ -91,8 +93,10 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             default: {
                 USE_PROFILES: { html: true }
             },
-            'no-html': {
-                USE_PROFILES: { html: false }
+            namedConfigurations: {
+                'no-html': {
+                    USE_PROFILES: { html: false }
+                }
             }
         });
 
