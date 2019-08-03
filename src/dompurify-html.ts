@@ -43,11 +43,7 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
             el.innerHTML = sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        if (config.default) {
-            el.innerHTML = sanitize(binding.value, config.default);
-            return;
-        }
-        el.innerHTML = sanitize(binding.value);
+        el.innerHTML = sanitize(binding.value, config.default);
     };
 
     return {
