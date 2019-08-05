@@ -1,8 +1,18 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
 import VueDOMPurifyHTML from '../src';
 import { buildDirective } from '../src/dompurify-html';
+import * as dompurifyModule from 'dompurify';
+import { ImportMock } from 'ts-mock-imports';
 
 describe('VueDOMPurifyHTML Test Suite', (): void => {
+    let sanitizeStub;
+
+    afterEach((): void => {
+        if (sanitizeStub) {
+            sanitizeStub.restore();
+        }
+    });
+
     it('can be used', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
@@ -20,10 +30,6 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         });
 
         expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
-        wrapper.setProps({
-            rawHtml: '<pre>Hello<script></script> After Update</pre>'
-        });
-        expect(wrapper.html()).toBe('<p><pre>Hello After Update</pre></p>');
         wrapper.setProps({
             rawHtml: '<pre>Hello<script></script> After Update</pre>'
         });
@@ -210,6 +216,34 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         });
 
         expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+    });
+
+    it('content is given to DOMPurify only when needed', (): void => {
+        sanitizeStub = ImportMock.mockFunction(
+            dompurifyModule,
+            'sanitize'
+        ).callThrough();
+
+        const localVue = createLocalVue();
+        localVue.use(VueDOMPurifyHTML);
+
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml']
+        };
+
+        const wrapper = shallowMount(component, {
+            propsData: {
+                rawHtml: '<pre>Hello<script></script></pre>'
+            },
+            localVue
+        });
+        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        wrapper.setProps({
+            rawHtml: '<pre>Hello<script></script></pre>'
+        });
+        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(sanitizeStub.callCount).toBe(1);
     });
 
     it('directive can be unbound from the element', (): void => {

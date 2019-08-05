@@ -12,7 +12,8 @@ module.exports = config => {
         tsconfigFile: 'tsconfig.json',
         mutate: ['src/**/*.ts'],
         thresholds: {
-            break: 91.3
+            break: 100,
+            high: 100
         }
     });
 };
