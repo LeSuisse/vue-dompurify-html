@@ -8,11 +8,13 @@ function buildDirective(config) {
             return;
         }
         var arg = binding.arg;
-        if (typeof config[arg] !== 'undefined') {
-            el.innerHTML = dompurify_1.sanitize(binding.value, config[arg]);
+        var namedConfigurations = config.namedConfigurations;
+        if (namedConfigurations &&
+            typeof namedConfigurations[arg] !== 'undefined') {
+            el.innerHTML = dompurify_1.sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        el.innerHTML = dompurify_1.sanitize(binding.value);
+        el.innerHTML = dompurify_1.sanitize(binding.value, config.default);
     };
     return {
         inserted: updateComponent,

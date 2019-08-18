@@ -17,6 +17,7 @@ export interface MinimalDOMPurifyConfig {
     };
 }
 export interface DirectiveConfig {
-    [name: string]: MinimalDOMPurifyConfig;
+    default?: MinimalDOMPurifyConfig;
+    namedConfigurations?: Record<string, MinimalDOMPurifyConfig>;
 }
 export declare function buildDirective(config?: DirectiveConfig): DirectiveOptions;
