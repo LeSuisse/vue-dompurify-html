@@ -34,7 +34,7 @@
     "lint-fix": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts' --fix"
   },
   "dependencies": {
-    "dompurify": "^1.0.10"
+    "dompurify": "^2.0.0"
   },
   "peerDependencies": {
     "vue": "^2.0.0"
