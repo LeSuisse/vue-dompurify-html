@@ -17,6 +17,6 @@ jobs:
         run: npm test
       - name: Mutation testing
         run: npm run test-mutation
-      - uses: codecov/codecov-action@v1.0.0
+      - uses: codecov/codecov-action@v1.0.3
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
