@@ -246,13 +246,13 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(sanitizeStub.callCount).toBe(1);
     });
 
-    it('directive can be unbound from the element', (): void => {
+    it('directive works the same way than v-html when unbounded', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
 
         const component = {
             template:
-                '<div><p v-if="display" v-dompurify-html="rawHtml"></p></div>',
+                '<div><p id="purified-p" v-if="display" v-html="rawHtml"></p><p id="pure-p" v-if="display" v-html="rawHtml"></p></div>',
             props: ['rawHtml', 'display']
         };
 
@@ -264,14 +264,19 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             localVue
         });
 
-        const purifiedElement = wrapper.find('p');
-        expect(purifiedElement.html()).toBe('<p>Test</p>');
-        expect(wrapper.html()).toBe('<div><p>Test</p></div>');
+        const purifiedElement = wrapper.find('#purified-p');
+        const pureHtmlElement = wrapper.find('#pure-p');
+        expect(purifiedElement.html()).toBe('<p id="purified-p">Test</p>');
+        expect(purifiedElement.text()).toBe(pureHtmlElement.text());
+        expect(wrapper.html()).toBe(
+            '<div><p id="purified-p">Test</p><p id="pure-p">Test</p></div>'
+        );
         wrapper.setProps({
             rawHtml: 'Test',
             display: false
         });
-        expect(purifiedElement.html()).toBe('<p></p>');
-        expect(wrapper.html()).toBe('<div><!----></div>');
+        expect(purifiedElement.html()).toBe('<p id="purified-p">Test</p>');
+        expect(purifiedElement.text()).toBe(pureHtmlElement.text());
+        expect(wrapper.html()).toBe('<div><!----><!----></div>');
     });
 });
