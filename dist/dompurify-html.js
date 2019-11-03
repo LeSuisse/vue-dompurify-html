@@ -18,10 +18,7 @@ function buildDirective(config) {
     };
     return {
         inserted: updateComponent,
-        update: updateComponent,
-        unbind: function (el) {
-            el.innerHTML = '';
-        }
+        update: updateComponent
     };
 }
 exports.buildDirective = buildDirective;
