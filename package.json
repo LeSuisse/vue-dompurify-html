@@ -46,7 +46,6 @@
     "@types/dompurify": "2.0.1",
     "@types/jest": "^24.0.17",
     "@types/node": "^13.1.0",
-    "@types/sinon": "^7.0.13",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
     "@vue/test-utils": "^1.0.0-beta.29",
@@ -55,9 +54,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.8.0",
     "prettier": "^1.17.0",
-    "sinon": "^8.0.2",
     "ts-jest": "^24.0.2",
-    "ts-mock-imports": "^1.2.6",
     "typescript": "^3.4.3",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"

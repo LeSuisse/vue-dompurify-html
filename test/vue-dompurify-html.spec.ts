@@ -2,17 +2,8 @@ import { createLocalVue, shallowMount } from '@vue/test-utils';
 import VueDOMPurifyHTML from '../src';
 import { buildDirective } from '../src/dompurify-html';
 import * as dompurifyModule from 'dompurify';
-import { ImportMock } from 'ts-mock-imports';
 
 describe('VueDOMPurifyHTML Test Suite', (): void => {
-    let sanitizeStub;
-
-    afterEach((): void => {
-        if (sanitizeStub) {
-            sanitizeStub.restore();
-        }
-    });
-
     it('can be used', async (): Promise<void> => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
@@ -222,10 +213,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
     it('content is given to DOMPurify only when needed', async (): Promise<
         void
     > => {
-        sanitizeStub = ImportMock.mockFunction(
-            dompurifyModule,
-            'sanitize'
-        ).callThrough();
+        const sanitizeStub = jest.spyOn(dompurifyModule, 'sanitize');
 
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
@@ -247,7 +235,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         });
         await wrapper.vm.$nextTick();
         expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
-        expect(sanitizeStub.callCount).toBe(1);
+        expect(sanitizeStub).toBeCalledTimes(1);
     });
 
     it('directive works the same way than v-html when unbounded', async (): Promise<
