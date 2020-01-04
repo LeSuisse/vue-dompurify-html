@@ -13,7 +13,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         }
     });
 
-    it('can be used', (): void => {
+    it('can be used', async (): Promise<void> => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
 
@@ -29,11 +29,12 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             localVue
         });
 
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
         wrapper.setProps({
             rawHtml: '<pre>Hello<script></script> After Update</pre>'
         });
-        expect(wrapper.html()).toBe('<p><pre>Hello After Update</pre></p>');
+        await wrapper.vm.$nextTick();
+        expect(wrapper.html()).toBe('<p><pre>Hello After Update</pre>\n</p>');
     });
 
     it('can be used with a default config', (): void => {
@@ -89,7 +90,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             localVue
         });
 
-        expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre>\n</p>');
         expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>');
     });
 
@@ -127,7 +128,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             localVue
         });
 
-        expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre>\n</p>');
         expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>');
     });
 
@@ -146,7 +147,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             localVue
         });
 
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
     });
 
     it('fallback to default configured profile when the requested configuration does not exist', (): void => {
@@ -215,10 +216,12 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             localVue
         });
 
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
     });
 
-    it('content is given to DOMPurify only when needed', (): void => {
+    it('content is given to DOMPurify only when needed', async (): Promise<
+        void
+    > => {
         sanitizeStub = ImportMock.mockFunction(
             dompurifyModule,
             'sanitize'
@@ -238,15 +241,18 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             },
             localVue
         });
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
         wrapper.setProps({
             rawHtml: '<pre>Hello<script></script></pre>'
         });
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        await wrapper.vm.$nextTick();
+        expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
         expect(sanitizeStub.callCount).toBe(1);
     });
 
-    it('directive works the same way than v-html when unbounded', (): void => {
+    it('directive works the same way than v-html when unbounded', async (): Promise<
+        void
+    > => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
 
@@ -269,14 +275,20 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(purifiedElement.html()).toBe('<p id="purified-p">Test</p>');
         expect(purifiedElement.text()).toBe(pureHtmlElement.text());
         expect(wrapper.html()).toBe(
-            '<div><p id="purified-p">Test</p><p id="pure-p">Test</p></div>'
+            '<div>\n' +
+                '  <p id="purified-p">Test</p>\n' +
+                '  <p id="pure-p">Test</p>\n' +
+                '</div>'
         );
         wrapper.setProps({
             rawHtml: 'Test',
             display: false
         });
+        await wrapper.vm.$nextTick();
         expect(purifiedElement.html()).toBe('<p id="purified-p">Test</p>');
         expect(purifiedElement.text()).toBe(pureHtmlElement.text());
-        expect(wrapper.html()).toBe('<div><!----><!----></div>');
+        expect(wrapper.html()).toBe(
+            '<div>\n' + '  <!---->\n' + '  <!---->\n' + '</div>'
+        );
     });
 });
