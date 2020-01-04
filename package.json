@@ -55,7 +55,7 @@
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.8.0",
     "prettier": "^1.17.0",
-    "sinon": "^7.3.2",
+    "sinon": "^8.0.2",
     "ts-jest": "^24.0.2",
     "ts-mock-imports": "^1.2.6",
     "typescript": "^3.4.3",
