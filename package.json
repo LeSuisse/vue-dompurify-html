@@ -52,9 +52,9 @@
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "jest": "^24.8.0",
+    "jest": "^25.1.0",
     "prettier": "^1.17.0",
-    "ts-jest": "^24.0.2",
+    "ts-jest": "^25.2.1",
     "typescript": "^3.4.3",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
