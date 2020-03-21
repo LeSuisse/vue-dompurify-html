@@ -10,19 +10,19 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         const component = {
             template: '<p v-dompurify-html="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
 
         const wrapper = shallowMount(component, {
             propsData: {
-                rawHtml: '<pre>Hello<script></script></pre>'
+                rawHtml: '<pre>Hello<script></script></pre>',
             },
-            localVue
+            localVue,
         });
 
         expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
         wrapper.setProps({
-            rawHtml: '<pre>Hello<script></script> After Update</pre>'
+            rawHtml: '<pre>Hello<script></script> After Update</pre>',
         });
         await wrapper.vm.$nextTick();
         expect(wrapper.html()).toBe('<p><pre>Hello After Update</pre>\n</p>');
@@ -32,19 +32,19 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {
             default: {
-                USE_PROFILES: { html: false }
-            }
+                USE_PROFILES: { html: false },
+            },
         });
 
         const component = {
             template: '<p v-dompurify-html="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapper = shallowMount(component, {
             propsData: {
-                rawHtml: '<pre>Hello</pre>'
+                rawHtml: '<pre>Hello</pre>',
             },
-            localVue
+            localVue,
         });
 
         expect(wrapper.html()).toBe('<p>Hello</p>');
@@ -55,30 +55,30 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         localVue.use(VueDOMPurifyHTML, {
             namedConfigurations: {
                 'no-html': {
-                    USE_PROFILES: { html: false }
-                }
-            }
+                    USE_PROFILES: { html: false },
+                },
+            },
         });
 
         const componentWithHtml = {
             template: '<p v-dompurify-html="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapperWithHtml = shallowMount(componentWithHtml, {
             propsData: {
-                rawHtml: '<pre>Hello</pre>'
+                rawHtml: '<pre>Hello</pre>',
             },
-            localVue
+            localVue,
         });
         const componentWithoutHtml = {
             template: '<p v-dompurify-html:no-html="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapperWithoutHtml = shallowMount(componentWithoutHtml, {
             propsData: {
-                rawHtml: '<pre>Hello</pre>'
+                rawHtml: '<pre>Hello</pre>',
             },
-            localVue
+            localVue,
         });
 
         expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre>\n</p>');
@@ -89,34 +89,34 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {
             default: {
-                USE_PROFILES: { html: true }
+                USE_PROFILES: { html: true },
             },
             namedConfigurations: {
                 'no-html': {
-                    USE_PROFILES: { html: false }
-                }
-            }
+                    USE_PROFILES: { html: false },
+                },
+            },
         });
 
         const componentWithHtml = {
             template: '<p v-dompurify-html="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapperWithHtml = shallowMount(componentWithHtml, {
             propsData: {
-                rawHtml: '<pre>Hello</pre>'
+                rawHtml: '<pre>Hello</pre>',
             },
-            localVue
+            localVue,
         });
         const componentWithoutHtml = {
             template: '<p v-dompurify-html:no-html="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapperWithoutHtml = shallowMount(componentWithoutHtml, {
             propsData: {
-                rawHtml: '<pre>Hello</pre>'
+                rawHtml: '<pre>Hello</pre>',
             },
-            localVue
+            localVue,
         });
 
         expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre>\n</p>');
@@ -129,13 +129,13 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         const component = {
             template: '<p v-dompurify-html:donotexist="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapper = shallowMount(component, {
             propsData: {
-                rawHtml: '<pre>Hello</pre>'
+                rawHtml: '<pre>Hello</pre>',
             },
-            localVue
+            localVue,
         });
 
         expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
@@ -145,20 +145,20 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {
             default: {
-                USE_PROFILES: { html: false }
-            }
+                USE_PROFILES: { html: false },
+            },
         });
 
         const component = {
             template: '<p v-dompurify-html:donotexist="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapper = shallowMount(component, {
             propsData: {
                 rawHtml:
-                    '<span style="color: red">This should not be red.</span>'
+                    '<span style="color: red">This should not be red.</span>',
             },
-            localVue
+            localVue,
         });
 
         expect(wrapper.html()).toBe('<p>This should not be red.</p>');
@@ -168,25 +168,25 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML, {
             default: {
-                USE_PROFILES: { html: false }
+                USE_PROFILES: { html: false },
             },
             namedConfigurations: {
                 svg: {
-                    USE_PROFILES: { svg: true }
-                }
-            }
+                    USE_PROFILES: { svg: true },
+                },
+            },
         });
 
         const component = {
             template: '<p v-dompurify-html:donotexist="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapper = shallowMount(component, {
             propsData: {
                 rawHtml:
-                    '<span style="color: red">This should not be red.</span>'
+                    '<span style="color: red">This should not be red.</span>',
             },
-            localVue
+            localVue,
         });
 
         expect(wrapper.html()).toBe('<p>This should not be red.</p>');
@@ -198,13 +198,13 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         const component = {
             template: '<p v-my-directive="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
         const wrapper = shallowMount(component, {
             propsData: {
-                rawHtml: '<pre>Hello</pre>'
+                rawHtml: '<pre>Hello</pre>',
             },
-            localVue
+            localVue,
         });
 
         expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
@@ -220,18 +220,18 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         const component = {
             template: '<p v-dompurify-html="rawHtml"></p>',
-            props: ['rawHtml']
+            props: ['rawHtml'],
         };
 
         const wrapper = shallowMount(component, {
             propsData: {
-                rawHtml: '<pre>Hello<script></script></pre>'
+                rawHtml: '<pre>Hello<script></script></pre>',
             },
-            localVue
+            localVue,
         });
         expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
         wrapper.setProps({
-            rawHtml: '<pre>Hello<script></script></pre>'
+            rawHtml: '<pre>Hello<script></script></pre>',
         });
         await wrapper.vm.$nextTick();
         expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
@@ -247,15 +247,15 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         const component = {
             template:
                 '<div><p id="purified-p" v-if="display" v-html="rawHtml"></p><p id="pure-p" v-if="display" v-html="rawHtml"></p></div>',
-            props: ['rawHtml', 'display']
+            props: ['rawHtml', 'display'],
         };
 
         const wrapper = shallowMount(component, {
             propsData: {
                 rawHtml: 'Test',
-                display: true
+                display: true,
             },
-            localVue
+            localVue,
         });
 
         const purifiedElement = wrapper.find('#purified-p');
@@ -270,7 +270,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         );
         wrapper.setProps({
             rawHtml: 'Test',
-            display: false
+            display: false,
         });
         await wrapper.vm.$nextTick();
         expect(purifiedElement.html()).toBe('<p id="purified-p">Test</p>');
