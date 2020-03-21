@@ -27,7 +27,7 @@ export interface DirectiveConfig {
 }
 
 export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
-    const updateComponent: DirectiveFunction = function(
+    const updateComponent: DirectiveFunction = function (
         el: HTMLElement,
         binding: VNodeDirective
     ): void {
@@ -48,6 +48,6 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
 
     return {
         inserted: updateComponent,
-        update: updateComponent
+        update: updateComponent,
     };
 }
