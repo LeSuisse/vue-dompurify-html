@@ -1,4 +1,8 @@
-import { DirectiveFunction, DirectiveOptions, VNodeDirective } from 'vue';
+import {
+    DirectiveHook,
+    ObjectDirective,
+    DirectiveBinding,
+} from '@vue/runtime-core';
 import { sanitize } from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
@@ -26,14 +30,13 @@ export interface DirectiveConfig {
     namedConfigurations?: Record<string, MinimalDOMPurifyConfig>;
 }
 
-export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
-    const updateComponent: DirectiveFunction = function (
+export function buildDirective(
+    config: DirectiveConfig = {}
+): ObjectDirective<HTMLElement> {
+    const updateComponent: DirectiveHook = function (
         el: HTMLElement,
-        binding: VNodeDirective
+        binding: DirectiveBinding
     ): void {
-        if (binding.oldValue === binding.value) {
-            return;
-        }
         const arg = binding.arg;
         const namedConfigurations = config.namedConfigurations;
         if (
@@ -47,7 +50,7 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
     };
 
     return {
-        inserted: updateComponent,
-        update: updateComponent,
+        mounted: updateComponent,
+        updated: updateComponent,
     };
 }

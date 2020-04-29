@@ -37,7 +37,7 @@
     "dompurify": "^2.0.0"
   },
   "peerDependencies": {
-    "vue": "^2.0.0"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
     "@stryker-mutator/core": "^2.0.2",
@@ -48,7 +48,7 @@
     "@types/node": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
     "@typescript-eslint/parser": "^2.14.0",
-    "@vue/test-utils": "^1.0.0-beta.29",
+    "@vue/test-utils": "^2.0.0-alpha.3",
     "eslint": "^6.8.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-plugin-prettier": "^3.0.1",
@@ -56,7 +56,6 @@
     "prettier": "^2.0.0",
     "ts-jest": "^25.2.1",
     "typescript": "^3.4.3",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "vue": "^3.0.0-beta.4"
   }
 }

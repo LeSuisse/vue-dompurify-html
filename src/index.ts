@@ -1,4 +1,4 @@
-import { VueConstructor } from 'vue';
+import { App } from 'vue';
 import {
     buildDirective,
     DirectiveConfig,
@@ -7,7 +7,7 @@ import {
 export { DirectiveConfig, MinimalDOMPurifyConfig };
 
 export default {
-    install(Vue: VueConstructor, config: DirectiveConfig = {}): void {
-        Vue.directive('dompurify-html', buildDirective(config));
+    install(app: App, config: DirectiveConfig = {}): void {
+        app.directive('dompurify-html', buildDirective(config));
     },
 };
