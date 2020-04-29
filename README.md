@@ -4,6 +4,9 @@
 [![Build Status](https://travis-ci.com/LeSuisse/vue-dompurify-html.svg?branch=master)](https://travis-ci.com/LeSuisse/vue-dompurify-html)
 [![Code Coverage](https://codecov.io/gh/LeSuisse/vue-dompurify-html/branch/master/graph/badge.svg)](https://codecov.io/gh/LeSuisse/vue-dompurify-html)
 
+⚠️ This branch is meant to be used with [vue-next](https://github.com/vuejs/vue-next). If you are looking for the stable
+version, go to [master branch](https://github.com/LeSuisse/vue-dompurify-html/tree/master).
+
 A "safe" replacement for the `v-html` directive. The HTML code is
 sanitized with [DOMPurify](https://github.com/cure53/DOMPurify) before being interpreted.
 
@@ -15,23 +18,22 @@ to understand what are the limitations and possibilities.
 ## Installation
 
 ```
-npm install vue-dompurify-html
+npm install vue-dompurify-html@vue-next
 ```
 
 ## Usage
 
 ```js
-import Vue from 'vue'
+import { createApp } from 'vue'
 import VueDOMPurifyHTML from 'vue-dompurify-html'
 
-Vue.use(VueDOMPurifyHTML)
-
-new Vue({
-  el: '#app',
-  data: {
-    rawHtml: '<span style="color: red">This should be red.</span>'
-  }
-})
+const app = createApp({
+    data: () => ({
+        rawHtml: '<span style="color: red">This should be red.</span>'
+    })
+});
+app.use(VueDOMPurifyHTML);
+app.mount('#app');
 ```
 
 In your template:
@@ -41,12 +43,19 @@ In your template:
 </div>
 ```
 
+
 You can also define your [DOMPurify configurations](https://github.com/cure53/DOMPurify#can-i-configure-dompurify):
 ```js
-import Vue from 'vue'
+import { createApp } from 'vue'
 import VueDOMPurifyHTML from 'vue-dompurify-html'
 
-Vue.use(VueDOMPurifyHTML, {
+const app = createApp({
+    data: () => ({
+        rawHtml: '<span style="color: red">This should be red.</span>',
+        svgContent: '<svg><rect height="50"></rect></svg>'
+    })
+});
+app.use(VueDOMPurifyHTML, {
   namedConfigurations: {
     'svg': {
       USE_PROFILES: { svg: true }
@@ -56,14 +65,7 @@ Vue.use(VueDOMPurifyHTML, {
     },
   }
 });
-
-new Vue({
-  el: '#app',
-  data: {
-    rawHtml: '<span style="color: red">This should be red.</span>',
-    svgContent: '<svg><rect height="50"></rect></svg>'
-  }
-})
+app.mount("#app")
 ```
 
 Your configuration keys can then be used as an argument of the directive:
@@ -76,21 +78,20 @@ Your configuration keys can then be used as an argument of the directive:
 
 Alternatively, you can define a default [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-i-configure-dompurify):
 ```js
-import Vue from 'vue'
+import { createApp } from 'vue'
 import VueDOMPurifyHTML from 'vue-dompurify-html'
 
-Vue.use(VueDOMPurifyHTML, {
+const app = createApp({
+    data: () => ({
+        rawHtml: '<span style="color: red">This should be red.</span>'
+    })
+});
+app.use(VueDOMPurifyHTML, {
   default: {
     USE_PROFILES: { html: false }
   }
 });
-
-new Vue({
-  el: '#app',
-  data: {
-    rawHtml: '<span style="color: red">This should not be red.</span>'
-  }
-})
+app.mount('#app');
 ```
 
 The `default` [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-i-configure-dompurify) will be used:
