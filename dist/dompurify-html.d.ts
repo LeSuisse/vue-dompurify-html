@@ -1,4 +1,4 @@
-import { DirectiveOptions } from 'vue';
+import { ObjectDirective } from '@vue/runtime-core';
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
     ADD_TAGS?: string[];
@@ -20,4 +20,4 @@ export interface DirectiveConfig {
     default?: MinimalDOMPurifyConfig;
     namedConfigurations?: Record<string, MinimalDOMPurifyConfig>;
 }
-export declare function buildDirective(config?: DirectiveConfig): DirectiveOptions;
+export declare function buildDirective(config?: DirectiveConfig): ObjectDirective<HTMLElement>;
