@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - vue-next
   pull_request:
 
 jobs:
