@@ -3,6 +3,7 @@
 [![npm](https://img.shields.io/npm/v/vue-dompurify-html)](https://www.npmjs.com/package/vue-dompurify-html)
 [![Build Status](https://travis-ci.com/LeSuisse/vue-dompurify-html.svg?branch=master)](https://travis-ci.com/LeSuisse/vue-dompurify-html)
 [![Code Coverage](https://codecov.io/gh/LeSuisse/vue-dompurify-html/branch/master/graph/badge.svg)](https://codecov.io/gh/LeSuisse/vue-dompurify-html)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLeSuisse%2Fvue-dompurify-html.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FLeSuisse%2Fvue-dompurify-html?ref=badge_shield)
 
 A "safe" replacement for the `v-html` directive. The HTML code is
 sanitized with [DOMPurify](https://github.com/cure53/DOMPurify) before being interpreted.
@@ -101,3 +102,7 @@ The `default` [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-
     <div v-dompurify-html="rawHtml"></div>
 </div>
 ```
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FLeSuisse%2Fvue-dompurify-html.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FLeSuisse%2Fvue-dompurify-html?ref=badge_large)
