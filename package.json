@@ -43,7 +43,7 @@
     "@stryker-mutator/core": "^2.0.2",
     "@stryker-mutator/jest-runner": "^3.0.0",
     "@stryker-mutator/typescript": "^3.0.0",
-    "@types/dompurify": "2.0.1",
+    "@types/dompurify": "2.0.2",
     "@types/jest": "^25.1.0",
     "@types/node": "^13.1.0",
     "@typescript-eslint/eslint-plugin": "^2.14.0",
