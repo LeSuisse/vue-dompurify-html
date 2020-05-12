@@ -18,7 +18,7 @@ function buildDirective(config) {
     };
     return {
         inserted: updateComponent,
-        update: updateComponent
+        update: updateComponent,
     };
 }
 exports.buildDirective = buildDirective;
