@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.buildDirective = void 0;
 var dompurify_1 = require("dompurify");
 function buildDirective(config) {
     if (config === void 0) { config = {}; }
