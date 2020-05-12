@@ -1,6 +1,7 @@
 import { ObjectDirective } from '@vue/runtime-core';
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
+    ADD_DATA_URI_TAGS?: string[];
     ADD_TAGS?: string[];
     ALLOW_DATA_ATTR?: boolean;
     ALLOWED_ATTR?: string[];
