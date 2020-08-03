@@ -3,7 +3,7 @@ import {
     ObjectDirective,
     DirectiveBinding,
 } from '@vue/runtime-core';
-import { sanitize } from 'dompurify';
+import * as dompurify from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
@@ -34,6 +34,7 @@ export interface DirectiveConfig {
 export function buildDirective(
     config: DirectiveConfig = {}
 ): ObjectDirective<HTMLElement> {
+    const dompurifyInstance = dompurify();
     const updateComponent: DirectiveHook = function (
         el: HTMLElement,
         binding: DirectiveBinding
@@ -44,10 +45,16 @@ export function buildDirective(
             namedConfigurations &&
             typeof namedConfigurations[arg] !== 'undefined'
         ) {
-            el.innerHTML = sanitize(binding.value, namedConfigurations[arg]);
+            el.innerHTML = dompurifyInstance.sanitize(
+                binding.value,
+                namedConfigurations[arg]
+            );
             return;
         }
-        el.innerHTML = sanitize(binding.value, config.default);
+        el.innerHTML = dompurifyInstance.sanitize(
+            binding.value,
+            config.default
+        );
     };
 
     return {
