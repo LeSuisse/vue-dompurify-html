@@ -1,8 +1,20 @@
 import { mount } from '@vue/test-utils';
 import { buildDirective } from '../src/dompurify-html';
-import * as dompurifyModule from 'dompurify';
+import * as DOMPurify from 'dompurify';
+
+const realDOMPurify = jest.requireActual('dompurify');
+const sanitizeSpy = jest.fn(realDOMPurify.sanitize);
+jest.mock('dompurify', () => {
+    return (): DOMPurify.DOMPurifyI => {
+        return { ...realDOMPurify, sanitize: sanitizeSpy };
+    };
+});
 
 describe('VueDOMPurifyHTML Test Suite', (): void => {
+    beforeEach((): void => {
+        sanitizeSpy.mockClear();
+    });
+
     it('can be used', async (): Promise<void> => {
         const component = {
             template: '<p v-dompurify-html="rawHtml"></p>',
@@ -231,8 +243,6 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
     it('content is given to DOMPurify only when needed', async (): Promise<
         void
     > => {
-        const sanitizeStub = jest.spyOn(dompurifyModule, 'sanitize');
-
         const component = {
             template: '<p v-dompurify-html="rawHtml"></p>',
             props: ['rawHtml'],
@@ -256,7 +266,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             rawHtml: '<pre>Hello<script></script></pre>',
         });
         expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
-        expect(sanitizeStub).toBeCalledTimes(1);
+        expect(sanitizeSpy).toBeCalledTimes(1);
     });
 
     it('directive works the same way than v-html when unbounded', async (): Promise<
