@@ -2,8 +2,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildDirective = void 0;
 var dompurify_1 = require("dompurify");
+function setUpHooks(config) {
+    var hooks = config.hooks;
+    var hookName;
+    for (hookName in hooks) {
+        dompurify_1.addHook(hookName, hooks[hookName]);
+    }
+}
 function buildDirective(config) {
     if (config === void 0) { config = {}; }
+    setUpHooks(config);
     var updateComponent = function (el, binding) {
         if (binding.oldValue === binding.value) {
             return;
