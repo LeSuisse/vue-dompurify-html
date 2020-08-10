@@ -4,6 +4,13 @@ import {
     DirectiveBinding,
 } from '@vue/runtime-core';
 import * as dompurify from 'dompurify';
+import {
+    DOMPurifyI,
+    HookEvent,
+    HookName,
+    SanitizeAttributeHookEvent,
+    SanitizeElementHookEvent,
+} from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
@@ -29,12 +36,45 @@ export interface MinimalDOMPurifyConfig {
 export interface DirectiveConfig {
     default?: MinimalDOMPurifyConfig;
     namedConfigurations?: Record<string, MinimalDOMPurifyConfig>;
+    hooks?: {
+        uponSanitizeElement?: (
+            currentNode: Element,
+            data: SanitizeElementHookEvent,
+            config: MinimalDOMPurifyConfig
+        ) => void;
+        uponSanitizeAttribute?: (
+            currentNode: Element,
+            data: SanitizeAttributeHookEvent,
+            config: MinimalDOMPurifyConfig
+        ) => void;
+    } & {
+        [H in HookName]?: (
+            currentNode: Element,
+            data: HookEvent,
+            config: MinimalDOMPurifyConfig
+        ) => void;
+    };
+}
+
+function setUpHooks(
+    config: DirectiveConfig,
+    dompurifyInstance: DOMPurifyI
+): void {
+    const hooks = config.hooks;
+
+    let hookName: HookName;
+    for (hookName in hooks) {
+        dompurifyInstance.addHook(hookName, hooks[hookName]);
+    }
 }
 
 export function buildDirective(
     config: DirectiveConfig = {}
 ): ObjectDirective<HTMLElement> {
     const dompurifyInstance = dompurify();
+
+    setUpHooks(config, dompurifyInstance);
+
     const updateComponent: DirectiveHook = function (
         el: HTMLElement,
         binding: DirectiveBinding
