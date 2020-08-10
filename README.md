@@ -100,3 +100,23 @@ The `default` [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-
     <div v-dompurify-html="rawHtml"></div>
 </div>
 ```
+
+There is also the possibility to set-up [DOMPurify hooks](https://github.com/cure53/DOMPurify#hooks):
+```js
+import { createApp } from 'vue'
+import VueDOMPurifyHTML from 'vue-dompurify-html'
+
+const app = createApp({
+    data: () => ({
+        rawHtml: '<span style="color: red">This should be red.</span>'
+    })
+});
+app.use(VueDOMPurifyHTML, {
+  hooks: {
+    uponSanitizeElement: (currentNode) => {
+      // Do something with the node
+    }   
+  }
+});
+app.mount('#app');
+```

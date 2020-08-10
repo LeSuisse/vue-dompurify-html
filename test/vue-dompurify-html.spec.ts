@@ -314,4 +314,33 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             '<div>' + '<!--v-if-->' + '<!--v-if-->' + '</div>'
         );
     });
+
+    it('can use DOMPurify hooks', async (): Promise<void> => {
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml'],
+        };
+
+        const uponSanitizeElement = jest.fn();
+        const afterSanitizeElements = jest.fn();
+
+        mount(component, {
+            global: {
+                directives: {
+                    'dompurify-html': buildDirective({
+                        hooks: {
+                            uponSanitizeElement,
+                            afterSanitizeElements,
+                        },
+                    }),
+                },
+            },
+            props: {
+                rawHtml: '<p>Some element</p>',
+            },
+        });
+
+        expect(uponSanitizeElement).toHaveBeenCalled();
+        expect(afterSanitizeElements).toHaveBeenCalled();
+    });
 });
