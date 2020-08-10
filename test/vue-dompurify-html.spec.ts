@@ -279,4 +279,32 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             '<div>\n' + '  <!---->\n' + '  <!---->\n' + '</div>'
         );
     });
+
+    it('can use DOMPurify hooks', async (): Promise<void> => {
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml'],
+        };
+
+        const uponSanitizeElement = jest.fn();
+        const afterSanitizeElements = jest.fn();
+
+        const localVue = createLocalVue();
+        localVue.use(VueDOMPurifyHTML, {
+            hooks: {
+                uponSanitizeElement,
+                afterSanitizeElements,
+            },
+        });
+
+        shallowMount(component, {
+            propsData: {
+                rawHtml: '<p>Some element</p>',
+            },
+            localVue,
+        });
+
+        expect(uponSanitizeElement).toHaveBeenCalled();
+        expect(afterSanitizeElements).toHaveBeenCalled();
+    });
 });

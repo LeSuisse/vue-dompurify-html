@@ -1,5 +1,12 @@
 import { DirectiveFunction, DirectiveOptions, VNodeDirective } from 'vue';
-import { sanitize } from 'dompurify';
+import {
+    HookEvent,
+    HookName,
+    sanitize,
+    addHook,
+    SanitizeAttributeHookEvent,
+    SanitizeElementHookEvent,
+} from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
@@ -25,9 +32,38 @@ export interface MinimalDOMPurifyConfig {
 export interface DirectiveConfig {
     default?: MinimalDOMPurifyConfig;
     namedConfigurations?: Record<string, MinimalDOMPurifyConfig>;
+    hooks?: {
+        uponSanitizeElement?: (
+            currentNode: Element,
+            data: SanitizeElementHookEvent,
+            config: MinimalDOMPurifyConfig
+        ) => void;
+        uponSanitizeAttribute?: (
+            currentNode: Element,
+            data: SanitizeAttributeHookEvent,
+            config: MinimalDOMPurifyConfig
+        ) => void;
+    } & {
+        [H in HookName]?: (
+            currentNode: Element,
+            data: HookEvent,
+            config: MinimalDOMPurifyConfig
+        ) => void;
+    };
+}
+
+function setUpHooks(config: DirectiveConfig): void {
+    const hooks = config.hooks;
+
+    let hookName: HookName;
+    for (hookName in hooks) {
+        addHook(hookName, hooks[hookName]);
+    }
 }
 
 export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
+    setUpHooks(config);
+
     const updateComponent: DirectiveFunction = function (
         el: HTMLElement,
         binding: VNodeDirective
