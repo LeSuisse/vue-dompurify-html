@@ -1,18 +1,27 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildDirective = void 0;
-var dompurify_1 = require("dompurify");
+var dompurify = require("dompurify");
+function setUpHooks(config, dompurifyInstance) {
+    var hooks = config.hooks;
+    var hookName;
+    for (hookName in hooks) {
+        dompurifyInstance.addHook(hookName, hooks[hookName]);
+    }
+}
 function buildDirective(config) {
     if (config === void 0) { config = {}; }
+    var dompurifyInstance = dompurify();
+    setUpHooks(config, dompurifyInstance);
     var updateComponent = function (el, binding) {
         var arg = binding.arg;
         var namedConfigurations = config.namedConfigurations;
         if (namedConfigurations &&
             typeof namedConfigurations[arg] !== 'undefined') {
-            el.innerHTML = dompurify_1.sanitize(binding.value, namedConfigurations[arg]);
+            el.innerHTML = dompurifyInstance.sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        el.innerHTML = dompurify_1.sanitize(binding.value, config.default);
+        el.innerHTML = dompurifyInstance.sanitize(binding.value, config.default);
     };
     return {
         mounted: updateComponent,

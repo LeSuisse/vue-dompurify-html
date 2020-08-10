@@ -1,4 +1,5 @@
 import { ObjectDirective } from '@vue/runtime-core';
+import { HookEvent, HookName, SanitizeAttributeHookEvent, SanitizeElementHookEvent } from 'dompurify';
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[];
     ADD_DATA_URI_TAGS?: string[];
@@ -20,5 +21,11 @@ export interface MinimalDOMPurifyConfig {
 export interface DirectiveConfig {
     default?: MinimalDOMPurifyConfig;
     namedConfigurations?: Record<string, MinimalDOMPurifyConfig>;
+    hooks?: {
+        uponSanitizeElement?: (currentNode: Element, data: SanitizeElementHookEvent, config: MinimalDOMPurifyConfig) => void;
+        uponSanitizeAttribute?: (currentNode: Element, data: SanitizeAttributeHookEvent, config: MinimalDOMPurifyConfig) => void;
+    } & {
+        [H in HookName]?: (currentNode: Element, data: HookEvent, config: MinimalDOMPurifyConfig) => void;
+    };
 }
 export declare function buildDirective(config?: DirectiveConfig): ObjectDirective<HTMLElement>;
