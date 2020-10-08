@@ -42,7 +42,7 @@
   "devDependencies": {
     "@stryker-mutator/core": "^2.0.2",
     "@stryker-mutator/jest-runner": "^3.0.0",
-    "@stryker-mutator/typescript": "^3.0.0",
+    "@stryker-mutator/typescript": "^4.0.0",
     "@types/dompurify": "2.0.4",
     "@types/jest": "^26.0.0",
     "@types/node": "^14.0.0",
