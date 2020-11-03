@@ -77,10 +77,12 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
             namedConfigurations &&
             typeof namedConfigurations[arg] !== 'undefined'
         ) {
-            el.innerHTML = sanitize(binding.value, namedConfigurations[arg]);
+            el.innerHTML =
+                el.innerHTML ||
+                sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        el.innerHTML = sanitize(binding.value, config.default);
+        el.innerHTML = el.innerHTML || sanitize(binding.value, config.default);
     };
 
     return {

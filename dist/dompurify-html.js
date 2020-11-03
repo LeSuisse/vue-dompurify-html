@@ -20,10 +20,12 @@ function buildDirective(config) {
         var namedConfigurations = config.namedConfigurations;
         if (namedConfigurations &&
             typeof namedConfigurations[arg] !== 'undefined') {
-            el.innerHTML = dompurify_1.sanitize(binding.value, namedConfigurations[arg]);
+            el.innerHTML =
+                el.innerHTML ||
+                    dompurify_1.sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        el.innerHTML = dompurify_1.sanitize(binding.value, config.default);
+        el.innerHTML = el.innerHTML || dompurify_1.sanitize(binding.value, config.default);
     };
     return {
         inserted: updateComponent,
