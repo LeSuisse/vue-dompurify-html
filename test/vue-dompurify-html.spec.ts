@@ -240,9 +240,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
     });
 
-    it('content is given to DOMPurify only when needed', async (): Promise<
-        void
-    > => {
+    it('content is given to DOMPurify only when needed', async (): Promise<void> => {
         const component = {
             template: '<p v-dompurify-html="rawHtml"></p>',
             props: ['rawHtml'],
@@ -269,9 +267,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(sanitizeSpy).toBeCalledTimes(1);
     });
 
-    it('directive works the same way than v-html when unbounded', async (): Promise<
-        void
-    > => {
+    it('directive works the same way than v-html when unbounded', async (): Promise<void> => {
         const component = {
             template:
                 '<div><p id="purified-p" v-if="display" v-html="rawHtml"></p><p id="pure-p" v-if="display" v-html="rawHtml"></p></div>',
