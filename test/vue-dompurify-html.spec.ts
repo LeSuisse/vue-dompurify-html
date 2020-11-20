@@ -210,9 +210,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(wrapper.html()).toBe('<p><pre>Hello</pre>\n</p>');
     });
 
-    it('content is given to DOMPurify only when needed', async (): Promise<
-        void
-    > => {
+    it('content is given to DOMPurify only when needed', async (): Promise<void> => {
         const sanitizeStub = jest.spyOn(dompurifyModule, 'sanitize');
 
         const localVue = createLocalVue();
@@ -238,9 +236,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(sanitizeStub).toBeCalledTimes(1);
     });
 
-    it('directive works the same way than v-html when unbounded', async (): Promise<
-        void
-    > => {
+    it('directive works the same way than v-html when unbounded', async (): Promise<void> => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
 
