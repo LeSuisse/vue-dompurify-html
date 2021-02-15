@@ -1,4 +1,4 @@
 {
   "extends": "./tsconfig",
-  "include": ["./test/"]
+  "include": ["./test/", "./vite.config.ts", "./example/"]
 }

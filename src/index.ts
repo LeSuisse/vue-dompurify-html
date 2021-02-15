@@ -4,7 +4,7 @@ import {
     DirectiveConfig,
     MinimalDOMPurifyConfig,
 } from './dompurify-html';
-export { DirectiveConfig, MinimalDOMPurifyConfig };
+export type { DirectiveConfig, MinimalDOMPurifyConfig };
 
 export default {
     install(app: App, config: DirectiveConfig = {}): void {
