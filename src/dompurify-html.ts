@@ -3,7 +3,7 @@ import {
     ObjectDirective,
     DirectiveBinding,
 } from '@vue/runtime-core';
-import * as dompurify from 'dompurify';
+import dompurify from 'dompurify';
 import {
     DOMPurifyI,
     HookEvent,

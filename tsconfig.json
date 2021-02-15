@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "module": "commonjs",
+    "target": "esnext",
+    "module": "esnext",
     "declaration": true,
-    "outDir": "./dist/",
-    "lib": ["es2020", "dom"]
+    "emitDeclarationOnly": true,
+    "outDir": "./types/",
+    "lib": ["es2020", "dom"],
+    "esModuleInterop": true,
+    "moduleResolution": "Node",
+    "isolatedModules": true,
+    "skipLibCheck": true
   },
-  "include": ["./src/"],
-  "exclude": ["./node_modules/"]
+  "include": ["./src/"]
 }
