@@ -61,7 +61,7 @@
     "@vue/compiler-sfc": "^3.0.5",
     "@vue/test-utils": "^2.0.0-alpha.3",
     "eslint": "^7.11.0",
-    "eslint-config-prettier": "^7.0.0",
+    "eslint-config-prettier": "^8.0.0",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^26.5.3",
     "prettier": "^2.0.0",
