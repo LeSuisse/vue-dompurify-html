@@ -32,11 +32,11 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             },
         });
 
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p>\n<pre>Hello</pre>\n</p>');
         await wrapper.setProps({
             rawHtml: '<pre>Hello<script></script> After Update</pre>',
         });
-        expect(wrapper.html()).toBe('<p><pre>Hello After Update</pre></p>');
+        expect(wrapper.html()).toBe('<p>\n<pre>Hello After Update</pre>\n</p>');
     });
 
     it('can be used with a default config', (): void => {
@@ -100,7 +100,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             },
         });
 
-        expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapperWithHtml.html()).toBe('<p>\n<pre>Hello</pre>\n</p>');
         expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>');
     });
 
@@ -145,7 +145,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             },
         });
 
-        expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapperWithHtml.html()).toBe('<p>\n<pre>Hello</pre>\n</p>');
         expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>');
     });
 
@@ -165,7 +165,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             },
         });
 
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p>\n<pre>Hello</pre>\n</p>');
     });
 
     it('fallback to default configured profile when the requested configuration does not exist', (): void => {
@@ -237,7 +237,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             },
         });
 
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p>\n<pre>Hello</pre>\n</p>');
     });
 
     it('content is given to DOMPurify only when needed', async (): Promise<void> => {
@@ -256,14 +256,14 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
                 rawHtml: '<pre>Hello<script></script></pre>',
             },
         });
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p>\n<pre>Hello</pre>\n</p>');
         await wrapper.setProps({
             rawHtml: '<pre>Hello<script></script></pre>',
         });
         await wrapper.setProps({
             rawHtml: '<pre>Hello<script></script></pre>',
         });
-        expect(wrapper.html()).toBe('<p><pre>Hello</pre></p>');
+        expect(wrapper.html()).toBe('<p>\n<pre>Hello</pre>\n</p>');
         expect(sanitizeSpy).toBeCalledTimes(1);
     });
 
@@ -293,9 +293,11 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         );
         expect(purifiedElement.text()).toBe(pureHtmlElement.text());
         expect(wrapper.html()).toBe(
-            '<div>' +
-                '<p id="purified-p">Test</p>' +
-                '<p id="pure-p">Test</p>' +
+            '<div>\n' +
+                '  <p id="purified-p">Test</p>' +
+                '\n' +
+                '  <p id="pure-p">Test</p>' +
+                '\n' +
                 '</div>'
         );
         await wrapper.setProps({
@@ -307,7 +309,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         );
         expect(purifiedElement.text()).toBe(pureHtmlElement.text());
         expect(wrapper.html()).toBe(
-            '<div>' + '<!--v-if-->' + '<!--v-if-->' + '</div>'
+            '<div>\n  <!--v-if-->\n  <!--v-if-->\n</div>'
         );
     });
 
