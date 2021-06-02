@@ -2,8 +2,9 @@ name: "CodeQL"
 
 permissions:
   contents: read
+  security-events: write
+  actions: read
   deployments: none
-  actions: none
   packages: none
 
 on:
