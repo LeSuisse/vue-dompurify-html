@@ -45,7 +45,7 @@
     "@stryker-mutator/typescript-checker": "^5.0.1",
     "@types/dompurify": "2.2.2",
     "@types/jest": "^26.0.0",
-    "@types/node": "^15.0.0",
+    "@types/node": "^16.0.0",
     "@typescript-eslint/eslint-plugin": "^4.4.1",
     "@typescript-eslint/parser": "^4.4.1",
     "@vue/test-utils": "^1.0.0-beta.29",
