@@ -29,7 +29,6 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "test-mutation": "stryker run",
     "lint": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts'",
     "lint-fix": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts' --fix"
   },
@@ -40,9 +39,6 @@
     "vue": "^2.0.0"
   },
   "devDependencies": {
-    "@stryker-mutator/core": "^5.0.1",
-    "@stryker-mutator/jest-runner": "^5.0.1",
-    "@stryker-mutator/typescript-checker": "^5.0.1",
     "@types/dompurify": "2.2.3",
     "@types/jest": "^27.0.0",
     "@types/node": "^16.0.0",
