@@ -3,7 +3,9 @@
     "target": "es5",
     "module": "commonjs",
     "declaration": true,
-    "outDir": "./dist/"
+    "outDir": "./dist/",
+    "strict": true,
+    "exactOptionalPropertyTypes": true
   },
   "include": ["./src/"],
   "exclude": ["./node_modules/"]

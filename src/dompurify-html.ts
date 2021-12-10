@@ -9,25 +9,26 @@ import {
 } from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
-    ADD_ATTR?: string[];
-    ADD_DATA_URI_TAGS?: string[];
-    ADD_TAGS?: string[];
-    ALLOW_DATA_ATTR?: boolean;
-    ALLOWED_ATTR?: string[];
-    ALLOWED_TAGS?: string[];
-    FORBID_ATTR?: string[];
+    ADD_ATTR?: string[] | undefined;
+    ADD_DATA_URI_TAGS?: string[] | undefined;
+    ADD_TAGS?: string[] | undefined;
+    ALLOW_DATA_ATTR?: boolean | undefined;
+    ALLOWED_ATTR?: string[] | undefined;
+    ALLOWED_TAGS?: string[] | undefined;
+    FORBID_ATTR?: string[] | undefined;
     FORBID_CONTENTS?: string[] | undefined;
-    FORBID_TAGS?: string[];
-    ALLOWED_URI_REGEXP?: RegExp;
-    ALLOW_UNKNOWN_PROTOCOLS?: boolean;
+    FORBID_TAGS?: string[] | undefined;
+    ALLOWED_URI_REGEXP?: RegExp | undefined;
+    ALLOW_UNKNOWN_PROTOCOLS?: boolean | undefined;
     USE_PROFILES?:
         | false
         | {
-              mathMl?: boolean;
-              svg?: boolean;
-              svgFilters?: boolean;
-              html?: boolean;
-          };
+              mathMl?: boolean | undefined;
+              svg?: boolean | undefined;
+              svgFilters?: boolean | undefined;
+              html?: boolean | undefined;
+          }
+        | undefined;
     CUSTOM_ELEMENT_HANDLING?: {
         tagNameCheck?:
             | RegExp
@@ -44,8 +45,8 @@ export interface MinimalDOMPurifyConfig {
 }
 
 export interface DirectiveConfig {
-    default?: MinimalDOMPurifyConfig;
-    namedConfigurations?: Record<string, MinimalDOMPurifyConfig>;
+    default?: MinimalDOMPurifyConfig | undefined;
+    namedConfigurations?: Record<string, MinimalDOMPurifyConfig> | undefined;
     hooks?: {
         uponSanitizeElement?: (
             currentNode: Element,
@@ -67,11 +68,14 @@ export interface DirectiveConfig {
 }
 
 function setUpHooks(config: DirectiveConfig): void {
-    const hooks = config.hooks;
+    const hooks = config.hooks ?? {};
 
     let hookName: HookName;
     for (hookName in hooks) {
-        addHook(hookName, hooks[hookName]);
+        const hook = hooks[hookName];
+        if (hook !== undefined) {
+            addHook(hookName, hook);
+        }
     }
 }
 
@@ -86,12 +90,13 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
         const namedConfigurations = config.namedConfigurations;
         if (
             namedConfigurations &&
+            arg !== undefined &&
             typeof namedConfigurations[arg] !== 'undefined'
         ) {
             el.innerHTML = sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        el.innerHTML = sanitize(binding.value, config.default);
+        el.innerHTML = sanitize(binding.value, config.default ?? {});
     };
 
     return {
