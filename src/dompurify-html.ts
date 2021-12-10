@@ -20,6 +20,7 @@ export interface MinimalDOMPurifyConfig {
     ALLOWED_ATTR?: string[];
     ALLOWED_TAGS?: string[];
     FORBID_ATTR?: string[];
+    FORBID_CONTENTS?: string[] | undefined;
     FORBID_TAGS?: string[];
     ALLOWED_URI_REGEXP?: RegExp;
     ALLOW_UNKNOWN_PROTOCOLS?: boolean;
@@ -31,6 +32,19 @@ export interface MinimalDOMPurifyConfig {
               svgFilters?: boolean;
               html?: boolean;
           };
+    CUSTOM_ELEMENT_HANDLING?: {
+        tagNameCheck?:
+            | RegExp
+            | ((tagName: string) => boolean)
+            | null
+            | undefined;
+        attributeNameCheck?:
+            | RegExp
+            | ((lcName: string) => boolean)
+            | null
+            | undefined;
+        allowCustomizedBuiltInElements?: boolean | undefined;
+    };
 }
 
 export interface DirectiveConfig {
