@@ -4,8 +4,8 @@
 [![Build Status](https://travis-ci.com/LeSuisse/vue-dompurify-html.svg?branch=master)](https://travis-ci.com/LeSuisse/vue-dompurify-html)
 [![Code Coverage](https://codecov.io/gh/LeSuisse/vue-dompurify-html/branch/master/graph/badge.svg)](https://codecov.io/gh/LeSuisse/vue-dompurify-html)
 
-⚠️ This branch is meant to be used with [vue-next](https://github.com/vuejs/vue-next). If you are looking for the stable
-version, go to [master branch](https://github.com/LeSuisse/vue-dompurify-html/tree/master).
+⚠️ This branch is meant to be used with [Vue 3](https://github.com/vuejs/vue-next). If you are looking for a version compatible with Vue 2,
+go to [master branch](https://github.com/LeSuisse/vue-dompurify-html/tree/master).
 
 A "safe" replacement for the `v-html` directive. The HTML code is
 sanitized with [DOMPurify](https://github.com/cure53/DOMPurify) before being interpreted.
