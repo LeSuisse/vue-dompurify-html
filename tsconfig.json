@@ -9,7 +9,9 @@
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "isolatedModules": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "strict": true,
+    "exactOptionalPropertyTypes": true
   },
   "include": ["./src/"]
 }
