@@ -290,6 +290,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             hooks: {
                 uponSanitizeElement,
                 afterSanitizeElements,
+                beforeSanitizeAttributes: undefined,
             },
         });
 
