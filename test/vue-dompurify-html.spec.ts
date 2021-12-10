@@ -4,9 +4,10 @@ import * as DOMPurify from 'dompurify';
 
 const realDOMPurify = jest.requireActual('dompurify');
 const sanitizeSpy = jest.fn(realDOMPurify.sanitize);
+const addHookSpy = jest.fn(realDOMPurify.addHook);
 jest.mock('dompurify', () => {
     return (): DOMPurify.DOMPurifyI => {
-        return { ...realDOMPurify, sanitize: sanitizeSpy };
+        return { ...realDOMPurify, sanitize: sanitizeSpy, addHook: addHookSpy };
     };
 });
 
@@ -329,6 +330,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
                         hooks: {
                             uponSanitizeElement,
                             afterSanitizeElements,
+                            beforeSanitizeAttributes: undefined,
                         },
                     }),
                 },
@@ -340,5 +342,6 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         expect(uponSanitizeElement).toHaveBeenCalled();
         expect(afterSanitizeElements).toHaveBeenCalled();
+        expect(addHookSpy).toBeCalledTimes(2);
     });
 });
