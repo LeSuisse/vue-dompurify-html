@@ -12,7 +12,7 @@ You should take a look at the
 [DOMPurify Security Goals & Threat Model](https://github.com/cure53/DOMPurify/wiki/Security-Goals-&-Threat-Model)
 to understand what are the limitations and possibilities.
 
-If you are looking for a version compatible with [vue-next](https://github.com/vuejs/vue-next) checkout the [vue-next branch](https://github.com/LeSuisse/vue-dompurify-html/tree/vue-next).
+If you are looking for a version compatible with [Vue 3](https://github.com/vuejs/vue-next) checkout the [vue-next branch](https://github.com/LeSuisse/vue-dompurify-html/tree/vue-next).
 
 ## Installation
 
