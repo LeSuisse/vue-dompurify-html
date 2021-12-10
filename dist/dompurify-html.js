@@ -3,27 +3,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildDirective = void 0;
 var dompurify_1 = require("dompurify");
 function setUpHooks(config) {
-    var hooks = config.hooks;
+    var _a;
+    var hooks = (_a = config.hooks) !== null && _a !== void 0 ? _a : {};
     var hookName;
     for (hookName in hooks) {
-        dompurify_1.addHook(hookName, hooks[hookName]);
+        var hook = hooks[hookName];
+        if (hook !== undefined) {
+            (0, dompurify_1.addHook)(hookName, hook);
+        }
     }
 }
 function buildDirective(config) {
     if (config === void 0) { config = {}; }
     setUpHooks(config);
     var updateComponent = function (el, binding) {
-        if (binding.oldValue === binding.value) {
-            return;
-        }
+        var _a;
         var arg = binding.arg;
         var namedConfigurations = config.namedConfigurations;
         if (namedConfigurations &&
+            arg !== undefined &&
             typeof namedConfigurations[arg] !== 'undefined') {
-            el.innerHTML = dompurify_1.sanitize(binding.value, namedConfigurations[arg]);
+            el.innerHTML = (0, dompurify_1.sanitize)(binding.value, namedConfigurations[arg]);
             return;
         }
-        el.innerHTML = dompurify_1.sanitize(binding.value, config.default);
+        el.innerHTML = (0, dompurify_1.sanitize)(binding.value, (_a = config.default) !== null && _a !== void 0 ? _a : {});
     };
     return {
         inserted: updateComponent,
