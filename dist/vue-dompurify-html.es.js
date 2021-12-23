@@ -29,9 +29,9 @@ function buildDirective(config = {}) {
     updated: updateComponent
   };
 }
-var index = {
+const vueDompurifyHTMLPlugin = {
   install(app, config = {}) {
     app.directive("dompurify-html", buildDirective(config));
   }
 };
-export { index as default };
+export { buildDirective as buildVueDompurifyHTMLDirective, vueDompurifyHTMLPlugin as default, vueDompurifyHTMLPlugin };
