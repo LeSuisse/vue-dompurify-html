@@ -120,3 +120,18 @@ app.use(VueDOMPurifyHTML, {
 });
 app.mount('#app');
 ```
+
+If needed you can use the directive without installing it globally:
+
+```ts
+<template>
+    <div v-dompurify-html="rawHtml"></div>
+</template>
+
+<script setup lang="ts">
+import { buildVueDompurifyHTMLDirective } from '../src/';
+
+const vdompurifyHtml = buildVueDompurifyHTMLDirective(<config...>);
+const rawHtml = '<span style="color: red">Hello!</span>';
+</script>
+```

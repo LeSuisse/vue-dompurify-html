@@ -14,6 +14,7 @@ export default defineConfig({
                 globals: {
                     dompurify: 'DOMPurify',
                 },
+                exports: 'named',
             },
         },
     },
