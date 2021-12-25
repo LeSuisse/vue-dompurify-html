@@ -1,7 +1,10 @@
 "use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.buildDirective = void 0;
-var dompurify_1 = require("dompurify");
+var dompurify_1 = __importDefault(require("dompurify"));
 function setUpHooks(config) {
     var _a;
     var hooks = (_a = config.hooks) !== null && _a !== void 0 ? _a : {};
@@ -9,7 +12,7 @@ function setUpHooks(config) {
     for (hookName in hooks) {
         var hook = hooks[hookName];
         if (hook !== undefined) {
-            (0, dompurify_1.addHook)(hookName, hook);
+            dompurify_1.default.addHook(hookName, hook);
         }
     }
 }
@@ -23,10 +26,10 @@ function buildDirective(config) {
         if (namedConfigurations &&
             arg !== undefined &&
             typeof namedConfigurations[arg] !== 'undefined') {
-            el.innerHTML = (0, dompurify_1.sanitize)(binding.value, namedConfigurations[arg]);
+            el.innerHTML = dompurify_1.default.sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        el.innerHTML = (0, dompurify_1.sanitize)(binding.value, (_a = config.default) !== null && _a !== void 0 ? _a : {});
+        el.innerHTML = dompurify_1.default.sanitize(binding.value, (_a = config.default) !== null && _a !== void 0 ? _a : {});
     };
     return {
         inserted: updateComponent,
