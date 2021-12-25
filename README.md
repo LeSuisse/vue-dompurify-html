@@ -121,3 +121,24 @@ app.use(VueDOMPurifyHTML, {
 });
 app.mount('#app');
 ```
+
+## Usage with [Nuxt](https://nuxtjs.org/)
+
+The usage is similar than when directly using Vue.
+
+Define a new Nuxt plugin to import and setup the directive to your liking:
+
+```js
+import Vue from 'vue';
+import VueDOMPurifyHTML from 'vue-dompurify-html';
+
+Vue.use(VueDOMPurifyHTML);
+```
+
+and then tell Nuxt to use it as **client-side plugin** in your Nuxt config:
+
+```js
+export default {
+  plugins: [{ src: '~/plugins/dompurify', mode: 'client' }]
+}
+```
