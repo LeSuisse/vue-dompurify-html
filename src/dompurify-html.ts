@@ -2,11 +2,10 @@ import { DirectiveFunction, DirectiveOptions, VNodeDirective } from 'vue';
 import {
     HookEvent,
     HookName,
-    sanitize,
-    addHook,
     SanitizeAttributeHookEvent,
     SanitizeElementHookEvent,
 } from 'dompurify';
+import DOMPurify from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[] | undefined;
@@ -74,7 +73,7 @@ function setUpHooks(config: DirectiveConfig): void {
     for (hookName in hooks) {
         const hook = hooks[hookName];
         if (hook !== undefined) {
-            addHook(hookName, hook);
+            DOMPurify.addHook(hookName, hook);
         }
     }
 }
@@ -93,10 +92,13 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
             arg !== undefined &&
             typeof namedConfigurations[arg] !== 'undefined'
         ) {
-            el.innerHTML = sanitize(binding.value, namedConfigurations[arg]);
+            el.innerHTML = DOMPurify.sanitize(
+                binding.value,
+                namedConfigurations[arg]
+            );
             return;
         }
-        el.innerHTML = sanitize(binding.value, config.default ?? {});
+        el.innerHTML = DOMPurify.sanitize(binding.value, config.default ?? {});
     };
 
     return {

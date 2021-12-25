@@ -211,7 +211,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
     });
 
     it('content is given to DOMPurify only when needed', async (): Promise<void> => {
-        const sanitizeStub = jest.spyOn(dompurifyModule, 'sanitize');
+        const sanitizeStub = jest.spyOn(dompurifyModule.default, 'sanitize');
 
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
