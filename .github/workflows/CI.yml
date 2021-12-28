@@ -1,4 +1,4 @@
-name: CI
+name: Tests & lint
 
 permissions: read-all
 
@@ -13,8 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2.4.0
-      - uses: actions/setup-node@v2.5.0
+      - uses: actions/checkout@ec3a7ce113134d7a93b817d10a8272cb61118579
+      - uses: actions/setup-node@04c56d2f954f1e4c69436aa54cfef261a018f458
         with:
           node-version: 14.x
       - run: npm ci
@@ -22,4 +22,4 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm test
-      - uses: codecov/codecov-action@v2.1.0
+      - uses: codecov/codecov-action@f32b3a3741e1053eb607407145bc9619351dc93b
