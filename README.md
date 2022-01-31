@@ -24,106 +24,109 @@ npm install vue-dompurify-html@vue-next
 ## Usage
 
 ```js
-import { createApp } from 'vue'
-import VueDOMPurifyHTML from 'vue-dompurify-html'
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 
-const app = createApp({
-    data: () => ({
-        rawHtml: '<span style="color: red">This should be red.</span>'
-    })
-});
+const app = createApp(App);
 app.use(VueDOMPurifyHTML);
 app.mount('#app');
 ```
 
-In your template:
-```html
-<div id="app">
+In your <abbr title="Single File Component">SFC</abbr>:
+```vue
+<template>
     <div v-dompurify-html="rawHtml"></div>
-</div>
+</template>
+<script setup>
+import { ref } from "vue";
+
+const rawHtml = ref('<span style="color: red">This should be red.</span>');
+</script>
 ```
 
 
 You can also define your [DOMPurify configurations](https://github.com/cure53/DOMPurify#can-i-configure-dompurify):
 ```js
-import { createApp } from 'vue'
-import VueDOMPurifyHTML from 'vue-dompurify-html'
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 
-const app = createApp({
-    data: () => ({
-        rawHtml: '<span style="color: red">This should be red.</span>',
-        svgContent: '<svg><rect height="50"></rect></svg>'
-    })
-});
+const app = createApp(App);
 app.use(VueDOMPurifyHTML, {
-  namedConfigurations: {
-    'svg': {
-      USE_PROFILES: { svg: true }
-    },
-    'mathml': {
-      USE_PROFILES: { mathMl: true }
-    },
-  }
+    namedConfigurations: {
+        'svg': {
+            USE_PROFILES: { svg: true }
+        },
+        'mathml': {
+            USE_PROFILES: { mathMl: true }
+        },
+    }
 });
-app.mount("#app")
+app.mount('#app');
 ```
 
 Your configuration keys can then be used as an argument of the directive:
-```html
-<div id="app">
+```vue
+<template>
     <div v-dompurify-html="rawHtml"></div>
     <div v-dompurify-html:svg="svgContent"></div>
-</div>
+</template>
+<script setup>
+import { ref } from "vue";
+
+const rawHtml = ref('<span style="color: red">This should be red.</span>');
+const svgContent = ref('<svg><rect height="50"></rect></svg>');
+</script>
 ```
 
 Alternatively, you can define a default [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-i-configure-dompurify):
 ```js
-import { createApp } from 'vue'
-import VueDOMPurifyHTML from 'vue-dompurify-html'
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 
-const app = createApp({
-    data: () => ({
-        rawHtml: '<span style="color: red">This should be red.</span>'
-    })
-});
+const app = createApp(App);
 app.use(VueDOMPurifyHTML, {
-  default: {
-    USE_PROFILES: { html: false }
-  }
+    default: {
+        USE_PROFILES: { html: false }
+    }
 });
 app.mount('#app');
 ```
 
 The `default` [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-i-configure-dompurify) will be used:
-```html
-<div id="app">
+```vue
+<template>
     <div v-dompurify-html="rawHtml"></div>
-</div>
+</template>
+<script setup>
+import { ref } from "vue";
+
+const rawHtml = ref('<span style="color: red">This should be red.</span>');
+</script>
 ```
 
 There is also the possibility to set-up [DOMPurify hooks](https://github.com/cure53/DOMPurify#hooks):
 ```js
-import { createApp } from 'vue'
-import VueDOMPurifyHTML from 'vue-dompurify-html'
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 
-const app = createApp({
-    data: () => ({
-        rawHtml: '<span style="color: red">This should be red.</span>'
-    })
-});
+const app = createApp(App);
 app.use(VueDOMPurifyHTML, {
-  hooks: {
-    uponSanitizeElement: (currentNode) => {
-      // Do something with the node
-    }   
-  }
+    hooks: {
+        uponSanitizeElement: (currentNode) => {
+            // Do something with the node
+        }
+    }
 });
 app.mount('#app');
 ```
 
 If needed you can use the directive without installing it globally:
 
-```ts
+```vue
 <template>
     <div v-dompurify-html="rawHtml"></div>
 </template>
