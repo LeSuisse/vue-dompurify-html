@@ -24,15 +24,19 @@ npm install vue-dompurify-html@vue-next
 ## Usage
 
 ```js
-import { createApp } from 'vue'
-import VueDOMPurifyHTML from 'vue-dompurify-html'
+import { createApp } from 'vue';
+import App from './App.vue';
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 
-const app = createApp({
-    data: () => ({
-        rawHtml: '<span style="color: red">This should be red.</span>'
-    })
+const app = createApp(App);
+
+app.use(VueDOMPurifyHTML, {
+  namedConfigurations: {
+    plaintext: {
+      USE_PROFILES: { html: false },
+    },
+  },
 });
-app.use(VueDOMPurifyHTML);
 app.mount('#app');
 ```
 
