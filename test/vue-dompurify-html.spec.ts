@@ -4,6 +4,12 @@ import { buildDirective } from '../src/dompurify-html';
 import * as dompurifyModule from 'dompurify';
 
 describe('VueDOMPurifyHTML Test Suite', (): void => {
+    const sanitizeStub = jest.spyOn(dompurifyModule.default, 'sanitize');
+
+    beforeEach(() => {
+        sanitizeStub.mockClear();
+    });
+
     it('can be used', async (): Promise<void> => {
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
@@ -211,8 +217,6 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
     });
 
     it('content is given to DOMPurify only when needed', async (): Promise<void> => {
-        const sanitizeStub = jest.spyOn(dompurifyModule.default, 'sanitize');
-
         const localVue = createLocalVue();
         localVue.use(VueDOMPurifyHTML);
 
@@ -303,5 +307,31 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         expect(uponSanitizeElement).toHaveBeenCalled();
         expect(afterSanitizeElements).toHaveBeenCalled();
+    });
+
+    it('does not rerender when input not changed', async (): Promise<void> => {
+        const localVue = createLocalVue();
+        localVue.use(VueDOMPurifyHTML);
+
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml'],
+        };
+
+        const wrapper = shallowMount(component, {
+            propsData: {
+                rawHtml: '<pre>Hello</pre>',
+                otherProp: 'original',
+            },
+            localVue,
+        });
+
+        wrapper.setProps({
+            otherProp: 'changed',
+        });
+
+        await wrapper.vm.$nextTick();
+
+        expect(sanitizeStub).toHaveBeenCalledTimes(1);
     });
 });
