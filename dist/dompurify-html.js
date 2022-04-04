@@ -21,6 +21,9 @@ function buildDirective(config) {
     setUpHooks(config);
     var updateComponent = function (el, binding) {
         var _a;
+        if (binding.oldValue === binding.value) {
+            return;
+        }
         var arg = binding.arg;
         var namedConfigurations = config.namedConfigurations;
         if (namedConfigurations &&
