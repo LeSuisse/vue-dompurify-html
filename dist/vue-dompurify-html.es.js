@@ -15,6 +15,9 @@ function buildDirective(config = {}) {
   setUpHooks(config, dompurifyInstance);
   const updateComponent = function(el, binding) {
     var _a, _b;
+    if (binding.oldValue === binding.value) {
+      return;
+    }
     const arg = binding.arg;
     const namedConfigurations = config.namedConfigurations;
     const defaultConfig = (_a = config.default) != null ? _a : {};
