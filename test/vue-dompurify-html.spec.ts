@@ -344,4 +344,31 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(afterSanitizeElements).toHaveBeenCalled();
         expect(addHookSpy).toBeCalledTimes(2);
     });
+
+    it('does not rerender when input not changed', async (): Promise<void> => {
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml'],
+        };
+
+        const wrapper = mount(component, {
+            global: {
+                directives: {
+                    'dompurify-html': buildDirective(),
+                },
+            },
+            props: {
+                rawHtml: '<pre>Hello</pre>',
+                otherProp: 'original',
+            },
+        });
+
+        wrapper.setProps({
+            otherProp: 'changed',
+        });
+
+        await wrapper.vm.$nextTick();
+
+        expect(sanitizeSpy).toBeCalledTimes(1);
+    });
 });
