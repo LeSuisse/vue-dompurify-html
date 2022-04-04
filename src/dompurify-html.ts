@@ -103,6 +103,9 @@ export function buildDirective(
         el: HTMLElement,
         binding: DirectiveBinding
     ): void {
+        if (binding.oldValue === binding.value) {
+            return;
+        }
         const arg = binding.arg;
         const namedConfigurations = config.namedConfigurations;
         const defaultConfig = config.default ?? {};
