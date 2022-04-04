@@ -85,6 +85,9 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
         el: HTMLElement,
         binding: VNodeDirective
     ): void {
+        if (binding.oldValue === binding.value) {
+            return;
+        }
         const arg = binding.arg;
         const namedConfigurations = config.namedConfigurations;
         if (
