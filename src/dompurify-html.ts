@@ -107,5 +107,8 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
     return {
         inserted: updateComponent,
         update: updateComponent,
+        unbind(el: HTMLElement) {
+            el.innerHTML = '';
+        },
     };
 }
