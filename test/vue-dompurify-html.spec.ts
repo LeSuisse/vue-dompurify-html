@@ -334,4 +334,27 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         expect(sanitizeStub).toHaveBeenCalledTimes(1);
     });
+
+    it('cleans up when unbinding', async (): Promise<void> => {
+        const localVue = createLocalVue();
+        localVue.use(VueDOMPurifyHTML);
+
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml'],
+        };
+
+        const wrapper = shallowMount(component, {
+            propsData: {
+                rawHtml: '<pre>Hello</pre>',
+            },
+            localVue,
+        });
+
+        const element = wrapper.element;
+
+        wrapper.destroy();
+
+        expect(element.innerHTML).toStrictEqual('');
+    });
 });
