@@ -37,6 +37,9 @@ function buildDirective(config) {
     return {
         inserted: updateComponent,
         update: updateComponent,
+        unbind: function (el) {
+            el.innerHTML = '';
+        },
     };
 }
 exports.buildDirective = buildDirective;
