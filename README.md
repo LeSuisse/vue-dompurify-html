@@ -1,11 +1,11 @@
 # vue-dompurify-html
 
 [![npm](https://img.shields.io/npm/v/vue-dompurify-html)](https://www.npmjs.com/package/vue-dompurify-html)
-[![Build Status](https://travis-ci.com/LeSuisse/vue-dompurify-html.svg?branch=master)](https://travis-ci.com/LeSuisse/vue-dompurify-html)
-[![Code Coverage](https://codecov.io/gh/LeSuisse/vue-dompurify-html/branch/master/graph/badge.svg)](https://codecov.io/gh/LeSuisse/vue-dompurify-html)
+[![Build Status](https://github.com/LeSuisse/vue-dompurify-html/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/LeSuisse/vue-dompurify-html/actions/workflows/CI.yml?query=branch%3Amain)
+[![Code Coverage](https://codecov.io/gh/LeSuisse/vue-dompurify-html/branch/main/graph/badge.svg)](https://codecov.io/gh/LeSuisse/vue-dompurify-html)
 
-⚠️ This branch is meant to be used with [Vue 3](https://github.com/vuejs/vue-next). If you are looking for a version compatible with Vue 2,
-go to [master branch](https://github.com/LeSuisse/vue-dompurify-html/tree/master).
+⚠️ This branch is meant to be used with [Vue 3](https://github.com/vuejs/core). If you are looking for a version compatible with Vue 2,
+go to [vue-legacy branch](https://github.com/LeSuisse/vue-dompurify-html/tree/vue-legacy).
 
 A "safe" replacement for the `v-html` directive. The HTML code is
 sanitized with [DOMPurify](https://github.com/cure53/DOMPurify) before being interpreted.
@@ -18,7 +18,7 @@ to understand what are the limitations and possibilities.
 ## Installation
 
 ```
-npm install vue-dompurify-html@vue-next
+npm install vue-dompurify-html
 ```
 
 ## Usage
