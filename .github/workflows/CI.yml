@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - main
-      - vue-next
+      - vue-legacy
   pull_request:
 
 jobs:
@@ -22,4 +22,6 @@ jobs:
         run: npm run lint
       - name: Test
         run: npm test
+      - name: Mutation testing
+        run: npm run test-mutation
       - uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378

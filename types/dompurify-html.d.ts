@@ -1,4 +1,4 @@
-import { DirectiveOptions } from 'vue';
+import { ObjectDirective } from '@vue/runtime-core';
 import { HookEvent, HookName, SanitizeAttributeHookEvent, SanitizeElementHookEvent } from 'dompurify';
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[] | undefined;
@@ -28,10 +28,10 @@ export interface DirectiveConfig {
     default?: MinimalDOMPurifyConfig | undefined;
     namedConfigurations?: Record<string, MinimalDOMPurifyConfig> | undefined;
     hooks?: {
-        uponSanitizeElement?: (currentNode: Element, data: SanitizeElementHookEvent, config: MinimalDOMPurifyConfig) => void;
-        uponSanitizeAttribute?: (currentNode: Element, data: SanitizeAttributeHookEvent, config: MinimalDOMPurifyConfig) => void;
+        uponSanitizeElement?: ((currentNode: Element, data: SanitizeElementHookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
+        uponSanitizeAttribute?: ((currentNode: Element, data: SanitizeAttributeHookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
     } & {
-        [H in HookName]?: (currentNode: Element, data: HookEvent, config: MinimalDOMPurifyConfig) => void;
+        [H in HookName]?: ((currentNode: Element, data: HookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
     };
 }
-export declare function buildDirective(config?: DirectiveConfig): DirectiveOptions;
+export declare function buildDirective(config?: DirectiveConfig): ObjectDirective<HTMLElement>;

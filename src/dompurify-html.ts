@@ -1,11 +1,16 @@
-import { DirectiveFunction, DirectiveOptions, VNodeDirective } from 'vue';
 import {
+    DirectiveHook,
+    ObjectDirective,
+    DirectiveBinding,
+} from '@vue/runtime-core';
+import dompurify from 'dompurify';
+import {
+    DOMPurifyI,
     HookEvent,
     HookName,
     SanitizeAttributeHookEvent,
     SanitizeElementHookEvent,
 } from 'dompurify';
-import DOMPurify from 'dompurify';
 
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[] | undefined;
@@ -47,68 +52,76 @@ export interface DirectiveConfig {
     default?: MinimalDOMPurifyConfig | undefined;
     namedConfigurations?: Record<string, MinimalDOMPurifyConfig> | undefined;
     hooks?: {
-        uponSanitizeElement?: (
-            currentNode: Element,
-            data: SanitizeElementHookEvent,
-            config: MinimalDOMPurifyConfig
-        ) => void;
-        uponSanitizeAttribute?: (
-            currentNode: Element,
-            data: SanitizeAttributeHookEvent,
-            config: MinimalDOMPurifyConfig
-        ) => void;
+        uponSanitizeElement?:
+            | ((
+                  currentNode: Element,
+                  data: SanitizeElementHookEvent,
+                  config: MinimalDOMPurifyConfig
+              ) => void)
+            | undefined;
+        uponSanitizeAttribute?:
+            | ((
+                  currentNode: Element,
+                  data: SanitizeAttributeHookEvent,
+                  config: MinimalDOMPurifyConfig
+              ) => void)
+            | undefined;
     } & {
-        [H in HookName]?: (
-            currentNode: Element,
-            data: HookEvent,
-            config: MinimalDOMPurifyConfig
-        ) => void;
+        [H in HookName]?:
+            | ((
+                  currentNode: Element,
+                  data: HookEvent,
+                  config: MinimalDOMPurifyConfig
+              ) => void)
+            | undefined;
     };
 }
 
-function setUpHooks(config: DirectiveConfig): void {
+function setUpHooks(
+    config: DirectiveConfig,
+    dompurifyInstance: DOMPurifyI
+): void {
     const hooks = config.hooks ?? {};
 
     let hookName: HookName;
     for (hookName in hooks) {
         const hook = hooks[hookName];
         if (hook !== undefined) {
-            DOMPurify.addHook(hookName, hook);
+            dompurifyInstance.addHook(hookName, hook);
         }
     }
 }
 
-export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
-    setUpHooks(config);
+export function buildDirective(
+    config: DirectiveConfig = {}
+): ObjectDirective<HTMLElement> {
+    const dompurifyInstance = dompurify();
 
-    const updateComponent: DirectiveFunction = function (
+    setUpHooks(config, dompurifyInstance);
+
+    const updateComponent: DirectiveHook = function (
         el: HTMLElement,
-        binding: VNodeDirective
+        binding: DirectiveBinding
     ): void {
         if (binding.oldValue === binding.value) {
             return;
         }
         const arg = binding.arg;
         const namedConfigurations = config.namedConfigurations;
-        if (
-            namedConfigurations &&
-            arg !== undefined &&
-            typeof namedConfigurations[arg] !== 'undefined'
-        ) {
-            el.innerHTML = DOMPurify.sanitize(
+        const defaultConfig = config.default ?? {};
+        // Stryker disable next-line ConditionalExpression: Do not see that transforming arg !== undefined to true is rejected by TS
+        if (namedConfigurations && arg !== undefined) {
+            el.innerHTML = dompurifyInstance.sanitize(
                 binding.value,
-                namedConfigurations[arg]
+                namedConfigurations[arg] ?? defaultConfig
             );
             return;
         }
-        el.innerHTML = DOMPurify.sanitize(binding.value, config.default ?? {});
+        el.innerHTML = dompurifyInstance.sanitize(binding.value, defaultConfig);
     };
 
     return {
-        inserted: updateComponent,
-        update: updateComponent,
-        unbind(el: HTMLElement) {
-            el.innerHTML = '';
-        },
+        mounted: updateComponent,
+        updated: updateComponent,
     };
 }

@@ -11,7 +11,7 @@ on:
   push:
     branches:
       - main
-      - vue-next
+      - vue-legacy
   pull_request:
   schedule:
     - cron: '0 6 * * *'

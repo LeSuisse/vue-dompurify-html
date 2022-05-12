@@ -1,14 +1,22 @@
 {
   "name": "vue-dompurify-html",
-  "version": "2.5.2",
+  "version": "3.0.0-beta.3",
   "description": "Safe replacement for the v-html directive",
   "license": "MIT",
   "author": "Thomas Gerbet",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/vue-dompurify-html.umd.js",
+  "module": "./dist/vue-dompurify-html.es.js",
+  "types": "types/index.d.ts",
   "files": [
-    "/dist"
+    "/dist",
+    "/types"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/vue-dompurify-html.es.js",
+      "require": "./dist/vue-dompurify-html.umd.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/LeSuisse/vue-dompurify-html.git"
@@ -27,23 +35,31 @@
     "html"
   ],
   "scripts": {
-    "build": "tsc",
+    "dev": "vite",
+    "build": "tsc && vite build",
     "test": "jest",
-    "lint": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts'",
-    "lint-fix": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts' --fix"
+    "test-mutation": "stryker run",
+    "lint": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' --ignore-pattern 'types/' '**/*.ts'",
+    "lint-fix": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' --ignore-pattern 'types/' '**/*.ts' --fix"
   },
   "dependencies": {
     "dompurify": "^2.3.4"
   },
   "peerDependencies": {
-    "vue": "^2.0.0"
+    "vue": "^3.0.0"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^5.0.1",
+    "@stryker-mutator/jest-runner": "^5.0.1",
+    "@stryker-mutator/typescript-checker": "^5.0.1",
     "@types/dompurify": "2.3.3",
     "@types/jest": "^27.0.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "@vue/test-utils": "^1.0.0-beta.29",
+    "@vitejs/plugin-vue": "^2.0.0",
+    "@vue/compiler-dom": "^3.2.11",
+    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/test-utils": "^2.0.0-alpha.3",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -51,7 +67,7 @@
     "prettier": "^2.0.0",
     "ts-jest": "^27.0.2",
     "typescript": "^4.0.3",
-    "vue": "^2.6.10",
-    "vue-template-compiler": "^2.6.10"
+    "vite": "^2.0.0-beta.69",
+    "vue": "^3.0.0-beta.4"
   }
 }

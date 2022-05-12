@@ -1,13 +1,15 @@
-import { VueConstructor } from 'vue';
+import { App, Plugin } from 'vue';
 import {
     buildDirective,
     DirectiveConfig,
     MinimalDOMPurifyConfig,
 } from './dompurify-html';
-export { DirectiveConfig, MinimalDOMPurifyConfig };
+export type { DirectiveConfig, MinimalDOMPurifyConfig };
 
-export default {
-    install(Vue: VueConstructor, config: DirectiveConfig = {}): void {
-        Vue.directive('dompurify-html', buildDirective(config));
+export const vueDompurifyHTMLPlugin: Plugin = {
+    install(app: App, config: DirectiveConfig = {}): void {
+        app.directive('dompurify-html', buildDirective(config));
     },
 };
+export { buildDirective as buildVueDompurifyHTMLDirective } from './dompurify-html';
+export default vueDompurifyHTMLPlugin;
