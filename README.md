@@ -1,8 +1,8 @@
 # vue-dompurify-html
 
 [![npm](https://img.shields.io/npm/v/vue-dompurify-html)](https://www.npmjs.com/package/vue-dompurify-html)
-[![Build Status](https://travis-ci.com/LeSuisse/vue-dompurify-html.svg?branch=master)](https://travis-ci.com/LeSuisse/vue-dompurify-html)
-[![Code Coverage](https://codecov.io/gh/LeSuisse/vue-dompurify-html/branch/master/graph/badge.svg)](https://codecov.io/gh/LeSuisse/vue-dompurify-html)
+[![Build Status](https://github.com/LeSuisse/vue-dompurify-html/actions/workflows/CI.yml/badge.svg?branch=vue-legacy)](https://github.com/LeSuisse/vue-dompurify-html/actions/workflows/CI.yml?query=branch%3Avue-legacy)
+[![Code Coverage](https://codecov.io/gh/LeSuisse/vue-dompurify-html/branch/vue-legacy/graph/badge.svg)](https://codecov.io/gh/LeSuisse/vue-dompurify-html)
 
 A "safe" replacement for the `v-html` directive. The HTML code is
 sanitized with [DOMPurify](https://github.com/cure53/DOMPurify) before being interpreted.
@@ -12,7 +12,7 @@ You should take a look at the
 [DOMPurify Security Goals & Threat Model](https://github.com/cure53/DOMPurify/wiki/Security-Goals-&-Threat-Model)
 to understand what are the limitations and possibilities.
 
-If you are looking for a version compatible with [Vue 3](https://github.com/vuejs/vue-next) checkout the [vue-next branch](https://github.com/LeSuisse/vue-dompurify-html/tree/vue-next).
+If you are looking for a version compatible with [Vue 3](https://github.com/vuejs/core) checkout the [main branch](https://github.com/LeSuisse/vue-dompurify-html/tree/main).
 
 ## Installation
 

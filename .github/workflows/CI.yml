@@ -6,7 +6,7 @@ on:
   push:
     branches:
       - main
-      - vue-next
+      - vue-legacy
   pull_request:
 
 jobs:

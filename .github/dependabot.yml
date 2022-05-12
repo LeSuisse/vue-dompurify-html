@@ -4,12 +4,12 @@ updates:
   directory: "/"
   schedule:
     interval: daily
-  target-branch: vue-next
+  target-branch: vue-legacy
 - package-ecosystem: npm
   directory: "/"
   schedule:
     interval: daily
-  target-branch: vue-next
+  target-branch: vue-legacy
 - package-ecosystem: github-actions
   directory: "/"
   schedule:
