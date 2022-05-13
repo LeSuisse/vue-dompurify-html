@@ -33,23 +33,24 @@
     "lint-fix": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts' --fix"
   },
   "dependencies": {
-    "dompurify": "^2.3.4"
+    "dompurify": "^2.3.4",
+    "jest-environment-jsdom": "^28.1.0"
   },
   "peerDependencies": {
     "vue": "^2.0.0"
   },
   "devDependencies": {
     "@types/dompurify": "2.3.3",
-    "@types/jest": "^27.0.0",
+    "@types/jest": "^27.5.1",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "@vue/test-utils": "^1.0.0-beta.29",
     "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "jest": "^27.0.3",
+    "jest": "^28.1.0",
     "prettier": "^2.0.0",
-    "ts-jest": "^27.0.2",
+    "ts-jest": "^28.0.2",
     "typescript": "^4.0.3",
     "vue": "^2.6.10",
     "vue-template-compiler": "^2.6.10"
