@@ -17,7 +17,7 @@ If you are looking for a version compatible with [Vue 3](https://github.com/vuej
 ## Installation
 
 ```
-npm install vue-dompurify-html
+npm install vue-dompurify-html@vue-legacy
 ```
 
 ## Usage
