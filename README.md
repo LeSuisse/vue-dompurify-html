@@ -124,6 +124,8 @@ app.mount('#app');
 
 ## Usage with [Nuxt](https://nuxtjs.org/)
 
+### Client side
+
 The usage is similar than when directly using Vue.
 
 Define a new Nuxt plugin to import and setup the directive to your liking:
@@ -142,3 +144,40 @@ export default {
   plugins: [{ src: '~/plugins/dompurify', mode: 'client' }]
 }
 ```
+
+### Server side
+
+The usage is similar than when directly using Vue but you need to setup DOMPurify to work with Node.
+
+Install this package, DOMPurify and [JSDOM](https://github.com/jsdom/jsdom):
+
+```
+npm install vue-dompurify-html@vue-legacy dompurify jsdom
+```
+
+In your Nuxt config you will need to setup a "server-side" directive:
+
+```js
+export default {
+    render: {
+        bundleRenderer: {
+            directives: {
+                'dompurify-html': (el, dir) => {
+                    const insertHook = buildVueDompurifyHTMLDirective(
+                        {},
+                        () => {
+                            const window = new JSDOM('').window;
+                            return createDOMPurify(window);
+                        }
+                    ).inserted;
+                    insertHook(el, dir);
+                    el.data.domProps = { innerHTML: el.innerHTML };
+                }
+            }
+        }
+    }
+}
+```
+
+Note that if you are not using [`injectScripts: false`](https://nuxtjs.org/docs/configuration-glossary/configuration-render/#injectscripts)
+in your Nuxt config you will also need to register a client-side plugin as described just before.

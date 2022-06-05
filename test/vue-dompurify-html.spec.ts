@@ -1,7 +1,8 @@
 import { createLocalVue, shallowMount } from '@vue/test-utils';
-import VueDOMPurifyHTML from '../src';
+import VueDOMPurifyHTML, { DOMPurifyInstanceBuilder } from '../src';
 import { buildDirective } from '../src/dompurify-html';
 import * as dompurifyModule from 'dompurify';
+import { DOMPurifyI } from 'dompurify';
 
 describe('VueDOMPurifyHTML Test Suite', (): void => {
     const sanitizeStub = jest.spyOn(dompurifyModule.default, 'sanitize');
@@ -127,6 +128,33 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         expect(wrapperWithHtml.html()).toBe('<p><pre>Hello</pre>\n</p>');
         expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>');
+    });
+
+    it('can be used with a custom DOMPurify instance builder', (): void => {
+        const localVue = createLocalVue();
+
+        const instanceBuilder: DOMPurifyInstanceBuilder = () => {
+            return {
+                sanitize(): string {
+                    return 'Test';
+                },
+            } as unknown as DOMPurifyI;
+        };
+
+        localVue.use(VueDOMPurifyHTML, {}, instanceBuilder);
+
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml'],
+        };
+        const wrapper = shallowMount(component, {
+            propsData: {
+                rawHtml: '<pre>Hello</pre>',
+            },
+            localVue,
+        });
+
+        expect(wrapper.html()).toBe('<p>Test</p>');
     });
 
     it('fallback to default (unconfigured) profile when the requested configuration does not exist', (): void => {
