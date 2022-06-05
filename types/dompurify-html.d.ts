@@ -1,5 +1,7 @@
 import { ObjectDirective } from '@vue/runtime-core';
-import { HookEvent, HookName, SanitizeAttributeHookEvent, SanitizeElementHookEvent } from 'dompurify';
+import { DOMPurifyI, HookEvent, HookName, SanitizeAttributeHookEvent, SanitizeElementHookEvent } from 'dompurify';
+declare type MinimalDOMPurifyInstance = Pick<DOMPurifyI, 'sanitize' | 'addHook'>;
+export declare type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[] | undefined;
     ADD_DATA_URI_TAGS?: string[] | undefined;
@@ -34,4 +36,6 @@ export interface DirectiveConfig {
         [H in HookName]?: ((currentNode: Element, data: HookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
     };
 }
-export declare function buildDirective(config?: DirectiveConfig): ObjectDirective<HTMLElement>;
+export declare function defaultDOMPurifyInstanceBuilder(): MinimalDOMPurifyInstance;
+export declare function buildDirective(config?: DirectiveConfig, buildDOMPurifyInstance?: DOMPurifyInstanceBuilder): ObjectDirective<HTMLElement>;
+export {};

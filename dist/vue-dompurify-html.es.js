@@ -10,8 +10,11 @@ function setUpHooks(config, dompurifyInstance) {
     }
   }
 }
-function buildDirective(config = {}) {
-  const dompurifyInstance = dompurify();
+function defaultDOMPurifyInstanceBuilder() {
+  return dompurify();
+}
+function buildDirective(config = {}, buildDOMPurifyInstance = defaultDOMPurifyInstanceBuilder) {
+  const dompurifyInstance = buildDOMPurifyInstance();
   setUpHooks(config, dompurifyInstance);
   const updateComponent = function(el, binding) {
     var _a, _b;
@@ -33,8 +36,8 @@ function buildDirective(config = {}) {
   };
 }
 const vueDompurifyHTMLPlugin = {
-  install(app, config = {}) {
-    app.directive("dompurify-html", buildDirective(config));
+  install(app, config = {}, buildDOMPurifyInstance = defaultDOMPurifyInstanceBuilder) {
+    app.directive("dompurify-html", buildDirective(config, buildDOMPurifyInstance));
   }
 };
 export { buildDirective as buildVueDompurifyHTMLDirective, vueDompurifyHTMLPlugin as default, vueDompurifyHTMLPlugin };

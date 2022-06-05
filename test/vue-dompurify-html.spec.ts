@@ -1,6 +1,10 @@
 import { mount } from '@vue/test-utils';
-import { buildDirective } from '../src/dompurify-html';
+import {
+    buildDirective,
+    DOMPurifyInstanceBuilder,
+} from '../src/dompurify-html';
 import * as DOMPurify from 'dompurify';
+import { DOMPurifyI } from 'dompurify';
 
 const realDOMPurify = jest.requireActual('dompurify');
 const sanitizeSpy = jest.fn(realDOMPurify.sanitize);
@@ -148,6 +152,34 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         expect(wrapperWithHtml.html()).toBe('<p>\n<pre>Hello</pre>\n</p>');
         expect(wrapperWithoutHtml.html()).toBe('<p>Hello</p>');
+    });
+
+    it('can be used with a custom DOMPurify instance builder', async (): Promise<void> => {
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml'],
+        };
+
+        const instanceBuilder: DOMPurifyInstanceBuilder = () => {
+            return {
+                sanitize(): string {
+                    return 'Test';
+                },
+            } as unknown as DOMPurifyI;
+        };
+
+        const wrapper = mount(component, {
+            global: {
+                directives: {
+                    'dompurify-html': buildDirective({}, instanceBuilder),
+                },
+            },
+            props: {
+                rawHtml: '<pre>Hello<script></script></pre>',
+            },
+        });
+
+        expect(wrapper.html()).toBe('<p>Test</p>');
     });
 
     it('fallback to default (unconfigured) profile when the requested configuration does not exist', (): void => {
