@@ -26,8 +26,6 @@ function buildDirective(config, buildDOMPurifyInstance) {
     var dompurifyInstance = buildDOMPurifyInstance();
     setUpHooks(config, dompurifyInstance);
     var updateComponent = function (el, binding) {
-        console.log("in directive")
-        console.log(el)
         var _a;
         if (binding.oldValue === binding.value) {
             return;
@@ -41,7 +39,6 @@ function buildDirective(config, buildDOMPurifyInstance) {
             return;
         }
         el.innerHTML = dompurifyInstance.sanitize(binding.value, (_a = config.default) !== null && _a !== void 0 ? _a : {});
-        console.log(el.innerHTML)
     };
     return {
         inserted: updateComponent,
