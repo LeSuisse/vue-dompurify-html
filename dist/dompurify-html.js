@@ -3,23 +3,31 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.buildDirective = void 0;
+exports.buildDirective = exports.defaultDOMPurifyInstanceBuilder = void 0;
 var dompurify_1 = __importDefault(require("dompurify"));
-function setUpHooks(config) {
+function defaultDOMPurifyInstanceBuilder() {
+    return dompurify_1.default;
+}
+exports.defaultDOMPurifyInstanceBuilder = defaultDOMPurifyInstanceBuilder;
+function setUpHooks(config, dompurifyInstance) {
     var _a;
     var hooks = (_a = config.hooks) !== null && _a !== void 0 ? _a : {};
     var hookName;
     for (hookName in hooks) {
         var hook = hooks[hookName];
         if (hook !== undefined) {
-            dompurify_1.default.addHook(hookName, hook);
+            dompurifyInstance.addHook(hookName, hook);
         }
     }
 }
-function buildDirective(config) {
+function buildDirective(config, buildDOMPurifyInstance) {
     if (config === void 0) { config = {}; }
-    setUpHooks(config);
+    if (buildDOMPurifyInstance === void 0) { buildDOMPurifyInstance = defaultDOMPurifyInstanceBuilder; }
+    var dompurifyInstance = buildDOMPurifyInstance();
+    setUpHooks(config, dompurifyInstance);
     var updateComponent = function (el, binding) {
+        console.log("in directive")
+        console.log(el)
         var _a;
         if (binding.oldValue === binding.value) {
             return;
@@ -29,10 +37,11 @@ function buildDirective(config) {
         if (namedConfigurations &&
             arg !== undefined &&
             typeof namedConfigurations[arg] !== 'undefined') {
-            el.innerHTML = dompurify_1.default.sanitize(binding.value, namedConfigurations[arg]);
+            el.innerHTML = dompurifyInstance.sanitize(binding.value, namedConfigurations[arg]);
             return;
         }
-        el.innerHTML = dompurify_1.default.sanitize(binding.value, (_a = config.default) !== null && _a !== void 0 ? _a : {});
+        el.innerHTML = dompurifyInstance.sanitize(binding.value, (_a = config.default) !== null && _a !== void 0 ? _a : {});
+        console.log(el.innerHTML)
     };
     return {
         inserted: updateComponent,

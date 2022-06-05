@@ -1,11 +1,15 @@
 import { DirectiveFunction, DirectiveOptions, VNodeDirective } from 'vue';
 import {
+    DOMPurifyI,
     HookEvent,
     HookName,
     SanitizeAttributeHookEvent,
     SanitizeElementHookEvent,
 } from 'dompurify';
 import DOMPurify from 'dompurify';
+
+type MinimalDOMPurifyInstance = Pick<DOMPurifyI, 'sanitize' | 'addHook'>;
+export type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
 
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[] | undefined;
@@ -66,20 +70,31 @@ export interface DirectiveConfig {
     };
 }
 
-function setUpHooks(config: DirectiveConfig): void {
+export function defaultDOMPurifyInstanceBuilder(): DOMPurifyI {
+    return DOMPurify;
+}
+
+function setUpHooks(
+    config: DirectiveConfig,
+    dompurifyInstance: MinimalDOMPurifyInstance
+): void {
     const hooks = config.hooks ?? {};
 
     let hookName: HookName;
     for (hookName in hooks) {
         const hook = hooks[hookName];
         if (hook !== undefined) {
-            DOMPurify.addHook(hookName, hook);
+            dompurifyInstance.addHook(hookName, hook);
         }
     }
 }
 
-export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
-    setUpHooks(config);
+export function buildDirective(
+    config: DirectiveConfig = {},
+    buildDOMPurifyInstance: DOMPurifyInstanceBuilder = defaultDOMPurifyInstanceBuilder
+): DirectiveOptions {
+    const dompurifyInstance = buildDOMPurifyInstance();
+    setUpHooks(config, dompurifyInstance);
 
     const updateComponent: DirectiveFunction = function (
         el: HTMLElement,
@@ -95,13 +110,16 @@ export function buildDirective(config: DirectiveConfig = {}): DirectiveOptions {
             arg !== undefined &&
             typeof namedConfigurations[arg] !== 'undefined'
         ) {
-            el.innerHTML = DOMPurify.sanitize(
+            el.innerHTML = dompurifyInstance.sanitize(
                 binding.value,
                 namedConfigurations[arg]
             );
             return;
         }
-        el.innerHTML = DOMPurify.sanitize(binding.value, config.default ?? {});
+        el.innerHTML = dompurifyInstance.sanitize(
+            binding.value,
+            config.default ?? {}
+        );
     };
 
     return {
