@@ -1,6 +1,7 @@
 import { createApp } from 'vue';
-import VueDOMPurifyHTML from '../src';
+import VueDOMPurifyHTML, { DOMPurifyInstanceBuilder } from '../src';
 import { buildVueDompurifyHTMLDirective } from '../src';
+import { DOMPurifyI } from 'dompurify';
 
 describe('VueDOMPurifyHTML Plugin Install', (): void => {
     it('can be installed', (): void => {
@@ -41,6 +42,30 @@ describe('VueDOMPurifyHTML Plugin Install', (): void => {
         app.mount(el);
 
         expect(el.innerHTML).toBe('<p>Hello</p>');
+    });
+
+    it('can be installed with a custom DOMPurify instance builder', (): void => {
+        const el = document.createElement('div');
+
+        const component = {
+            setup(): { rawHtml: string } {
+                return { rawHtml: '<b>Hello<script></script></b>' };
+            },
+            template: '<p v-dompurify-html="rawHtml"></p>',
+        };
+
+        const app = createApp(component);
+        const instanceBuilder: DOMPurifyInstanceBuilder = () => {
+            return {
+                sanitize(): string {
+                    return 'Test';
+                },
+            } as unknown as DOMPurifyI;
+        };
+        app.use(VueDOMPurifyHTML, {}, instanceBuilder);
+        app.mount(el);
+
+        expect(el.innerHTML).toBe('<p>Test</p>');
     });
 
     it('can be used locally inside a component', () => {

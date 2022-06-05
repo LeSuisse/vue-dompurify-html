@@ -12,6 +12,9 @@ import {
     SanitizeElementHookEvent,
 } from 'dompurify';
 
+type MinimalDOMPurifyInstance = Pick<DOMPurifyI, 'sanitize' | 'addHook'>;
+export type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
+
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[] | undefined;
     ADD_DATA_URI_TAGS?: string[] | undefined;
@@ -79,7 +82,7 @@ export interface DirectiveConfig {
 
 function setUpHooks(
     config: DirectiveConfig,
-    dompurifyInstance: DOMPurifyI
+    dompurifyInstance: MinimalDOMPurifyInstance
 ): void {
     const hooks = config.hooks ?? {};
 
@@ -92,10 +95,15 @@ function setUpHooks(
     }
 }
 
+export function defaultDOMPurifyInstanceBuilder(): MinimalDOMPurifyInstance {
+    return dompurify();
+}
+
 export function buildDirective(
-    config: DirectiveConfig = {}
+    config: DirectiveConfig = {},
+    buildDOMPurifyInstance: DOMPurifyInstanceBuilder = defaultDOMPurifyInstanceBuilder
 ): ObjectDirective<HTMLElement> {
-    const dompurifyInstance = dompurify();
+    const dompurifyInstance = buildDOMPurifyInstance();
 
     setUpHooks(config, dompurifyInstance);
 
