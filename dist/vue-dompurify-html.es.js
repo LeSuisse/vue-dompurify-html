@@ -1,4 +1,5 @@
 import dompurify from "dompurify";
+import { isVue3 } from "vue-demi";
 function setUpHooks(config, dompurifyInstance) {
   var _a;
   const hooks = (_a = config.hooks) != null ? _a : {};
@@ -30,9 +31,18 @@ function buildDirective(config = {}, buildDOMPurifyInstance = defaultDOMPurifyIn
     }
     el.innerHTML = dompurifyInstance.sanitize(binding.value, defaultConfig);
   };
+  if (isVue3) {
+    return {
+      mounted: updateComponent,
+      updated: updateComponent
+    };
+  }
   return {
-    mounted: updateComponent,
-    updated: updateComponent
+    inserted: updateComponent,
+    update: updateComponent,
+    unbind: (el) => {
+      el.innerHTML = "";
+    }
   };
 }
 const vueDompurifyHTMLPlugin = {

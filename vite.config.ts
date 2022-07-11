@@ -9,13 +9,17 @@ export default defineConfig({
             name: 'VueDOMPurifyHTML',
         },
         rollupOptions: {
-            external: ['dompurify'],
+            external: ['dompurify', 'vue-demi'],
             output: {
                 globals: {
                     dompurify: 'DOMPurify',
+                    'vue-demi': 'VueDemi',
                 },
                 exports: 'named',
             },
         },
+    },
+    optimizeDeps: {
+        exclude: ['vue-demi'],
     },
 });
