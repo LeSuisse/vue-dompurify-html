@@ -10,11 +10,3 @@ updates:
   schedule:
     interval: daily
   target-branch: vue-legacy
-- package-ecosystem: github-actions
-  directory: "/"
-  schedule:
-    interval: daily
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
