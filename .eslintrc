@@ -8,5 +8,8 @@
         "plugin:@typescript-eslint/recommended",
         "prettier",
         "plugin:prettier/recommended"
-    ]
+    ],
+    "rules": {
+        "@typescript-eslint/consistent-type-imports": "error"
+    }
 }

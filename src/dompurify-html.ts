@@ -1,6 +1,10 @@
-import { DirectiveHook, ObjectDirective, DirectiveBinding } from 'vue-demi';
+import type {
+    DirectiveHook,
+    ObjectDirective,
+    DirectiveBinding,
+} from 'vue-demi';
 import dompurify from 'dompurify';
-import {
+import type {
     DOMPurifyI,
     HookEvent,
     HookName,
