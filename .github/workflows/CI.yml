@@ -22,4 +22,4 @@ jobs:
         run: nix-shell --run "pnpm test"
       - name: Mutation testing
         run: nix-shell --run "pnpm run test-mutation"
-      - uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378
+      - uses: codecov/codecov-action@2a829b95deaeea2d11d127cc0358005714ff35ea
