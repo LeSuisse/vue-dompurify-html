@@ -13,8 +13,8 @@ jobs:
   build:
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
-      - uses: cachix/install-nix-action@d64e0553100205688c0fb2fa16edb0fc8663c590
+      - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
+      - uses: cachix/install-nix-action@d64e0553100205688c0fb2fa16edb0fc8663c590 # renovate: tag=v17
       - run: nix-shell --run "pnpm install --frozen-lockfile"
       - name: Lint
         run: nix-shell --run "pnpm run lint"
@@ -22,4 +22,4 @@ jobs:
         run: nix-shell --run "pnpm test"
       - name: Mutation testing
         run: nix-shell --run "pnpm run test-mutation"
-      - uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378
+      - uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378 # renovate: tag=v3.1.0

@@ -23,10 +23,10 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
+        uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@3f62b754e23e0dd60f91b744033e1dc1654c0ec6
+        uses: github/codeql-action/init@3f62b754e23e0dd60f91b744033e1dc1654c0ec6 # renovate: tag=codeql-bundle-20220623
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@3f62b754e23e0dd60f91b744033e1dc1654c0ec6
+        uses: github/codeql-action/analyze@3f62b754e23e0dd60f91b744033e1dc1654c0ec6 # renovate: tag=codeql-bundle-20220623
