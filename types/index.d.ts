@@ -1,4 +1,4 @@
-import { Plugin } from 'vue';
+import { Plugin } from 'vue-demi';
 import { DirectiveConfig, MinimalDOMPurifyConfig, DOMPurifyInstanceBuilder } from './dompurify-html';
 export type { DirectiveConfig, MinimalDOMPurifyConfig, DOMPurifyInstanceBuilder, };
 export declare const vueDompurifyHTMLPlugin: Plugin;
