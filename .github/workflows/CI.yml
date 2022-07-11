@@ -15,11 +15,11 @@ jobs:
     steps:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b
       - uses: cachix/install-nix-action@d64e0553100205688c0fb2fa16edb0fc8663c590
-      - run: nix-shell --run "npm ci"
+      - run: nix-shell --run "pnpm install --frozen-lockfile"
       - name: Lint
-        run: nix-shell --run "npm run lint"
+        run: nix-shell --run "pnpm run lint"
       - name: Test
-        run: nix-shell --run "npm test"
+        run: nix-shell --run "pnpm test"
       - name: Mutation testing
-        run: nix-shell --run "npm run test-mutation"
+        run: nix-shell --run "pnpm run test-mutation"
       - uses: codecov/codecov-action@81cd2dc8148241f03f5839d295e000b8f761e378

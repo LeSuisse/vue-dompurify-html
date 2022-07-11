@@ -52,7 +52,7 @@
   "devDependencies": {
     "@stryker-mutator/core": "^6.0.2",
     "@stryker-mutator/jest-runner": "^6.0.2",
-    "@stryker-mutator/typescript-checker": "^6.0.2",
+    "@stryker-mutator/typescript-checker": "^6.1.2",
     "@types/dompurify": "2.3.3",
     "@types/jest": "^28.1.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
