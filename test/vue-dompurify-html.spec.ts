@@ -1,10 +1,8 @@
 import { mount } from '@vue/test-utils';
-import {
-    buildDirective,
-    DOMPurifyInstanceBuilder,
-} from '../src/dompurify-html';
-import * as DOMPurify from 'dompurify';
-import { DOMPurifyI } from 'dompurify';
+import type { DOMPurifyInstanceBuilder } from '../src/dompurify-html';
+import { buildDirective } from '../src/dompurify-html';
+import type * as DOMPurify from 'dompurify';
+import type { DOMPurifyI } from 'dompurify';
 
 const realDOMPurify = jest.requireActual('dompurify');
 const sanitizeSpy = jest.fn(realDOMPurify.sanitize);

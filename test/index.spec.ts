@@ -1,7 +1,8 @@
 import { createApp } from 'vue';
-import VueDOMPurifyHTML, { DOMPurifyInstanceBuilder } from '../src';
+import type { DOMPurifyInstanceBuilder } from '../src';
+import VueDOMPurifyHTML from '../src';
 import { buildVueDompurifyHTMLDirective } from '../src';
-import { DOMPurifyI } from 'dompurify';
+import type { DOMPurifyI } from 'dompurify';
 
 describe('VueDOMPurifyHTML Plugin Install', (): void => {
     it('can be installed', (): void => {
