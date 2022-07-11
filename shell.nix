@@ -1,12 +1,13 @@
 { pkgs ? import (
   fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/d2fc6856824cb87742177eefc8dd534bdb6c3439.tar.gz";
-    sha256 = "sha256:18nmpsna8lmqcmag2x0gfncd96rrvxgsgn4r7wyagdjymbhzmx2a";
+    url = "https://github.com/NixOS/nixpkgs/archive/85deee6d6c8127d360096a5caa0aeb876b976496.tar.gz";
+    sha256 = "sha256:01b1wjmwyl3n15mvk2i1bfb3zjx4yc6wac3274gbvi8h43a1wk5q";
   }
 ) {} }:
 
 pkgs.mkShell {
   buildInputs = [
-    pkgs.nodejs-18_x
+    pkgs.nodejs-slim-18_x
+    pkgs.nodePackages.pnpm
   ];
 }
