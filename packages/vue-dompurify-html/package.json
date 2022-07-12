@@ -1,0 +1,63 @@
+{
+  "name": "vue-dompurify-html",
+  "version": "3.0.0",
+  "description": "Safe replacement for the v-html directive",
+  "license": "MIT",
+  "author": "Thomas Gerbet",
+  "main": "./dist/vue-dompurify-html.umd.js",
+  "module": "./dist/vue-dompurify-html.es.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "/dist",
+    "/types"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/vue-dompurify-html.es.js",
+      "require": "./dist/vue-dompurify-html.umd.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LeSuisse/vue-dompurify-html.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LeSuisse/vue-dompurify-html/issues"
+  },
+  "homepage": "https://github.com/LeSuisse/vue-dompurify-html#readme",
+  "keywords": [
+    "vue",
+    "vue-directive",
+    "xss",
+    "dom-xss",
+    "dompurify",
+    "security",
+    "html"
+  ],
+  "scripts": {
+    "build": "tsc && vite build",
+    "test": "jest",
+    "test-mutation": "stryker run"
+  },
+  "dependencies": {
+    "dompurify": "^2.3.4",
+    "vue-demi": "^0.13.2"
+  },
+  "peerDependencies": {
+    "vue": "^2.7.0 || ^3.0.0"
+  },
+  "devDependencies": {
+    "@stryker-mutator/core": "6.1.2",
+    "@stryker-mutator/jest-runner": "6.1.2",
+    "@stryker-mutator/typescript-checker": "6.1.2",
+    "@types/dompurify": "2.3.3",
+    "@types/jest": "28.1.4",
+    "@vue/test-utils": "2.0.2",
+    "jest": "28.1.2",
+    "jest-environment-jsdom": "28.1.2",
+    "ts-jest": "28.0.5",
+    "typescript": "4.7.4",
+    "vite": "2.9.14",
+    "vue": "3.2.37"
+  }
+}

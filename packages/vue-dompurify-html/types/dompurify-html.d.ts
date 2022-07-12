@@ -1,5 +1,5 @@
-import { ObjectDirective } from 'vue-demi';
-import { DOMPurifyI, HookEvent, HookName, SanitizeAttributeHookEvent, SanitizeElementHookEvent } from 'dompurify';
+import type { ObjectDirective } from 'vue-demi';
+import type { DOMPurifyI, HookEvent, HookName, SanitizeAttributeHookEvent, SanitizeElementHookEvent } from 'dompurify';
 declare type MinimalDOMPurifyInstance = Pick<DOMPurifyI, 'sanitize' | 'addHook'>;
 export declare type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
 export interface MinimalDOMPurifyConfig {

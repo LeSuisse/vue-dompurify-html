@@ -1,5 +1,5 @@
 import { createApp } from 'vue';
-import VueDOMPurifyHTML from '../src/';
+import VueDOMPurifyHTML from 'vue-dompurify-html';
 import Example from './Example.vue';
 
 const app = createApp(Example);
