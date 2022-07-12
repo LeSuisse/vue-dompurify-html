@@ -2,9 +2,6 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "esnext",
-    "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "./types/",
     "lib": ["es2020", "dom"],
     "types": ["jest"],
     "esModuleInterop": true,
