@@ -16,6 +16,8 @@ jobs:
       - uses: actions/checkout@2541b1294d2704b0964813337f33b291d3f8596b # renovate: tag=v3.0.2
       - uses: cachix/install-nix-action@d64e0553100205688c0fb2fa16edb0fc8663c590 # renovate: tag=v17
       - run: nix-shell --run "pnpm install --frozen-lockfile"
+      - name: Typecheck
+        run: nix-shell --run "pnpm run typecheck"
       - name: Lint
         run: nix-shell --run "pnpm run lint"
       - name: Test
