@@ -4,5 +4,8 @@
     "config:js-lib"
   ],
   "prHourlyLimit": 0,
-  "automerge": false
+  "automerge": false,
+  "ignorePaths": [
+    "**/node_modules/**"
+  ]
 }
