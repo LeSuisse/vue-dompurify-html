@@ -29,7 +29,7 @@ importers:
       vite: 2.9.14
       vue: 3.2.37
       vue-dompurify-html: workspace:*
-      vue-tsc: ^0.38.5
+      vue-tsc: 0.38.5
     dependencies:
       vue: 3.2.37
       vue-dompurify-html: link:../../packages/vue-dompurify-html
