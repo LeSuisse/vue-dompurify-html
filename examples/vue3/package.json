@@ -6,9 +6,9 @@
     "vue-dompurify-html": "workspace:*"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "2.3.3",
+    "@vitejs/plugin-vue": "3.0.0",
     "typescript": "4.7.4",
-    "vite": "2.9.14",
+    "vite": "3.0.0",
     "vue-tsc": "0.38.5"
   },
   "scripts": {
