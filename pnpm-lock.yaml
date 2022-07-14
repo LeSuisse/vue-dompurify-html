@@ -28,7 +28,7 @@ importers:
       typescript: 4.7.4
       vite: 3.0.0
       vue: ^2.7.5
-      vue-demi: ^0.13.4
+      vue-demi: 0.13.4
       vue-dompurify-html: workspace:*
       vue-tsc: 0.38.5
     dependencies:
