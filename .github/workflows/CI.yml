@@ -18,6 +18,8 @@ jobs:
       - run: nix-shell --run "pnpm install --frozen-lockfile"
       - name: Typecheck
         run: nix-shell --run "pnpm run typecheck"
+      - name: Build
+        run: nix-shell --run "pnpm run build"
       - name: Lint
         run: nix-shell --run "pnpm run lint"
       - name: Test
