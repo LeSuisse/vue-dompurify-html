@@ -1,0 +1,19 @@
+{
+  "name": "vue-dompurify-html-example-vue2",
+  "private": true,
+  "dependencies": {
+    "vue": "^2.7.5",
+    "vue-dompurify-html": "workspace:*"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue2": "1.1.2",
+    "typescript": "4.7.4",
+    "vite": "3.0.0",
+    "vue-demi": "^0.13.4",
+    "vue-tsc": "0.38.5"
+  },
+  "scripts": {
+    "typecheck": "vue-tsc --noEmit",
+    "dev": "vite"
+  }
+}
