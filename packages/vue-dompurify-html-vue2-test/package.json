@@ -5,13 +5,14 @@
     "test": "vue-demi-switch 2.7 && jest"
   },
   "devDependencies": {
+    "@jest/types": "^28.1.3",
     "@types/dompurify": "2.3.3",
     "@types/jest": "28.1.5",
     "@vue/test-utils": "1.3.0",
     "dompurify": "2.3.9",
     "jest": "28.1.3",
     "jest-environment-jsdom": "28.1.3",
-    "ts-jest": "28.0.5",
+    "ts-jest": "28.0.6",
     "typescript": "4.7.4",
     "vue": "2.7.5",
     "vue-demi": "0.13.4",
