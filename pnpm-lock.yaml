@@ -22,6 +22,25 @@ importers:
       turbo: 1.3.1
       typescript: 4.7.4
 
+  examples/vue2:
+    specifiers:
+      '@vitejs/plugin-vue2': 1.1.2
+      typescript: 4.7.4
+      vite: 3.0.0
+      vue: ^2.7.5
+      vue-demi: ^0.13.4
+      vue-dompurify-html: workspace:*
+      vue-tsc: 0.38.5
+    dependencies:
+      vue: 2.7.5
+      vue-dompurify-html: link:../../packages/vue-dompurify-html
+    devDependencies:
+      '@vitejs/plugin-vue2': 1.1.2_vite@3.0.0+vue@2.7.5
+      typescript: 4.7.4
+      vite: 3.0.0
+      vue-demi: 0.13.4_vue@2.7.5
+      vue-tsc: 0.38.5_typescript@4.7.4
+
   examples/vue3:
     specifiers:
       '@vitejs/plugin-vue': 3.0.0
@@ -1245,6 +1264,17 @@ packages:
       vue: 3.2.37
     dev: true
 
+  /@vitejs/plugin-vue2/1.1.2_vite@3.0.0+vue@2.7.5:
+    resolution: {integrity: sha512-y6OEA+2UdJ0xrEQHodq20v9r3SpS62IOHrgN92JPLvVpNkhcissu7yvD5PXMzMESyazj0XNWGsc8UQk8+mVrjQ==}
+    engines: {node: '>=14.6.0'}
+    peerDependencies:
+      vite: '>=2.5.10'
+      vue: ^2.7.0-0
+    dependencies:
+      vite: 3.0.0
+      vue: 2.7.5
+    dev: true
+
   /@volar/code-gen/0.38.5:
     resolution: {integrity: sha512-GRGhPKoNtRwZyn9M0b2buobeMR1Aj9zxZI0osanLG9vB9YCnJov1myxKU8EJV5NobpyspLIv1X6/BEHLZNsKig==}
     dependencies:
@@ -1295,7 +1325,6 @@ packages:
       '@babel/parser': 7.18.8
       postcss: 8.4.14
       source-map: 0.6.1
-    dev: true
 
   /@vue/compiler-sfc/3.2.37:
     resolution: {integrity: sha512-+7i/2+9LYlpqDv+KTtWhOZH+pa8/HnX/905MdVmAcI/mPQOBwkHHIzrsEsucyOIZQYMkXUiTkmZq5am/NyXKkg==}
@@ -1869,7 +1898,6 @@ packages:
 
   /csstype/3.1.0:
     resolution: {integrity: sha512-uX1KG+x9h5hIJsaKR9xHUeUraxf8IODOwq9JLNPq6BwB04a/xgpq3rcx47l5BZu5zBPlgD342tdke3Hom/nJRA==}
-    dev: true
 
   /data-urls/3.0.2:
     resolution: {integrity: sha512-Jy/tj3ldjZJo63sVAvg6LHt2mHvl4V6AgRAmNDtLdm7faqtsx+aJG42rsyCo9JCoRVKwPFzKlIPx3DIibwSIaQ==}
@@ -4809,6 +4837,7 @@ packages:
         optional: true
     dependencies:
       vue: 3.2.37
+    dev: false
 
   /vue-template-compiler/2.7.5:
     resolution: {integrity: sha512-f5aofPdhOtoCW2jnK+iehkfVizDSrLuiyHcgIlGrXlkBXpIDfvm3HNX8emrhEduj5o5NyVulVbwpXW+zpRZQNg==}
@@ -4832,7 +4861,6 @@ packages:
     dependencies:
       '@vue/compiler-sfc': 2.7.5
       csstype: 3.1.0
-    dev: true
 
   /vue/3.2.37:
     resolution: {integrity: sha512-bOKEZxrm8Eh+fveCqS1/NkG/n6aMidsI6hahas7pa0w/l7jkbssJVsRhVDs07IdDq7h9KHswZOgItnwJAgtVtQ==}
