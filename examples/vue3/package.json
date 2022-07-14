@@ -13,6 +13,7 @@
   },
   "scripts": {
     "typecheck": "vue-tsc --noEmit",
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build"
   }
 }

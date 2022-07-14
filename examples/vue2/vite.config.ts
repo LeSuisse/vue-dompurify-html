@@ -9,6 +9,6 @@ export default defineConfig({
             // This is not needed in a real app, this is workaround to force using the "right" vue-demi since this
             // monorepo uses Vue 3 by default
             'vue-demi': resolve(__dirname, './node_modules/vue-demi/'),
-        }
-    }
+        },
+    },
 });

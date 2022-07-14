@@ -1,6 +1,6 @@
 import VueDOMPurifyHTML from 'vue-dompurify-html';
 import Example from './Example.vue';
-import Vue from "vue";
+import Vue from 'vue';
 
 Vue.use(VueDOMPurifyHTML, {
     namedConfigurations: {
@@ -10,4 +10,4 @@ Vue.use(VueDOMPurifyHTML, {
     },
 });
 const App = Vue.extend(Example);
-new App().$mount("#app");
+new App().$mount('#app');

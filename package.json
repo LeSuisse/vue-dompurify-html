@@ -3,6 +3,7 @@
   "packageManager": "pnpm@7.5.1",
   "scripts": {
     "typecheck": "turbo run typecheck",
+    "build": "turbo run build",
     "test": "turbo run test",
     "test-mutation": "turbo run test-mutation",
     "lint": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' --ignore-pattern 'types/' '**/*.ts'",
