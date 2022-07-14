@@ -5,7 +5,8 @@
   "license": "MIT",
   "author": "Thomas Gerbet",
   "main": "./dist/vue-dompurify-html.umd.js",
-  "module": "./dist/vue-dompurify-html.mjs",
+  "type": "module",
+  "module": "./dist/vue-dompurify-html.js",
   "types": "types/index.d.ts",
   "files": [
     "/dist",
@@ -13,8 +14,8 @@
   ],
   "exports": {
     ".": {
-      "import": "./dist/vue-dompurify-html.mjs",
-      "require": "./dist/vue-dompurify-html.umd.js"
+      "import": "./dist/vue-dompurify-html.js",
+      "require": "./dist/vue-dompurify-html.umd.cjs"
     }
   },
   "repository": {

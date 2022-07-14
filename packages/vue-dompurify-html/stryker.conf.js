@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
     packageManager: 'npm',
     reporters: ['clear-text', 'progress', 'dashboard'],
     testRunner: 'jest',
@@ -12,3 +12,4 @@ module.exports = {
         high: 100
     }
 };
+export default config;
