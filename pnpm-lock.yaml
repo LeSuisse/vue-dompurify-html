@@ -43,7 +43,7 @@ importers:
 
   examples/vue3:
     specifiers:
-      '@vitejs/plugin-vue': 3.0.0
+      '@vitejs/plugin-vue': 3.0.1
       typescript: 4.7.4
       vite: 3.0.1
       vue: 3.2.37
@@ -53,7 +53,7 @@ importers:
       vue: 3.2.37
       vue-dompurify-html: link:../../packages/vue-dompurify-html
     devDependencies:
-      '@vitejs/plugin-vue': 3.0.0_vite@3.0.1+vue@3.2.37
+      '@vitejs/plugin-vue': 3.0.1_vite@3.0.1+vue@3.2.37
       typescript: 4.7.4
       vite: 3.0.1
       vue-tsc: 0.38.8_typescript@4.7.4
@@ -1253,9 +1253,9 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue/3.0.0_vite@3.0.1+vue@3.2.37:
-    resolution: {integrity: sha512-yWP34ArFh/jAeNUDkkLz/kVRLjf5ppJiq4L36f64Cp6dIrMQeYZGDP9xxdemlXfZR9ylN9JgHUl3GzfqOtgYDg==}
-    engines: {node: '>=14.18.0'}
+  /@vitejs/plugin-vue/3.0.1_vite@3.0.1+vue@3.2.37:
+    resolution: {integrity: sha512-Ll9JgxG7ONIz/XZv3dssfoMUDu9qAnlJ+km+pBA0teYSXzwPCIzS/e1bmwNYl5dcQGs677D21amgfYAnzMl17A==}
+    engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
