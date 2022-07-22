@@ -104,24 +104,24 @@ importers:
       jest-environment-jsdom: 28.1.3
       ts-jest: 28.0.7
       typescript: 4.7.4
-      vue: 2.7.7
+      vue: 2.7.8
       vue-demi: 0.13.5
       vue-dompurify-html: workspace:*
-      vue-template-compiler: 2.7.7
+      vue-template-compiler: 2.7.8
     devDependencies:
       '@jest/types': 28.1.3
       '@types/dompurify': 2.3.3
       '@types/jest': 28.1.6
-      '@vue/test-utils': 1.3.0_bsfvtfsktrde675atkxiqnygju
+      '@vue/test-utils': 1.3.0_7unolrgjwxngstwwllrtmolbmm
       dompurify: 2.3.10
       jest: 28.1.3
       jest-environment-jsdom: 28.1.3
       ts-jest: 28.0.7_lhw3xkmzugq5tscs3x2ndm4sby
       typescript: 4.7.4
-      vue: 2.7.7
-      vue-demi: 0.13.5_vue@2.7.7
+      vue: 2.7.8
+      vue-demi: 0.13.5_vue@2.7.8
       vue-dompurify-html: link:../vue-dompurify-html
-      vue-template-compiler: 2.7.7
+      vue-template-compiler: 2.7.8
 
 packages:
 
@@ -1326,8 +1326,8 @@ packages:
       postcss: 8.4.14
       source-map: 0.6.1
 
-  /@vue/compiler-sfc/2.7.7:
-    resolution: {integrity: sha512-Ah8dIuo6ZVPHTq9+s4rBU/YpJu3vGSNyeOTCrPrVPQnkUfnT5Ig+IKBhePuQWFXguYb2TuEWrEfiiX9DZ3aJlA==}
+  /@vue/compiler-sfc/2.7.8:
+    resolution: {integrity: sha512-2DK4YWKfgLnW9VDR9gnju1gcYRk3flKj8UNsms7fsRmFcg35slVTZEkqwBtX+wJBXaamFfn6NxSsZh3h12Ix/Q==}
     dependencies:
       '@babel/parser': 7.18.8
       postcss: 8.4.14
@@ -1393,7 +1393,7 @@ packages:
   /@vue/shared/3.2.37:
     resolution: {integrity: sha512-4rSJemR2NQIo9Klm1vabqWjD8rs/ZaJSzMxkMNeJS6lHiUjjUeYFbooN19NgFjztubEKh3WlZUeOLVdbbUWHsw==}
 
-  /@vue/test-utils/1.3.0_bsfvtfsktrde675atkxiqnygju:
+  /@vue/test-utils/1.3.0_7unolrgjwxngstwwllrtmolbmm:
     resolution: {integrity: sha512-Xk2Xiyj2k5dFb8eYUKkcN9PzqZSppTlx7LaQWBbdA8tqh3jHr/KHX2/YLhNFc/xwDrgeLybqd+4ZCPJSGPIqeA==}
     peerDependencies:
       vue: 2.x
@@ -1402,8 +1402,8 @@ packages:
       dom-event-types: 1.1.0
       lodash: 4.17.21
       pretty: 2.0.0
-      vue: 2.7.7
-      vue-template-compiler: 2.7.7
+      vue: 2.7.8
+      vue-template-compiler: 2.7.8
     dev: true
 
   /@vue/test-utils/2.0.2_vue@3.2.37:
@@ -4824,7 +4824,7 @@ packages:
       vue: 2.7.5
     dev: true
 
-  /vue-demi/0.13.5_vue@2.7.7:
+  /vue-demi/0.13.5_vue@2.7.8:
     resolution: {integrity: sha512-tO3K2bML3AwiHmVHeKCq6HLef2st4zBXIV5aEkoJl6HZ+gJWxWv2O8wLH8qrA3SX3lDoTDHNghLX1xZg83MXvw==}
     engines: {node: '>=12'}
     hasBin: true
@@ -4836,11 +4836,11 @@ packages:
       '@vue/composition-api':
         optional: true
     dependencies:
-      vue: 2.7.7
+      vue: 2.7.8
     dev: true
 
-  /vue-template-compiler/2.7.7:
-    resolution: {integrity: sha512-vxOsjWhvDPyMW7QwXPecNmTNwKyXiF+j4KjBFjDxYPuY0xvqCT5o9WrapVItR/Nrh0XThfBaL19kXFSNYtbKmw==}
+  /vue-template-compiler/2.7.8:
+    resolution: {integrity: sha512-eQqdcUpJKJpBRPDdxCNsqUoT0edNvdt1jFjtVnVS/LPPmr0BU2jWzXlrf6BVMeODtdLewB3j8j3WjNiB+V+giw==}
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
@@ -4862,10 +4862,10 @@ packages:
       '@vue/compiler-sfc': 2.7.5
       csstype: 3.1.0
 
-  /vue/2.7.7:
-    resolution: {integrity: sha512-osfkncsGCWqtch+YWYxbqTNQ9hl/UQ6TFRkdmK/VqAjuMpxzr5QotFsYpmJ1AB1ez2LJeIKXDmtMkXUotMOTsA==}
+  /vue/2.7.8:
+    resolution: {integrity: sha512-ncwlZx5qOcn754bCu5/tS/IWPhXHopfit79cx+uIlLMyt3vCMGcXai5yCG5y+I6cDmEj4ukRYyZail9FTQh7lQ==}
     dependencies:
-      '@vue/compiler-sfc': 2.7.7
+      '@vue/compiler-sfc': 2.7.8
       csstype: 3.1.0
     dev: true
 
