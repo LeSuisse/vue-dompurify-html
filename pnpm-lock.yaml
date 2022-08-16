@@ -28,7 +28,7 @@ importers:
       typescript: 4.7.4
       vite: 3.0.8
       vue: ^2.7.5
-      vue-demi: 0.13.7
+      vue-demi: 0.13.8
       vue-dompurify-html: workspace:*
       vue-tsc: 0.40.1
     dependencies:
@@ -38,7 +38,7 @@ importers:
       '@vitejs/plugin-vue2': 1.1.2_vite@3.0.8+vue@2.7.5
       typescript: 4.7.4
       vite: 3.0.8
-      vue-demi: 0.13.7_vue@2.7.5
+      vue-demi: 0.13.8_vue@2.7.5
       vue-tsc: 0.40.1_typescript@4.7.4
 
   examples/vue3:
@@ -105,7 +105,7 @@ importers:
       ts-jest: 28.0.8
       typescript: 4.7.4
       vue: 2.7.8
-      vue-demi: 0.13.7
+      vue-demi: 0.13.8
       vue-dompurify-html: workspace:*
       vue-template-compiler: 2.7.8
     devDependencies:
@@ -119,7 +119,7 @@ importers:
       ts-jest: 28.0.8_lhw3xkmzugq5tscs3x2ndm4sby
       typescript: 4.7.4
       vue: 2.7.8
-      vue-demi: 0.13.7_vue@2.7.8
+      vue-demi: 0.13.8_vue@2.7.8
       vue-dompurify-html: link:../vue-dompurify-html
       vue-template-compiler: 2.7.8
 
@@ -4863,8 +4863,8 @@ packages:
       vue: 3.2.37
     dev: false
 
-  /vue-demi/0.13.7_vue@2.7.5:
-    resolution: {integrity: sha512-hbhlvpx1gFW3TB5HxJ0mNxyA9Jh5iQt409taOs6zkhpvfJ7YzLs1rsLufJmDsjH5PI1cOyfikY1fE/meyHfU5A==}
+  /vue-demi/0.13.8_vue@2.7.5:
+    resolution: {integrity: sha512-Vy1zbZhCOdsmvGR6tJhAvO5vhP7eiS8xkbYQSoVa7o6KlIy3W8Rc53ED4qI4qpeRDjv3mLfXSEpYU6Yq4pgXRg==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
@@ -4878,8 +4878,8 @@ packages:
       vue: 2.7.5
     dev: true
 
-  /vue-demi/0.13.7_vue@2.7.8:
-    resolution: {integrity: sha512-hbhlvpx1gFW3TB5HxJ0mNxyA9Jh5iQt409taOs6zkhpvfJ7YzLs1rsLufJmDsjH5PI1cOyfikY1fE/meyHfU5A==}
+  /vue-demi/0.13.8_vue@2.7.8:
+    resolution: {integrity: sha512-Vy1zbZhCOdsmvGR6tJhAvO5vhP7eiS8xkbYQSoVa7o6KlIy3W8Rc53ED4qI4qpeRDjv3mLfXSEpYU6Yq4pgXRg==}
     engines: {node: '>=12'}
     hasBin: true
     requiresBuild: true
