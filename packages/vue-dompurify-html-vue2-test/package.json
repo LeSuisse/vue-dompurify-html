@@ -14,9 +14,9 @@
     "jest-environment-jsdom": "28.1.3",
     "ts-jest": "28.0.8",
     "typescript": "4.7.4",
-    "vue": "2.7.9",
+    "vue": "2.7.10",
     "vue-demi": "0.13.8",
     "vue-dompurify-html": "workspace:*",
-    "vue-template-compiler": "2.7.9"
+    "vue-template-compiler": "2.7.10"
   }
 }
