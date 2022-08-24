@@ -40,7 +40,7 @@
     "vue": "^2.0.0"
   },
   "devDependencies": {
-    "@types/dompurify": "2.3.3",
+    "@types/dompurify": "2.3.4",
     "@types/jest": "^28.1.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
