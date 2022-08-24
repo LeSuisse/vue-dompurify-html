@@ -51,7 +51,7 @@
     "@stryker-mutator/core": "6.1.2",
     "@stryker-mutator/jest-runner": "6.1.2",
     "@stryker-mutator/typescript-checker": "6.1.2",
-    "@types/dompurify": "2.3.3",
+    "@types/dompurify": "2.3.4",
     "@types/jest": "28.1.8",
     "@vue/test-utils": "2.0.2",
     "jest": "28.1.3",
