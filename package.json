@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "dompurify": "^2.3.4",
-    "jest-environment-jsdom": "^28.1.0"
+    "jest-environment-jsdom": "^29.0.0"
   },
   "peerDependencies": {
     "vue": "^2.0.0"
