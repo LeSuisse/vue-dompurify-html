@@ -9,7 +9,7 @@
     "@vitejs/plugin-vue2": "1.1.2",
     "typescript": "4.8.2",
     "vite": "3.0.9",
-    "vue-demi": "0.13.10",
+    "vue-demi": "0.13.11",
     "vue-tsc": "0.40.1"
   },
   "scripts": {
