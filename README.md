@@ -4,9 +4,6 @@
 [![Build Status](https://github.com/LeSuisse/vue-dompurify-html/actions/workflows/CI.yml/badge.svg?branch=main)](https://github.com/LeSuisse/vue-dompurify-html/actions/workflows/CI.yml?query=branch%3Amain)
 [![Code Coverage](https://codecov.io/gh/LeSuisse/vue-dompurify-html/branch/main/graph/badge.svg)](https://codecov.io/gh/LeSuisse/vue-dompurify-html)
 
-⚠️ This branch is meant to be used with [Vue 3](https://github.com/vuejs/core). If you are looking for a version compatible with Vue 2,
-go to [vue-legacy branch](https://github.com/LeSuisse/vue-dompurify-html/tree/vue-legacy).
-
 A "safe" replacement for the `v-html` directive. The HTML code is
 sanitized with [DOMPurify](https://github.com/cure53/DOMPurify) before being interpreted.
 
@@ -22,6 +19,9 @@ npm install vue-dompurify-html
 ```
 
 ## Usage
+
+The code snippets default to Vue 3, you can see setup examples in both Vue 2 and Vue 3 in the [examples/](./examples)
+folder. 
 
 ```js
 import { createApp } from 'vue';
@@ -169,7 +169,7 @@ The usage is similar than when directly using Vue but you need to setup DOMPurif
 Install this package, DOMPurify and [JSDOM](https://github.com/jsdom/jsdom):
 
 ```
-npm install vue-dompurify-html@vue-legacy dompurify jsdom
+npm install vue-dompurify-html dompurify jsdom
 ```
 
 In your Nuxt config you will need to setup a "server-side" directive:
