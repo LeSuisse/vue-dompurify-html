@@ -24,7 +24,7 @@
   "bugs": {
     "url": "https://github.com/LeSuisse/vue-dompurify-html/issues"
   },
-  "homepage": "https://github.com/LeSuisse/vue-dompurify-html#readme",
+  "homepage": "https://github.com/LeSuisse/vue-dompurify-html/tree/main/packages/vue-dompurify-html#readme",
   "keywords": [
     "vue",
     "vue-directive",
