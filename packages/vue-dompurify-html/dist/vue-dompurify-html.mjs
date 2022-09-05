@@ -21,7 +21,10 @@ function v(n = {}, i = l) {
       return;
     const r = e.arg, a = n.namedConfigurations, s = (f = n.default) != null ? f : {};
     if (a && r !== void 0) {
-      u.innerHTML = o.sanitize(e.value, (d = a[r]) != null ? d : s);
+      u.innerHTML = o.sanitize(
+        e.value,
+        (d = a[r]) != null ? d : s
+      );
       return;
     }
     u.innerHTML = o.sanitize(e.value, s);
@@ -39,7 +42,10 @@ function v(n = {}, i = l) {
 }
 const y = {
   install(n, i = {}, o = l) {
-    n.directive("dompurify-html", v(i, o));
+    n.directive(
+      "dompurify-html",
+      v(i, o)
+    );
   }
 };
 export {
