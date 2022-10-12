@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
-      - uses: cachix/install-nix-action@d64e0553100205688c0fb2fa16edb0fc8663c590 # renovate: tag=v17
+      - uses: cachix/install-nix-action@daddc62a2e67d1decb56e028c9fa68344b9b7c2a # tag=v18
       - run: nix-shell --run "pnpm install --frozen-lockfile"
       - name: Typecheck
         run: nix-shell --run "pnpm run typecheck"
