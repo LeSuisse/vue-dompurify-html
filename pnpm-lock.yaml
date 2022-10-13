@@ -26,7 +26,7 @@ importers:
     specifiers:
       '@vitejs/plugin-vue2': 2.0.0
       typescript: 4.8.4
-      vite: 3.1.7
+      vite: 3.1.8
       vue: ^2.7.5
       vue-demi: 0.13.11
       vue-dompurify-html: workspace:*
@@ -35,9 +35,9 @@ importers:
       vue: 2.7.5
       vue-dompurify-html: link:../../packages/vue-dompurify-html
     devDependencies:
-      '@vitejs/plugin-vue2': 2.0.0_vite@3.1.7+vue@2.7.5
+      '@vitejs/plugin-vue2': 2.0.0_vite@3.1.8+vue@2.7.5
       typescript: 4.8.4
-      vite: 3.1.7
+      vite: 3.1.8
       vue-demi: 0.13.11_vue@2.7.5
       vue-tsc: 1.0.7_typescript@4.8.4
 
@@ -45,7 +45,7 @@ importers:
     specifiers:
       '@vitejs/plugin-vue': 3.1.2
       typescript: 4.8.4
-      vite: 3.1.7
+      vite: 3.1.8
       vue: 3.2.40
       vue-dompurify-html: workspace:*
       vue-tsc: 1.0.7
@@ -53,9 +53,9 @@ importers:
       vue: 3.2.40
       vue-dompurify-html: link:../../packages/vue-dompurify-html
     devDependencies:
-      '@vitejs/plugin-vue': 3.1.2_vite@3.1.7+vue@3.2.40
+      '@vitejs/plugin-vue': 3.1.2_vite@3.1.8+vue@3.2.40
       typescript: 4.8.4
-      vite: 3.1.7
+      vite: 3.1.8
       vue-tsc: 1.0.7_typescript@4.8.4
 
   packages/vue-dompurify-html:
@@ -72,7 +72,7 @@ importers:
       jest-environment-jsdom: 29.1.2
       ts-jest: 29.0.3
       typescript: 4.8.4
-      vite: 3.1.7
+      vite: 3.1.8
       vue: 3.2.40
       vue-demi: ^0.13.2
     dependencies:
@@ -90,7 +90,7 @@ importers:
       jest-environment-jsdom: 29.1.2
       ts-jest: 29.0.3_tgejc6cnv2pbkgcnmxq3dkgmme
       typescript: 4.8.4
-      vite: 3.1.7
+      vite: 3.1.8
       vue: 3.2.40
 
   packages/vue-dompurify-html-vue2-test:
@@ -1297,25 +1297,25 @@ packages:
       eslint-visitor-keys: 3.3.0
     dev: true
 
-  /@vitejs/plugin-vue/3.1.2_vite@3.1.7+vue@3.2.40:
+  /@vitejs/plugin-vue/3.1.2_vite@3.1.8+vue@3.2.40:
     resolution: {integrity: sha512-3zxKNlvA3oNaKDYX0NBclgxTQ1xaFdL7PzwF6zj9tGFziKwmBa3Q/6XcJQxudlT81WxDjEhHmevvIC4Orc1LhQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^3.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 3.1.7
+      vite: 3.1.8
       vue: 3.2.40
     dev: true
 
-  /@vitejs/plugin-vue2/2.0.0_vite@3.1.7+vue@2.7.5:
+  /@vitejs/plugin-vue2/2.0.0_vite@3.1.8+vue@2.7.5:
     resolution: {integrity: sha512-VJOCDtBNcRv7kYLQRbbERDP0OqW0EKgMQp6wwbqZRpU3kg38OP891avx6Xl3szntGkf9mK4i8k3TjsAlmkzWFg==}
     engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
       vite: ^3.0.0
       vue: ^2.7.0-0
     dependencies:
-      vite: 3.1.7
+      vite: 3.1.8
       vue: 2.7.5
     dev: true
 
@@ -4798,8 +4798,8 @@ packages:
       convert-source-map: 1.8.0
     dev: true
 
-  /vite/3.1.7:
-    resolution: {integrity: sha512-5vCAmU4S8lyVdFCInu9M54f/g8qbOMakVw5xJ4pjoaDy5wgy9sLLZkGdSLN52dlsBqh0tBqxjaqqa8LgPqwRAA==}
+  /vite/3.1.8:
+    resolution: {integrity: sha512-m7jJe3nufUbuOfotkntGFupinL/fmuTNuQmiVE7cH2IZMuf4UbfbGYMUT3jVWgGYuRVLY9j8NnrRqgw5rr5QTg==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
