@@ -196,5 +196,7 @@ export default {
 }
 ```
 
+or create custom Nuxt Module: [Nuxt2 example](../../examples/nuxt2/nuxt.config.js)
+
 Note that if you are not using [`injectScripts: false`](https://nuxtjs.org/docs/configuration-glossary/configuration-render/#injectscripts)
 in your Nuxt config you will also need to register a client-side plugin as described just before.
