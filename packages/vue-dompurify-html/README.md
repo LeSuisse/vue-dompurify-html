@@ -162,9 +162,9 @@ export default {
 }
 ```
 
-### Server side
+### Server side or static site generation
 
-The usage is similar than when directly using Vue but you need to setup DOMPurify to work with Node.
+The usage is similar than when directly using Vue but you need to setup DOMPurify to work with Node. This is also required in case you are using Nuxt's [full static mode](https://nuxtjs.org/announcements/going-full-static/).
 
 Install this package, DOMPurify and [JSDOM](https://github.com/jsdom/jsdom):
 
@@ -175,6 +175,10 @@ npm install vue-dompurify-html dompurify jsdom
 In your Nuxt config you will need to setup a "server-side" directive:
 
 ```js
+import { buildVueDompurifyHTMLDirective } from 'vue-dompurify-html';
+import { JSDOM } from 'jsdom';
+import createDOMPurify from 'dompurify';
+
 export default {
     render: {
         bundleRenderer: {
