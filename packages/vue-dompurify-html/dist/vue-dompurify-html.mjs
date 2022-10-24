@@ -1,55 +1,59 @@
-import c from "dompurify";
-import { isVue3 as m } from "vue-demi";
-function p(n, i) {
-  var u;
-  const o = (u = n.hooks) != null ? u : {};
+import p from "dompurify";
+import { isVue3 as v } from "vue-demi";
+function H(o, r) {
+  var e;
+  const n = (e = o.hooks) != null ? e : {};
   let t;
-  for (t in o) {
-    const e = o[t];
-    e !== void 0 && i.addHook(t, e);
+  for (t in n) {
+    const i = n[t];
+    i !== void 0 && r.addHook(t, i);
   }
 }
-function l() {
-  return c();
+function m() {
+  return p();
 }
-function v(n = {}, i = l) {
-  const o = i();
-  p(n, o);
-  const t = function(u, e) {
-    var f, d;
-    if (e.oldValue === e.value)
+function k(o = {}, r = m) {
+  const n = r();
+  H(o, n);
+  const t = function(e, i) {
+    var c, l;
+    const u = i.value;
+    if (i.oldValue === u)
       return;
-    const r = e.arg, a = n.namedConfigurations, s = (f = n.default) != null ? f : {};
-    if (a && r !== void 0) {
-      u.innerHTML = o.sanitize(
-        e.value,
-        (d = a[r]) != null ? d : s
+    const a = `${u}`, s = i.arg, d = o.namedConfigurations, f = (c = o.default) != null ? c : {};
+    if (d && s !== void 0) {
+      e.innerHTML = n.sanitize(
+        a,
+        (l = d[s]) != null ? l : f
       );
       return;
     }
-    u.innerHTML = o.sanitize(e.value, s);
+    e.innerHTML = n.sanitize(
+      a,
+      f
+    );
   };
-  return m ? {
+  return v ? {
     mounted: t,
     updated: t
   } : {
     inserted: t,
     update: t,
-    unbind: (u) => {
-      u.innerHTML = "";
+    unbind: (e) => {
+      e.innerHTML = "";
     }
   };
 }
-const y = {
-  install(n, i = {}, o = l) {
-    n.directive(
+const h = {
+  install(o, r = {}, n = m) {
+    o.directive(
       "dompurify-html",
-      v(i, o)
+      k(r, n)
     );
   }
 };
 export {
-  v as buildVueDompurifyHTMLDirective,
-  y as default,
-  y as vueDompurifyHTMLPlugin
+  k as buildVueDompurifyHTMLDirective,
+  h as default,
+  h as vueDompurifyHTMLPlugin
 };
