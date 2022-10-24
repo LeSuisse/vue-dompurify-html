@@ -16,7 +16,9 @@ const dompurifyModule = function (moduleOptions) {
                     }
                 ).inserted;
                 insertHook(el, dir, undefined, undefined);
-                el.data.domProps = { innerHTML: el.innerHTML };
+                if (el.innerHTML != null) {
+                    el.data.domProps = { innerHTML: el.innerHTML };
+                }
             },
         };
     });
