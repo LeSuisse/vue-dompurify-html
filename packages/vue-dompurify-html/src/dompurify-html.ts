@@ -112,21 +112,26 @@ export function buildDirective(
         el: HTMLElement,
         binding: DirectiveBinding<HTMLElement>
     ): void {
-        if (binding.oldValue === binding.value) {
+        const current_value = binding.value;
+        if (binding.oldValue === current_value) {
             return;
         }
+        const current_value_string = `${current_value}`;
         const arg = binding.arg;
         const namedConfigurations = config.namedConfigurations;
         const defaultConfig = config.default ?? {};
         // Stryker disable next-line ConditionalExpression: Do not see that transforming arg !== undefined to true is rejected by TS
         if (namedConfigurations && arg !== undefined) {
             el.innerHTML = dompurifyInstance.sanitize(
-                binding.value,
+                current_value_string,
                 namedConfigurations[arg] ?? defaultConfig
             );
             return;
         }
-        el.innerHTML = dompurifyInstance.sanitize(binding.value, defaultConfig);
+        el.innerHTML = dompurifyInstance.sanitize(
+            current_value_string,
+            defaultConfig
+        );
     };
 
     // Stryker disable next-line ConditionalExpression

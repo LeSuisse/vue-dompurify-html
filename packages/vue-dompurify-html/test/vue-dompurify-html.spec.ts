@@ -401,4 +401,29 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         expect(sanitizeSpy).toBeCalledTimes(1);
     });
+
+    it.each([
+        { input: 0, expected: '0' },
+        { input: 1, expected: '1' },
+        { input: true, expected: 'true' },
+        { input: false, expected: 'false' },
+    ])('treats strings like v-html', ({ input, expected }): void => {
+        const component = {
+            template: '<p v-dompurify-html="rawHtml"></p>',
+            props: ['rawHtml'],
+        };
+
+        const wrapper = mount(component, {
+            global: {
+                directives: {
+                    'dompurify-html': buildDirective(),
+                },
+            },
+            props: {
+                rawHtml: input,
+            },
+        });
+
+        expect(wrapper.html()).toStrictEqual(`<p>${expected}</p>`);
+    });
 });
