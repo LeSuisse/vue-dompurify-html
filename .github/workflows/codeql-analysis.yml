@@ -26,7 +26,7 @@ jobs:
         uses: actions/checkout@93ea575cb5d8a053eaa0ac8fa3b40d7e05a33cc8 # tag=v3.1.0
 
       - name: Initialize CodeQL
-        uses: github/codeql-action/init@33b10be6bf0b751c776ae2799b0f044885a8fa8f # tag=codeql-bundle-20220623
+        uses: github/codeql-action/init@af487b12e794149ded6b54481531389b81a91996 # tag=codeql-bundle-20220623
 
       - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@33b10be6bf0b751c776ae2799b0f044885a8fa8f # tag=codeql-bundle-20220623
+        uses: github/codeql-action/analyze@af487b12e794149ded6b54481531389b81a91996 # tag=codeql-bundle-20220623
