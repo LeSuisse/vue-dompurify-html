@@ -24,7 +24,7 @@ importers:
 
   examples/vue2:
     specifiers:
-      '@vitejs/plugin-vue2': 2.0.1
+      '@vitejs/plugin-vue2': 2.1.0
       typescript: 4.9.3
       vite: 3.2.4
       vue: ^2.7.5
@@ -35,7 +35,7 @@ importers:
       vue: 2.7.5
       vue-dompurify-html: link:../../packages/vue-dompurify-html
     devDependencies:
-      '@vitejs/plugin-vue2': 2.0.1_vite@3.2.4+vue@2.7.5
+      '@vitejs/plugin-vue2': 2.1.0_vite@3.2.4+vue@2.7.5
       typescript: 4.9.3
       vite: 3.2.4
       vue-demi: 0.13.11_vue@2.7.5
@@ -1314,8 +1314,8 @@ packages:
       vue: 3.2.45
     dev: true
 
-  /@vitejs/plugin-vue2/2.0.1_vite@3.2.4+vue@2.7.5:
-    resolution: {integrity: sha512-4eFAypstsQoiR9NLZXJ6K3ZWmU2CMFNxGTjGfRdmimImXJe4eHVfMMizaOjfX6Y8HfFJ7u+L8oUg32MInAHZ+g==}
+  /@vitejs/plugin-vue2/2.1.0_vite@3.2.4+vue@2.7.5:
+    resolution: {integrity: sha512-9glD5jLWRjdj+SpH7cQo+n/kZlZBaTjQwTe3aUxsWr9uU7aOnlhG319ywJT5175mHWIyNz8g5QG6NPdgKwwYDA==}
     engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
       vite: ^3.0.0
