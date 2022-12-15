@@ -1,7 +1,7 @@
 import type { ObjectDirective } from 'vue-demi';
 import type { DOMPurifyI, HookEvent, HookName, SanitizeAttributeHookEvent, SanitizeElementHookEvent } from 'dompurify';
-declare type MinimalDOMPurifyInstance = Pick<DOMPurifyI, 'sanitize' | 'addHook'>;
-export declare type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
+type MinimalDOMPurifyInstance = Pick<DOMPurifyI, 'sanitize' | 'addHook'>;
+export type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[] | undefined;
     ADD_DATA_URI_TAGS?: string[] | undefined;
