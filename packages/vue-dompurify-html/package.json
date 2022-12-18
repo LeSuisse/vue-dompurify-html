@@ -48,9 +48,9 @@
   },
   "devDependencies": {
     "@jest/types": "29.3.1",
-    "@stryker-mutator/core": "6.3.0",
-    "@stryker-mutator/jest-runner": "6.3.0",
-    "@stryker-mutator/typescript-checker": "6.3.0",
+    "@stryker-mutator/core": "6.3.1",
+    "@stryker-mutator/jest-runner": "6.3.1",
+    "@stryker-mutator/typescript-checker": "6.3.1",
     "@types/dompurify": "2.4.0",
     "@types/jest": "29.2.4",
     "@vue/test-utils": "2.2.1",
