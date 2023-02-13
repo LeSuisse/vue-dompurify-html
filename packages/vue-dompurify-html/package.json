@@ -40,7 +40,7 @@
     "test-mutation": "stryker run"
   },
   "dependencies": {
-    "dompurify": "^2.3.4",
+    "dompurify": "^3.0.0",
     "vue-demi": "^0.13.2"
   },
   "peerDependencies": {
