@@ -17,6 +17,10 @@ to understand what are the limitations and possibilities.
 ```
 npm install vue-dompurify-html
 ```
+or if you still use Vue 2:
+```
+npm install vue-dompurify-html@2.6.0
+```
 
 ## Usage
 
