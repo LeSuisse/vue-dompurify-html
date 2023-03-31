@@ -13,7 +13,7 @@
     "jest": "29.5.0",
     "jest-environment-jsdom": "29.5.0",
     "ts-jest": "29.0.5",
-    "typescript": "5.0.2",
+    "typescript": "5.0.3",
     "vue": "2.7.14",
     "vue-demi": "0.13.11",
     "vue-dompurify-html": "workspace:*",
