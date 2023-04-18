@@ -1,6 +1,6 @@
 {
   "private": true,
-  "packageManager": "pnpm@7.32.0",
+  "packageManager": "pnpm@7.32.1",
   "scripts": {
     "typecheck": "turbo run typecheck",
     "build": "turbo run build",
