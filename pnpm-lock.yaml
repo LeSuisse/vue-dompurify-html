@@ -66,7 +66,7 @@ importers:
       '@stryker-mutator/typescript-checker': 6.4.2
       '@types/dompurify': 3.0.2
       '@types/jest': 29.5.1
-      '@vue/test-utils': 2.2.1
+      '@vue/test-utils': 2.3.2
       dompurify: ^3.0.0
       jest: 29.5.0
       jest-environment-jsdom: 29.5.0
@@ -85,7 +85,7 @@ importers:
       '@stryker-mutator/typescript-checker': 6.4.2_4pqp2sbxyw2xgewoodx27fqwdi
       '@types/dompurify': 3.0.2
       '@types/jest': 29.5.1
-      '@vue/test-utils': 2.2.1_vue@3.2.47
+      '@vue/test-utils': 2.3.2_vue@3.2.47
       jest: 29.5.0
       jest-environment-jsdom: 29.5.0
       ts-jest: 29.1.0_sye3n7rnony6rzpy3o3kwkrynm
@@ -1725,12 +1725,16 @@ packages:
       vue-template-compiler: 2.7.14
     dev: true
 
-  /@vue/test-utils/2.2.1_vue@3.2.47:
-    resolution: {integrity: sha512-AkLt24wnnxedJ3NX090JYiueog184QqlR5TVNZM+lggCrK8XjeuPr274okaLqDmiRgp4XVCaGa07KqKLGQbsMQ==}
+  /@vue/test-utils/2.3.2_vue@3.2.47:
+    resolution: {integrity: sha512-hJnVaYhbrIm0yBS0+e1Y0Sj85cMyAi+PAbK4JHqMRUZ6S622Goa+G7QzkRSyvCteG8wop7tipuEbHoZo26wsSA==}
     peerDependencies:
       vue: ^3.0.1
     dependencies:
+      js-beautify: 1.14.6
       vue: 3.2.47
+    optionalDependencies:
+      '@vue/compiler-dom': 3.2.47
+      '@vue/server-renderer': 3.2.47_vue@3.2.47
     dev: true
 
   /abab/2.0.6:
@@ -3643,8 +3647,8 @@ packages:
       - ts-node
     dev: true
 
-  /js-beautify/1.14.7:
-    resolution: {integrity: sha512-5SOX1KXPFKx+5f6ZrPsIPEY7NwKeQz47n3jm2i+XeHx9MoRsfQenlOP13FQhWvg8JRS0+XLO6XYUQ2GX+q+T9A==}
+  /js-beautify/1.14.6:
+    resolution: {integrity: sha512-GfofQY5zDp+cuHc+gsEXKPpNw2KbPddreEo35O6jT6i0RVK6LhsoYBhq5TvK4/n74wnA0QbK8gGd+jUZwTMKJw==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -4268,7 +4272,7 @@ packages:
     dependencies:
       condense-newlines: 0.2.1
       extend-shallow: 2.0.1
-      js-beautify: 1.14.7
+      js-beautify: 1.14.6
     dev: true
 
   /progress/2.0.3:
