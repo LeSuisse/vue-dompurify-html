@@ -58,7 +58,7 @@
     "jest-environment-jsdom": "29.5.0",
     "ts-jest": "29.1.0",
     "typescript": "5.0.4",
-    "vite": "4.3.4",
+    "vite": "4.3.5",
     "vue": "3.2.47"
   }
 }
