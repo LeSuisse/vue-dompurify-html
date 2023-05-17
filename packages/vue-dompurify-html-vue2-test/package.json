@@ -15,7 +15,7 @@
     "ts-jest": "29.1.0",
     "typescript": "5.0.4",
     "vue": "2.7.14",
-    "vue-demi": "0.14.1",
+    "vue-demi": "0.14.4",
     "vue-dompurify-html": "workspace:*",
     "vue-template-compiler": "2.7.14"
   }
