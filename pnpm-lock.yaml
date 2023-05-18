@@ -40,13 +40,13 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue2':
         specifier: 2.2.0
-        version: 2.2.0(vite@4.3.7)(vue@2.7.5)
+        version: 2.2.0(vite@4.3.8)(vue@2.7.5)
       typescript:
         specifier: 5.0.4
         version: 5.0.4
       vite:
-        specifier: 4.3.7
-        version: 4.3.7
+        specifier: 4.3.8
+        version: 4.3.8
       vue-demi:
         specifier: 0.14.5
         version: 0.14.5(vue@2.7.5)
@@ -65,13 +65,13 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 4.2.3
-        version: 4.2.3(vite@4.3.7)(vue@3.2.47)
+        version: 4.2.3(vite@4.3.8)(vue@3.2.47)
       typescript:
         specifier: 5.0.4
         version: 5.0.4
       vite:
-        specifier: 4.3.7
-        version: 4.3.7
+        specifier: 4.3.8
+        version: 4.3.8
       vue-tsc:
         specifier: 1.6.5
         version: 1.6.5(typescript@5.0.4)
@@ -119,8 +119,8 @@ importers:
         specifier: 5.0.4
         version: 5.0.4
       vite:
-        specifier: 4.3.7
-        version: 4.3.7
+        specifier: 4.3.8
+        version: 4.3.8
       vue:
         specifier: 3.2.47
         version: 3.2.47
@@ -1599,25 +1599,25 @@ packages:
       eslint-visitor-keys: 3.4.1
     dev: true
 
-  /@vitejs/plugin-vue2@2.2.0(vite@4.3.7)(vue@2.7.5):
+  /@vitejs/plugin-vue2@2.2.0(vite@4.3.8)(vue@2.7.5):
     resolution: {integrity: sha512-1km7zEuZ/9QRPvzXSjikbTYGQPG86Mq1baktpC4sXqsXlb02HQKfi+fl8qVS703JM7cgm24Ga9j+RwKmvFn90A==}
     engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0
       vue: ^2.7.0-0
     dependencies:
-      vite: 4.3.7
+      vite: 4.3.8
       vue: 2.7.5
     dev: true
 
-  /@vitejs/plugin-vue@4.2.3(vite@4.3.7)(vue@3.2.47):
+  /@vitejs/plugin-vue@4.2.3(vite@4.3.8)(vue@3.2.47):
     resolution: {integrity: sha512-R6JDUfiZbJA9cMiguQ7jxALsgiprjBeHL5ikpXfJCH62pPHtI+JdJ5xWj6Ev73yXSlYl86+blXn1kZHQ7uElxw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 4.3.7
+      vite: 4.3.8
       vue: 3.2.47
     dev: true
 
@@ -4995,8 +4995,8 @@ packages:
       convert-source-map: 1.8.0
     dev: true
 
-  /vite@4.3.7:
-    resolution: {integrity: sha512-MTIFpbIm9v7Hh5b0wSBgkcWzSBz7SAa6K/cBTwS4kUiQJfQLFlZZRJRQgqunCVzhTPCk674tW+0Qaqh3Q00dBg==}
+  /vite@4.3.8:
+    resolution: {integrity: sha512-uYB8PwN7hbMrf4j1xzGDk/lqjsZvCDbt/JC5dyfxc19Pg8kRm14LinK/uq+HSLNswZEoKmweGdtpbnxRtrAXiQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     hasBin: true
     peerDependencies:
