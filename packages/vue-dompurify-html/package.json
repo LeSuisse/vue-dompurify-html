@@ -20,7 +20,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/LeSuisse/vue-dompurify-html.git"
+    "url": "https://github.com/LeSuisse/vue-dompurify-html.git",
+    "directory": "packages/vue-dompurify-html"
   },
   "bugs": {
     "url": "https://github.com/LeSuisse/vue-dompurify-html/issues"
