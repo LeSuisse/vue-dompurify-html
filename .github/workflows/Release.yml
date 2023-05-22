@@ -12,6 +12,7 @@ jobs:
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
       - uses: cachix/install-nix-action@29bd9290ef037a3ecbdafe83cbd2185e9dd0fa0a # v20
       - run: nix-shell --run "pnpm install --frozen-lockfile"
-      - run: nix-shell --run "pnpm publish --recursive --provenance --access public --no-git-checks"
+      - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+      - run: nix-shell --run "pnpm publish --recursive --provenance --access public --no-git-checks"
