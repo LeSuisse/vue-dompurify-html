@@ -7,8 +7,8 @@
 
 pkgs.mkShell {
   buildInputs = [
-    pkgs.nodejs_20
-    pkgs.nodePackages.pnpm
+    pkgs.nodejs-slim
+    pkgs.nodePackages_latest.pnpm
     pkgs.ps
   ];
 }
