@@ -15,15 +15,17 @@ jobs:
     steps:
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
       - uses: cachix/install-nix-action@29bd9290ef037a3ecbdafe83cbd2185e9dd0fa0a # v20
-      - run: nix-shell --run "pnpm install --frozen-lockfile"
+      - run: nix-shell --pure --run "pnpm install --frozen-lockfile"
       - name: Typecheck
-        run: nix-shell --run "pnpm run typecheck"
+        run: nix-shell --pure --run "pnpm run typecheck"
       - name: Build
-        run: nix-shell --run "pnpm run build"
+        run: nix-shell --pure --run "pnpm run build"
       - name: Lint
-        run: nix-shell --run "pnpm run lint"
+        run: nix-shell --pure --run "pnpm run lint"
       - name: Test
-        run: nix-shell --run "pnpm test"
+        run: nix-shell --pure --run "pnpm test"
       - name: Mutation testing
-        run: nix-shell --run "pnpm run test-mutation"
+        run: nix-shell --pure --run "pnpm run test-mutation"
+      - name: Dry run release
+        run: nix-shell --pure --run "pnpm publish --dry-run --recursive --provenance --access public --no-git-checks"
       - uses: codecov/codecov-action@eaaf4bedf32dbdc6b720b63067d99c4d77d6047d # v3.1.4
