@@ -10,7 +10,7 @@ jobs:
       id-token: write
     steps:
       - uses: actions/checkout@8e5e7e5ab8b370d6c329ec480221332ada57f0ab # v3.5.2
-      - uses: cachix/install-nix-action@29bd9290ef037a3ecbdafe83cbd2185e9dd0fa0a # v20
+      - uses: cachix/install-nix-action@4b933aa7ebcc94a6174cf1364864e957b4910265 # v21
       - run: nix-shell --run "pnpm install --frozen-lockfile"
       - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
         env:
