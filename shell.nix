@@ -1,7 +1,7 @@
 { pkgs ? import (
   fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/9356eead97d8d16956b0226d78f76bd66e06cb60.tar.gz";
-    sha256 = "1f6gqsm9f8hx3sf5a66iih619bfzzvs5xdval3p807ad8a1zwmbq";
+    url = "https://github.com/NixOS/nixpkgs/archive/c6ffce3d5df7b4c588ce80a0c6e2d2348a611707.tar.gz";
+    sha256 = "15pdl53q06dsxwnix191mrkwzh21sb7yqrmz2qq6q25qk8hdpjrr";
   }
 ) {} }:
 
