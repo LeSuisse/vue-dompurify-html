@@ -1,11 +1,11 @@
 module.exports = {
-    packageManager: 'npm',
+    packageManager: 'pnpm',
     reporters: ['clear-text', 'progress', 'dashboard'],
-    testRunner: 'jest',
+    testRunner: 'vitest',
     coverageAnalysis: 'off',
-    plugins: ["@stryker-mutator/typescript-checker", "@stryker-mutator/jest-runner"],
+    plugins: ["@stryker-mutator/typescript-checker", "@stryker-mutator/vitest-runner"],
     checkers: ["typescript"],
-    tsconfigFile: 'tsconfig.json',
+    tsconfigFile: 'tsconfig.test.json',
     mutate: ['src/**/*.ts'],
     thresholds: {
         break: 100,

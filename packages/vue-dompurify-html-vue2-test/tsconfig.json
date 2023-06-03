@@ -3,7 +3,6 @@
     "target": "esnext",
     "module": "esnext",
     "lib": ["es2020", "dom"],
-    "types": ["jest"],
     "esModuleInterop": true,
     "moduleResolution": "Node",
     "isolatedModules": true,
