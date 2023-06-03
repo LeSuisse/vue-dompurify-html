@@ -1,7 +1,7 @@
+import { describe, it, vi, expect } from 'vitest';
 import { createLocalVue, shallowMount } from '@vue/test-utils';
 import type { DOMPurifyInstanceBuilder } from '../../vue-dompurify-html/src/';
 import VueDOMPurifyHTML from '../../vue-dompurify-html/src/';
-import * as dompurifyModule from 'dompurify';
 import type { DOMPurifyI } from 'dompurify';
 import type { PluginObject } from 'vue/types/plugin';
 
@@ -10,12 +10,6 @@ const plugin = VueDOMPurifyHTML as unknown as PluginObject<
 >;
 
 describe('VueDOMPurifyHTML Test Suite for Vue 2.7', (): void => {
-    const sanitizeStub = jest.spyOn(dompurifyModule.default, 'sanitize');
-
-    beforeEach(() => {
-        sanitizeStub.mockClear();
-    });
-
     it('can be used', async (): Promise<void> => {
         const localVue = createLocalVue();
         localVue.use(plugin);
@@ -277,8 +271,8 @@ describe('VueDOMPurifyHTML Test Suite for Vue 2.7', (): void => {
             props: ['rawHtml'],
         };
 
-        const uponSanitizeElement = jest.fn();
-        const afterSanitizeElements = jest.fn();
+        const uponSanitizeElement = vi.fn();
+        const afterSanitizeElements = vi.fn();
 
         const localVue = createLocalVue();
         localVue.use(plugin, {

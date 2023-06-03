@@ -20,4 +20,12 @@ export default defineConfig({
     optimizeDeps: {
         exclude: ['vue-demi'],
     },
+    test: {
+        environment: 'jsdom',
+        watch: false,
+        coverage: {
+            provider: 'c8',
+            enabled: true,
+        },
+    },
 });

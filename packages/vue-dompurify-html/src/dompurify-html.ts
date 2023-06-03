@@ -140,9 +140,9 @@ export function buildDirective(
             mounted: updateComponent,
             updated: updateComponent,
         };
+        /* c8 ignore next 10 */
     }
 
-    /* istanbul ignore next */
     return {
         inserted: updateComponent,
         update: updateComponent,
