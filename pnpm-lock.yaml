@@ -89,14 +89,14 @@ importers:
         specifier: 29.5.0
         version: 29.5.0
       '@stryker-mutator/core':
-        specifier: 7.0.0
-        version: 7.0.0
+        specifier: 7.0.1
+        version: 7.0.1
       '@stryker-mutator/jest-runner':
-        specifier: 7.0.0
-        version: 7.0.0(@stryker-mutator/core@7.0.0)
+        specifier: 7.0.1
+        version: 7.0.1(@stryker-mutator/core@7.0.1)
       '@stryker-mutator/typescript-checker':
-        specifier: 7.0.0
-        version: 7.0.0(@stryker-mutator/core@7.0.0)(typescript@5.1.3)
+        specifier: 7.0.1
+        version: 7.0.1(@stryker-mutator/core@7.0.1)(typescript@5.1.3)
       '@types/dompurify':
         specifier: 3.0.2
         version: 3.0.2
@@ -177,13 +177,6 @@ packages:
       '@jridgewell/trace-mapping': 0.3.17
     dev: true
 
-  /@babel/code-frame@7.18.6:
-    resolution: {integrity: sha512-TDCmlK5eOvH+eH7cdAFlNXeVJqWIQ7gW9tY1GJIpUtFb6CmjVyq2VM3u71bOyR8CRihcCgMUYoDNyLXao3+70Q==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/highlight': 7.18.6
-    dev: true
-
   /@babel/code-frame@7.21.4:
     resolution: {integrity: sha512-LYvhNKfwWSPpocw8GI7gpK2nq3HSDuEPC/uSYaALSJu9xjsalaaYFOq0Pwt5KmVqwEbZlDu81aLXwBOmD/Fv9g==}
     engines: {node: '>=6.9.0'}
@@ -250,25 +243,6 @@ packages:
       semver: 6.3.0
     dev: true
 
-  /@babel/helper-create-class-features-plugin@7.21.0(@babel/core@7.22.1):
-    resolution: {integrity: sha512-Q8wNiMIdwsv5la5SPxNYzzkPnjgC0Sy0i7jLkVOCdllu/xcVNkr3TeZzbHBJrj+XXRqzX5uCyCoV9eu6xUG7KQ==}
-    engines: {node: '>=6.9.0'}
-    peerDependencies:
-      '@babel/core': ^7.0.0
-    dependencies:
-      '@babel/core': 7.22.1
-      '@babel/helper-annotate-as-pure': 7.18.6
-      '@babel/helper-environment-visitor': 7.22.1
-      '@babel/helper-function-name': 7.21.0
-      '@babel/helper-member-expression-to-functions': 7.21.0
-      '@babel/helper-optimise-call-expression': 7.18.6
-      '@babel/helper-replace-supers': 7.22.1
-      '@babel/helper-skip-transparent-expression-wrappers': 7.20.0
-      '@babel/helper-split-export-declaration': 7.18.6
-    transitivePeerDependencies:
-      - supports-color
-    dev: true
-
   /@babel/helper-create-class-features-plugin@7.22.1(@babel/core@7.22.1):
     resolution: {integrity: sha512-SowrZ9BWzYFgzUMwUmowbPSGu6CXL5MSuuCkG3bejahSpSymioPmuLdhPxNOc9MjuNGjy7M/HaXvJ8G82Lywlw==}
     engines: {node: '>=6.9.0'}
@@ -309,13 +283,6 @@ packages:
       '@babel/types': 7.22.4
     dev: true
 
-  /@babel/helper-member-expression-to-functions@7.21.0:
-    resolution: {integrity: sha512-Muu8cdZwNN6mRRNG6lAYErJ5X3bRevgYR2O8wN0yn7jJSnGDu6eG59RfT29JHxGUovyfrh6Pj0XzmR7drNVL3Q==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      '@babel/types': 7.22.4
-    dev: true
-
   /@babel/helper-member-expression-to-functions@7.22.3:
     resolution: {integrity: sha512-Gl7sK04b/2WOb6OPVeNy9eFKeD3L6++CzL3ykPOWqTn08xgYYK0wz4TUh2feIImDXxcVW3/9WQ1NMKY66/jfZA==}
     engines: {node: '>=6.9.0'}
@@ -351,11 +318,6 @@ packages:
     engines: {node: '>=6.9.0'}
     dependencies:
       '@babel/types': 7.22.4
-    dev: true
-
-  /@babel/helper-plugin-utils@7.20.2:
-    resolution: {integrity: sha512-8RvlJG2mj4huQ4pZ+rU9lqKi9ZKiRmuvGuM2HlWmkmgOhbs6zEAw6IEiJ5cQqGbDzGZOhwuOQNtZMi/ENLjZoQ==}
-    engines: {node: '>=6.9.0'}
     dev: true
 
   /@babel/helper-plugin-utils@7.21.5:
@@ -480,8 +442,8 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.22.1
-      '@babel/helper-create-class-features-plugin': 7.21.0(@babel/core@7.22.1)
-      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-create-class-features-plugin': 7.22.1(@babel/core@7.22.1)
+      '@babel/helper-plugin-utils': 7.21.5
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -509,8 +471,8 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.22.1
-      '@babel/helper-create-class-features-plugin': 7.21.0(@babel/core@7.22.1)
-      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-create-class-features-plugin': 7.22.1(@babel/core@7.22.1)
+      '@babel/helper-plugin-utils': 7.21.5
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -676,7 +638,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.22.1
-      '@babel/helper-plugin-utils': 7.20.2
+      '@babel/helper-plugin-utils': 7.21.5
       '@babel/helper-validator-option': 7.21.0
       '@babel/plugin-transform-typescript': 7.21.3(@babel/core@7.22.1)
     transitivePeerDependencies:
@@ -1309,8 +1271,8 @@ packages:
       '@sinonjs/commons': 2.0.0
     dev: true
 
-  /@stryker-mutator/api@7.0.0:
-    resolution: {integrity: sha512-39fvzrDdlMFU1oNgNv9QyqnVKuhrMgKRTh0X2H6rTUrm3BpSQogNlQcWU0FirMWpdlaAfy8zMz/L06KSpX9wfg==}
+  /@stryker-mutator/api@7.0.1:
+    resolution: {integrity: sha512-kC1Cr1L3PitSrNjK85ev0mGVoSdvglCavVSof7dNZ3S5fXcDrvCzG7hsPt9g9Zho8GVZLN58PJ1kCquNo3mtaw==}
     engines: {node: '>=16.0.0'}
     dependencies:
       mutation-testing-metrics: 2.0.1
@@ -1318,14 +1280,14 @@ packages:
       tslib: 2.5.2
     dev: true
 
-  /@stryker-mutator/core@7.0.0:
-    resolution: {integrity: sha512-JBtEJHMdEoITxISMdqtjC8v9XhFlRQCa8BrFUsmCFlLgIBx9Wilsz7zeU8Url9K5T2QPdUIL9NO+PXlXD3oQ3g==}
+  /@stryker-mutator/core@7.0.1:
+    resolution: {integrity: sha512-vBRAtHEK357ZT/1bKEnHoEp91C5QeOaw1xz0NYbo9/VElQeFjJDWWKJKrDxFLsAz3Py2N3+euMuNFIf7QC0j4w==}
     engines: {node: '>=16.0.0'}
     hasBin: true
     dependencies:
-      '@stryker-mutator/api': 7.0.0
-      '@stryker-mutator/instrumenter': 7.0.0
-      '@stryker-mutator/util': 7.0.0
+      '@stryker-mutator/api': 7.0.1
+      '@stryker-mutator/instrumenter': 7.0.1
+      '@stryker-mutator/util': 7.0.1
       ajv: 8.12.0
       chalk: 5.2.0
       commander: 10.0.0
@@ -1345,7 +1307,7 @@ packages:
       mutation-testing-report-schema: 2.0.1
       npm-run-path: 5.1.0
       progress: 2.0.3
-      rxjs: 7.8.0
+      rxjs: 7.8.1
       semver: 7.5.0
       source-map: 0.7.4
       tree-kill: 1.2.2
@@ -1356,8 +1318,8 @@ packages:
       - supports-color
     dev: true
 
-  /@stryker-mutator/instrumenter@7.0.0:
-    resolution: {integrity: sha512-asWYKJemAnlPr6XALh/bRFQV3S1uZmlsvnoGapff2gi+9g6iXeS03tD1TkWi6LH0MZbZF8/ME2YQyIytM2nnvA==}
+  /@stryker-mutator/instrumenter@7.0.1:
+    resolution: {integrity: sha512-OOsRMDqSdELy1t1xwFhIwpoaUt4pehp1PJkks8EiyJOO9+YW6Hwe3r1YI46i3dBeErgQzUZ09yjOeh4ZjIoIow==}
     engines: {node: '>=16.0.0'}
     dependencies:
       '@babel/core': 7.22.1
@@ -1367,43 +1329,43 @@ packages:
       '@babel/plugin-proposal-decorators': 7.22.3(@babel/core@7.22.1)
       '@babel/plugin-proposal-private-methods': 7.18.6(@babel/core@7.22.1)
       '@babel/preset-typescript': 7.21.0(@babel/core@7.22.1)
-      '@stryker-mutator/api': 7.0.0
-      '@stryker-mutator/util': 7.0.0
+      '@stryker-mutator/api': 7.0.1
+      '@stryker-mutator/util': 7.0.1
       angular-html-parser: 4.0.1
       weapon-regex: 1.1.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@stryker-mutator/jest-runner@7.0.0(@stryker-mutator/core@7.0.0):
-    resolution: {integrity: sha512-z1nKOVCb/shFMV5OMpYER6p+H60wS/AWHPDkQuD3+Du0cYxGM3fUGplv3ZtOk0XWO17VweH3WzLHJiNNI4JatA==}
+  /@stryker-mutator/jest-runner@7.0.1(@stryker-mutator/core@7.0.1):
+    resolution: {integrity: sha512-Vnkxz6tExTeV7iSCGywbry7WtUdn8aWQaopYbnJYelAajJjG5/V92A14AUrTlI/GkSmLBXE+NUiyA9KZV4pt7w==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
-      '@stryker-mutator/core': ^6.4.0
+      '@stryker-mutator/core': ~7.0.0
     dependencies:
-      '@stryker-mutator/api': 7.0.0
-      '@stryker-mutator/core': 7.0.0
-      '@stryker-mutator/util': 7.0.0
+      '@stryker-mutator/api': 7.0.1
+      '@stryker-mutator/core': 7.0.1
+      '@stryker-mutator/util': 7.0.1
       semver: 7.5.0
-      tslib: 2.5.0
+      tslib: 2.5.2
     dev: true
 
-  /@stryker-mutator/typescript-checker@7.0.0(@stryker-mutator/core@7.0.0)(typescript@5.1.3):
-    resolution: {integrity: sha512-POlANxQeVJRXkj7RXqjxkjUj1hfGgQNpP2KsUGzTEWjvNhcZdHHQzjRR5dN+o377m78vxpd8aN1B5V7JVMl83A==}
+  /@stryker-mutator/typescript-checker@7.0.1(@stryker-mutator/core@7.0.1)(typescript@5.1.3):
+    resolution: {integrity: sha512-iUjxbGWWF8j3ThCfrgtECJFoy6hGiLRsb1UwQ3Dx0+K2yJYVfUxc8PM+NYoBoL7dY0qNktwPp48q8utiYAb/kQ==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
-      '@stryker-mutator/core': ^6.4.0
+      '@stryker-mutator/core': ~7.0.0
       typescript: '>=3.6'
     dependencies:
-      '@stryker-mutator/api': 7.0.0
-      '@stryker-mutator/core': 7.0.0
-      '@stryker-mutator/util': 7.0.0
+      '@stryker-mutator/api': 7.0.1
+      '@stryker-mutator/core': 7.0.1
+      '@stryker-mutator/util': 7.0.1
       semver: 7.5.0
       typescript: 5.1.3
     dev: true
 
-  /@stryker-mutator/util@7.0.0:
-    resolution: {integrity: sha512-jwsG9rVdFWuJynbQsXNI5+4GbNjjh/S1a5mHkbNbdLys9ePtifCLLGw62oT4AxVLwYjJ6GIHSUqfH74A+kI/qQ==}
+  /@stryker-mutator/util@7.0.1:
+    resolution: {integrity: sha512-N50WK7h99Hwes48IYmkHz9cTOae4nBInhOFGh+K87m2TgtE89vyJk2E7rsZSBEvnxBXBgFYCB/V0D3nb0Ozi9Q==}
     dependencies:
       lodash.flatmap: 4.5.0
     dev: true
@@ -3563,7 +3525,7 @@ packages:
     resolution: {integrity: sha512-Kijeg9Dag6CKtIDA7O21zNTACqD5MD/8HfIV8pdD94vFyFuer52SigdC3IQMhab3vACxXMiFk+yMHNdbqtyTGA==}
     engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
     dependencies:
-      '@babel/code-frame': 7.18.6
+      '@babel/code-frame': 7.21.4
       '@jest/types': 29.5.0
       '@types/stack-utils': 2.0.1
       chalk: 4.1.2
@@ -4557,12 +4519,6 @@ packages:
       queue-microtask: 1.2.3
     dev: true
 
-  /rxjs@7.8.0:
-    resolution: {integrity: sha512-F2+gxDshqmIub1KdvZkaEfGDwLNpPvk9Fs6LD/MyQxNgMds/WH9OdDDXOmxUZpME+iSK3rQCctkL0DYyytUqMg==}
-    dependencies:
-      tslib: 2.5.2
-    dev: true
-
   /rxjs@7.8.1:
     resolution: {integrity: sha512-AA3TVj+0A2iuIoQkWEK/tqFjBq2j+6PO6Y0zJcvzLAFhEFIO3HL0vls9hWLncZbAAbK0mar7oZ4V079I/qPMxg==}
     dependencies:
@@ -4895,10 +4851,6 @@ packages:
 
   /tslib@1.14.1:
     resolution: {integrity: sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==}
-    dev: true
-
-  /tslib@2.5.0:
-    resolution: {integrity: sha512-336iVw3rtn2BUK7ORdIAHTyxHGRIHVReokCR3XjbckJMK7ms8FysBfhLR8IXnAgy7T0PTPNBWKiH514FOW/WSg==}
     dev: true
 
   /tslib@2.5.2:
