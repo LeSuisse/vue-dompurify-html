@@ -1,18 +1,18 @@
 name: Publish Package to npmjs
 on:
-  release:
-    types: [created]
+    release:
+        types: [created]
 jobs:
-  build:
-    runs-on: ubuntu-22.04
-    permissions:
-      contents: read
-      id-token: write
-    steps:
-      - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
-      - uses: cachix/install-nix-action@6ed004b9ccb68dbc28e7c85bee15fa93dbd214ac # v22
-      - run: nix-shell --run "pnpm install --frozen-lockfile"
-      - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
-      - run: nix-shell --pure --run "pnpm publish --recursive --provenance --access public --no-git-checks"
+    build:
+        runs-on: ubuntu-22.04
+        permissions:
+            contents: read
+            id-token: write
+        steps:
+            - uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+            - uses: cachix/install-nix-action@6ed004b9ccb68dbc28e7c85bee15fa93dbd214ac # v22
+            - run: nix-shell --run "pnpm install --frozen-lockfile"
+            - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
+              env:
+                  NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
+            - run: nix-shell --pure --run "pnpm publish --recursive --provenance --access public --no-git-checks"

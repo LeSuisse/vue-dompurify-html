@@ -1,15 +1,12 @@
 {
-  "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "Node",
-    "isolatedModules": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "exactOptionalPropertyTypes": true,
-  },
-  "include": [
-    "src/",
-    "vite.config.ts"
-  ]
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "esnext",
+        "moduleResolution": "Node",
+        "isolatedModules": true,
+        "skipLibCheck": true,
+        "strict": true,
+        "exactOptionalPropertyTypes": true
+    },
+    "include": ["src/", "vite.config.ts"]
 }

@@ -1,65 +1,65 @@
 {
-  "name": "vue-dompurify-html",
-  "version": "4.1.4",
-  "description": "Safe replacement for the v-html directive",
-  "license": "MIT",
-  "author": "Thomas Gerbet",
-  "main": "./dist/vue-dompurify-html.umd.js",
-  "module": "./dist/vue-dompurify-html.mjs",
-  "types": "types/index.d.ts",
-  "files": [
-    "/dist",
-    "/types"
-  ],
-  "exports": {
-    ".": {
-      "import": "./dist/vue-dompurify-html.mjs",
-      "require": "./dist/vue-dompurify-html.umd.js",
-      "types": "./types/index.d.ts"
+    "name": "vue-dompurify-html",
+    "version": "4.1.4",
+    "description": "Safe replacement for the v-html directive",
+    "license": "MIT",
+    "author": "Thomas Gerbet",
+    "main": "./dist/vue-dompurify-html.umd.js",
+    "module": "./dist/vue-dompurify-html.mjs",
+    "types": "types/index.d.ts",
+    "files": [
+        "/dist",
+        "/types"
+    ],
+    "exports": {
+        ".": {
+            "import": "./dist/vue-dompurify-html.mjs",
+            "require": "./dist/vue-dompurify-html.umd.js",
+            "types": "./types/index.d.ts"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/LeSuisse/vue-dompurify-html.git",
+        "directory": "packages/vue-dompurify-html"
+    },
+    "bugs": {
+        "url": "https://github.com/LeSuisse/vue-dompurify-html/issues"
+    },
+    "homepage": "https://github.com/LeSuisse/vue-dompurify-html/tree/main/packages/vue-dompurify-html#readme",
+    "keywords": [
+        "vue",
+        "vue-directive",
+        "xss",
+        "dom-xss",
+        "dompurify",
+        "security",
+        "html"
+    ],
+    "scripts": {
+        "build": "tsc --declaration --emitDeclarationOnly && vite build",
+        "typecheck": "tsc --noEmit -p ./tsconfig.test.json",
+        "test": "vitest",
+        "test-mutation": "stryker run"
+    },
+    "dependencies": {
+        "dompurify": "^3.0.0",
+        "vue-demi": "^0.14.0"
+    },
+    "peerDependencies": {
+        "vue": "^2.7.0 || ^3.0.0"
+    },
+    "devDependencies": {
+        "@stryker-mutator/core": "7.1.0",
+        "@stryker-mutator/typescript-checker": "7.1.0",
+        "@stryker-mutator/vitest-runner": "7.1.0",
+        "@types/dompurify": "3.0.2",
+        "@vitest/coverage-c8": "0.32.4",
+        "@vue/test-utils": "2.3.2",
+        "jsdom": "22.1.0",
+        "typescript": "5.1.6",
+        "vite": "4.3.9",
+        "vitest": "0.32.4",
+        "vue": "3.3.4"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/LeSuisse/vue-dompurify-html.git",
-    "directory": "packages/vue-dompurify-html"
-  },
-  "bugs": {
-    "url": "https://github.com/LeSuisse/vue-dompurify-html/issues"
-  },
-  "homepage": "https://github.com/LeSuisse/vue-dompurify-html/tree/main/packages/vue-dompurify-html#readme",
-  "keywords": [
-    "vue",
-    "vue-directive",
-    "xss",
-    "dom-xss",
-    "dompurify",
-    "security",
-    "html"
-  ],
-  "scripts": {
-    "build": "tsc --declaration --emitDeclarationOnly && vite build",
-    "typecheck": "tsc --noEmit -p ./tsconfig.test.json",
-    "test": "vitest",
-    "test-mutation": "stryker run"
-  },
-  "dependencies": {
-    "dompurify": "^3.0.0",
-    "vue-demi": "^0.14.0"
-  },
-  "peerDependencies": {
-    "vue": "^2.7.0 || ^3.0.0"
-  },
-  "devDependencies": {
-    "@stryker-mutator/core": "7.1.0",
-    "@stryker-mutator/typescript-checker": "7.1.0",
-    "@stryker-mutator/vitest-runner": "7.1.0",
-    "@types/dompurify": "3.0.2",
-    "@vitest/coverage-c8": "0.32.4",
-    "@vue/test-utils": "2.3.2",
-    "jsdom": "22.1.0",
-    "typescript": "5.1.6",
-    "vite": "4.3.9",
-    "vitest": "0.32.4",
-    "vue": "3.3.4"
-  }
 }
