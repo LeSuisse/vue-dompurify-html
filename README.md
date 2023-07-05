@@ -6,6 +6,6 @@
 
 ## Packages
 
-| Package                                           | Version                                                                                                       |
-|---------------------------------------------------| :----------------------------------------------------------------------------------------------------------------------------------- |
-| [vue-dompurify-html](packages/vue-dompurify-html) | [![npm](https://img.shields.io/npm/v/vue-dompurify-html)](https://www.npmjs.com/package/vue-dompurify-html)                          |
+| Package                                           | Version                                                                                                     |
+| ------------------------------------------------- | :---------------------------------------------------------------------------------------------------------- |
+| [vue-dompurify-html](packages/vue-dompurify-html) | [![npm](https://img.shields.io/npm/v/vue-dompurify-html)](https://www.npmjs.com/package/vue-dompurify-html) |

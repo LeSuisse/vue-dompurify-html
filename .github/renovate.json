@@ -1,11 +1,7 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:js-lib"
-  ],
-  "prHourlyLimit": 0,
-  "automerge": false,
-  "ignorePaths": [
-    "**/node_modules/**"
-  ]
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "extends": ["config:js-lib"],
+    "prHourlyLimit": 0,
+    "automerge": false,
+    "ignorePaths": ["**/node_modules/**"]
 }

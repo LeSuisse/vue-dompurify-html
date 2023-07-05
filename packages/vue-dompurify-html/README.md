@@ -34,19 +34,20 @@ app.mount('#app');
 ```
 
 In your <abbr title="Single File Component">SFC</abbr>:
+
 ```vue
 <template>
     <div v-dompurify-html="rawHtml"></div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const rawHtml = ref('<span style="color: red">This should be red.</span>');
 </script>
 ```
 
-
 You can also define your [DOMPurify configurations](https://github.com/cure53/DOMPurify#can-i-configure-dompurify):
+
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
@@ -55,25 +56,26 @@ import VueDOMPurifyHTML from 'vue-dompurify-html';
 const app = createApp(App);
 app.use(VueDOMPurifyHTML, {
     namedConfigurations: {
-        'svg': {
-            USE_PROFILES: { svg: true }
+        svg: {
+            USE_PROFILES: { svg: true },
         },
-        'mathml': {
-            USE_PROFILES: { mathMl: true }
+        mathml: {
+            USE_PROFILES: { mathMl: true },
         },
-    }
+    },
 });
 app.mount('#app');
 ```
 
 Your configuration keys can then be used as an argument of the directive:
+
 ```vue
 <template>
     <div v-dompurify-html="rawHtml"></div>
     <div v-dompurify-html:svg="svgContent"></div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const rawHtml = ref('<span style="color: red">This should be red.</span>');
 const svgContent = ref('<svg><rect height="50"></rect></svg>');
@@ -81,6 +83,7 @@ const svgContent = ref('<svg><rect height="50"></rect></svg>');
 ```
 
 Alternatively, you can define a default [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-i-configure-dompurify):
+
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
@@ -89,25 +92,27 @@ import VueDOMPurifyHTML from 'vue-dompurify-html';
 const app = createApp(App);
 app.use(VueDOMPurifyHTML, {
     default: {
-        USE_PROFILES: { html: false }
-    }
+        USE_PROFILES: { html: false },
+    },
 });
 app.mount('#app');
 ```
 
 The `default` [DOMPurify configuration](https://github.com/cure53/DOMPurify#can-i-configure-dompurify) will be used:
+
 ```vue
 <template>
     <div v-dompurify-html="rawHtml"></div>
 </template>
 <script setup>
-import { ref } from "vue";
+import { ref } from 'vue';
 
 const rawHtml = ref('<span style="color: red">This should be red.</span>');
 </script>
 ```
 
 There is also the possibility to set-up [DOMPurify hooks](https://github.com/cure53/DOMPurify#hooks):
+
 ```js
 import { createApp } from 'vue';
 import App from './App.vue';
@@ -118,8 +123,8 @@ app.use(VueDOMPurifyHTML, {
     hooks: {
         uponSanitizeElement: (currentNode) => {
             // Do something with the node
-        }
-    }
+        },
+    },
 });
 app.mount('#app');
 ```
@@ -158,8 +163,8 @@ and then tell Nuxt to use it as **client-side plugin** in your Nuxt config:
 
 ```js
 export default {
-  plugins: [{ src: '~/plugins/dompurify', mode: 'client' }]
-}
+    plugins: [{ src: '~/plugins/dompurify', mode: 'client' }],
+};
 ```
 
 ### Server side or static site generation
@@ -189,15 +194,15 @@ export default {
                         () => {
                             const window = new JSDOM('').window;
                             return createDOMPurify(window);
-                        }
+                        },
                     ).inserted;
                     insertHook(el, dir);
                     el.data.domProps = { innerHTML: el.innerHTML };
-                }
-            }
-        }
-    }
-}
+                },
+            },
+        },
+    },
+};
 ```
 
 Note that if you are not using [`injectScripts: false`](https://nuxtjs.org/docs/configuration-glossary/configuration-render/#injectscripts)
