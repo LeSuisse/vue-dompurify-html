@@ -251,7 +251,7 @@ describe('VueDOMPurifyHTML Test Suite for Vue 2.7', (): void => {
             '<div>\n' +
                 '  <p id="purified-p">Test</p>\n' +
                 '  <p id="pure-p">Test</p>\n' +
-                '</div>'
+                '</div>',
         );
         wrapper.setProps({
             rawHtml: 'Test',
@@ -261,7 +261,7 @@ describe('VueDOMPurifyHTML Test Suite for Vue 2.7', (): void => {
         expect(purifiedElement.html()).toBe('<p id="purified-p">Test</p>');
         expect(purifiedElement.text()).toBe(pureHtmlElement.text());
         expect(wrapper.html()).toBe(
-            '<div>\n' + '  <!---->\n' + '  <!---->\n' + '</div>'
+            '<div>\n' + '  <!---->\n' + '  <!---->\n' + '</div>',
         );
     });
 

@@ -18,11 +18,11 @@ export const vueDompurifyHTMLPlugin: Plugin = {
     install(
         app: App,
         config: DirectiveConfig = {},
-        buildDOMPurifyInstance: DOMPurifyInstanceBuilder = defaultDOMPurifyInstanceBuilder
+        buildDOMPurifyInstance: DOMPurifyInstanceBuilder = defaultDOMPurifyInstanceBuilder,
     ): void {
         app.directive(
             'dompurify-html',
-            buildDirective(config, buildDOMPurifyInstance)
+            buildDirective(config, buildDOMPurifyInstance),
         );
     },
 };

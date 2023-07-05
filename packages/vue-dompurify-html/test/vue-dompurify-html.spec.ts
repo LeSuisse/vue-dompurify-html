@@ -327,7 +327,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         const purifiedElement = wrapper.find('#purified-p');
         const pureHtmlElement = wrapper.find('#pure-p');
         expect(purifiedElement.element.outerHTML).toBe(
-            '<p id="purified-p">Test</p>'
+            '<p id="purified-p">Test</p>',
         );
         expect(purifiedElement.text()).toBe(pureHtmlElement.text());
         expect(wrapper.html()).toBe(
@@ -336,18 +336,18 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
                 '\n' +
                 '  <p id="pure-p">Test</p>' +
                 '\n' +
-                '</div>'
+                '</div>',
         );
         await wrapper.setProps({
             rawHtml: 'Test',
             display: false,
         });
         expect(purifiedElement.element.outerHTML).toBe(
-            '<p id="purified-p">Test</p>'
+            '<p id="purified-p">Test</p>',
         );
         expect(purifiedElement.text()).toBe(pureHtmlElement.text());
         expect(wrapper.html()).toBe(
-            '<div>\n  <!--v-if-->\n  <!--v-if-->\n</div>'
+            '<div>\n  <!--v-if-->\n  <!--v-if-->\n</div>',
         );
     });
 
