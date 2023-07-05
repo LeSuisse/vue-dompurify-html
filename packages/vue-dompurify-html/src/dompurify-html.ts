@@ -60,14 +60,14 @@ export interface DirectiveConfig {
             | ((
                   currentNode: Element,
                   data: SanitizeElementHookEvent,
-                  config: MinimalDOMPurifyConfig
+                  config: MinimalDOMPurifyConfig,
               ) => void)
             | undefined;
         uponSanitizeAttribute?:
             | ((
                   currentNode: Element,
                   data: SanitizeAttributeHookEvent,
-                  config: MinimalDOMPurifyConfig
+                  config: MinimalDOMPurifyConfig,
               ) => void)
             | undefined;
     } & {
@@ -75,7 +75,7 @@ export interface DirectiveConfig {
             | ((
                   currentNode: Element,
                   data: HookEvent,
-                  config: MinimalDOMPurifyConfig
+                  config: MinimalDOMPurifyConfig,
               ) => void)
             | undefined;
     };
@@ -83,7 +83,7 @@ export interface DirectiveConfig {
 
 function setUpHooks(
     config: DirectiveConfig,
-    dompurifyInstance: MinimalDOMPurifyInstance
+    dompurifyInstance: MinimalDOMPurifyInstance,
 ): void {
     const hooks = config.hooks ?? {};
 
@@ -102,7 +102,7 @@ export function defaultDOMPurifyInstanceBuilder(): MinimalDOMPurifyInstance {
 
 export function buildDirective(
     config: DirectiveConfig = {},
-    buildDOMPurifyInstance: DOMPurifyInstanceBuilder = defaultDOMPurifyInstanceBuilder
+    buildDOMPurifyInstance: DOMPurifyInstanceBuilder = defaultDOMPurifyInstanceBuilder,
 ): ObjectDirective<HTMLElement> {
     const dompurifyInstance = buildDOMPurifyInstance();
 
@@ -110,7 +110,7 @@ export function buildDirective(
 
     const updateComponent: DirectiveHook = function (
         el: HTMLElement,
-        binding: DirectiveBinding<HTMLElement>
+        binding: DirectiveBinding<HTMLElement>,
     ): void {
         const current_value = binding.value;
         if (binding.oldValue === current_value) {
@@ -124,13 +124,13 @@ export function buildDirective(
         if (namedConfigurations && arg !== undefined) {
             el.innerHTML = dompurifyInstance.sanitize(
                 current_value_string,
-                namedConfigurations[arg] ?? defaultConfig
+                namedConfigurations[arg] ?? defaultConfig,
             );
             return;
         }
         el.innerHTML = dompurifyInstance.sanitize(
             current_value_string,
-            defaultConfig
+            defaultConfig,
         );
     };
 
