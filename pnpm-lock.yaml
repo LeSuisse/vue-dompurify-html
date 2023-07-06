@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -21,8 +21,8 @@ importers:
         specifier: 8.8.0
         version: 8.8.0(eslint@8.44.0)
       eslint-plugin-prettier:
-        specifier: 5.0.0-alpha.1
-        version: 5.0.0-alpha.1(eslint-config-prettier@8.8.0)(eslint@8.44.0)(prettier@3.0.0)
+        specifier: 5.0.0-alpha.2
+        version: 5.0.0-alpha.2(eslint-config-prettier@8.8.0)(eslint@8.44.0)(prettier@3.0.0)
       prettier:
         specifier: 3.0.0
         version: 3.0.0
@@ -2187,8 +2187,8 @@ packages:
       eslint: 8.44.0
     dev: true
 
-  /eslint-plugin-prettier@5.0.0-alpha.1(eslint-config-prettier@8.8.0)(eslint@8.44.0)(prettier@3.0.0):
-    resolution: {integrity: sha512-VB20LzLKsHC19yRtxyr73OFJexGaIm8dkODwtUB5qwFrqRhswr/J624dMxCSBe6Dyx3993dbm2jr+rwJ9yoPhA==}
+  /eslint-plugin-prettier@5.0.0-alpha.2(eslint-config-prettier@8.8.0)(eslint@8.44.0)(prettier@3.0.0):
+    resolution: {integrity: sha512-F6YBCbrRzvZwcINw3crm1+/uX/i+rJYaFErPtwCfUoPLywRfY7pwBtI3yMe5OpIotuaiws8cd29oM80ca6NQSQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
