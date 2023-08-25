@@ -24,7 +24,7 @@ export default defineConfig({
         environment: 'jsdom',
         watch: false,
         coverage: {
-            provider: 'c8',
+            provider: 'v8',
             enabled: true,
         },
     },
