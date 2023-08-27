@@ -1,4 +1,4 @@
-lockfileVersion: '6.1'
+lockfileVersion: '6.0'
 
 settings:
   autoInstallPeers: true
@@ -102,7 +102,7 @@ importers:
         specifier: 3.0.2
         version: 3.0.2
       '@vitest/coverage-v8':
-        specifier: ^0.34.3
+        specifier: 0.34.3
         version: 0.34.3(vitest@0.34.3)
       '@vue/test-utils':
         specifier: 2.3.2
@@ -841,7 +841,7 @@ packages:
     engines: {node: '>=6.0.0'}
     dependencies:
       '@jridgewell/set-array': 1.1.2
-      '@jridgewell/sourcemap-codec': 1.4.14
+      '@jridgewell/sourcemap-codec': 1.4.15
       '@jridgewell/trace-mapping': 0.3.17
     dev: true
 
