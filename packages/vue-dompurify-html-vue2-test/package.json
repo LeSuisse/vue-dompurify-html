@@ -5,7 +5,7 @@
         "test": "vue-demi-switch 2.7 && vitest run"
     },
     "devDependencies": {
-        "@types/dompurify": "3.0.2",
+        "@types/dompurify": "3.0.3",
         "@vue/test-utils": "1.3.6",
         "dompurify": "3.0.5",
         "typescript": "5.2.2",
