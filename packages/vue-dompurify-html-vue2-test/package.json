@@ -10,7 +10,7 @@
         "dompurify": "3.0.6",
         "typescript": "5.2.2",
         "vite": "4.4.9",
-        "vitest": "0.34.5",
+        "vitest": "0.34.6",
         "vue": "2.7.14",
         "vue-demi": "0.14.6",
         "vue-dompurify-html": "workspace:*",
