@@ -2,7 +2,7 @@
     "name": "vue-dompurify-html-example-vue3",
     "private": true,
     "dependencies": {
-        "vue": "3.3.4",
+        "vue": "3.3.5",
         "vue-dompurify-html": "workspace:*"
     },
     "devDependencies": {
