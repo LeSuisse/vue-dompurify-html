@@ -10,7 +10,7 @@
         "typescript": "5.2.2",
         "vite": "4.5.0",
         "vue-demi": "0.14.6",
-        "vue-tsc": "1.8.21"
+        "vue-tsc": "1.8.22"
     },
     "scripts": {
         "typecheck": "vue-tsc --noEmit",
