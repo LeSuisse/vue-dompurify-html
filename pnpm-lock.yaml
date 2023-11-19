@@ -43,8 +43,8 @@ importers:
         version: link:../../packages/vue-dompurify-html
     devDependencies:
       '@vitejs/plugin-vue2':
-        specifier: 2.2.0
-        version: 2.2.0(vite@5.0.0)(vue@2.7.14)
+        specifier: 2.3.1
+        version: 2.3.1(vite@5.0.0)(vue@2.7.14)
       typescript:
         specifier: 5.2.2
         version: 5.2.2
@@ -1239,11 +1239,11 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vitejs/plugin-vue2@2.2.0(vite@5.0.0)(vue@2.7.14):
-    resolution: {integrity: sha512-1km7zEuZ/9QRPvzXSjikbTYGQPG86Mq1baktpC4sXqsXlb02HQKfi+fl8qVS703JM7cgm24Ga9j+RwKmvFn90A==}
+  /@vitejs/plugin-vue2@2.3.1(vite@5.0.0)(vue@2.7.14):
+    resolution: {integrity: sha512-/ksaaz2SRLN11JQhLdEUhDzOn909WEk99q9t9w+N12GjQCljzv7GyvAbD/p20aBUjHkvpGOoQ+FCOkG+mjDF4A==}
     engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
-      vite: ^3.0.0 || ^4.0.0
+      vite: ^3.0.0 || ^4.0.0 || ^5.0.0
       vue: ^2.7.0-0
     dependencies:
       vite: 5.0.0(@types/node@18.0.3)
