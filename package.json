@@ -17,6 +17,6 @@
         "eslint-plugin-prettier": "5.0.1",
         "prettier": "3.1.0",
         "turbo": "1.10.16",
-        "typescript": "5.2.2"
+        "typescript": "5.3.2"
     }
 }
