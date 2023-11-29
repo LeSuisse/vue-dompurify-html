@@ -44,13 +44,13 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue2':
         specifier: 2.3.1
-        version: 2.3.1(vite@5.0.3)(vue@2.7.14)
+        version: 2.3.1(vite@5.0.4)(vue@2.7.14)
       typescript:
         specifier: 5.3.2
         version: 5.3.2
       vite:
-        specifier: 5.0.3
-        version: 5.0.3(@types/node@18.0.3)
+        specifier: 5.0.4
+        version: 5.0.4(@types/node@18.0.3)
       vue-demi:
         specifier: 0.14.6
         version: 0.14.6(vue@2.7.14)
@@ -69,13 +69,13 @@ importers:
     devDependencies:
       '@vitejs/plugin-vue':
         specifier: 4.5.0
-        version: 4.5.0(vite@5.0.3)(vue@3.3.6)
+        version: 4.5.0(vite@5.0.4)(vue@3.3.6)
       typescript:
         specifier: 5.3.2
         version: 5.3.2
       vite:
-        specifier: 5.0.3
-        version: 5.0.3(@types/node@18.0.3)
+        specifier: 5.0.4
+        version: 5.0.4(@types/node@18.0.3)
       vue-tsc:
         specifier: 1.8.24
         version: 1.8.24(typescript@5.3.2)
@@ -114,8 +114,8 @@ importers:
         specifier: 5.3.2
         version: 5.3.2
       vite:
-        specifier: 5.0.3
-        version: 5.0.3(@types/node@18.0.3)
+        specifier: 5.0.4
+        version: 5.0.4(@types/node@18.0.3)
       vitest:
         specifier: 0.34.6
         version: 0.34.6(jsdom@23.0.0)
@@ -138,8 +138,8 @@ importers:
         specifier: 5.3.2
         version: 5.3.2
       vite:
-        specifier: 5.0.3
-        version: 5.0.3(@types/node@18.0.3)
+        specifier: 5.0.4
+        version: 5.0.4(@types/node@18.0.3)
       vitest:
         specifier: 0.34.6
         version: 0.34.6(jsdom@23.0.0)
@@ -1234,25 +1234,25 @@ packages:
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
     dev: true
 
-  /@vitejs/plugin-vue2@2.3.1(vite@5.0.3)(vue@2.7.14):
+  /@vitejs/plugin-vue2@2.3.1(vite@5.0.4)(vue@2.7.14):
     resolution: {integrity: sha512-/ksaaz2SRLN11JQhLdEUhDzOn909WEk99q9t9w+N12GjQCljzv7GyvAbD/p20aBUjHkvpGOoQ+FCOkG+mjDF4A==}
     engines: {node: ^14.18.0 || >= 16.0.0}
     peerDependencies:
       vite: ^3.0.0 || ^4.0.0 || ^5.0.0
       vue: ^2.7.0-0
     dependencies:
-      vite: 5.0.3(@types/node@18.0.3)
+      vite: 5.0.4(@types/node@18.0.3)
       vue: 2.7.14
     dev: true
 
-  /@vitejs/plugin-vue@4.5.0(vite@5.0.3)(vue@3.3.6):
+  /@vitejs/plugin-vue@4.5.0(vite@5.0.4)(vue@3.3.6):
     resolution: {integrity: sha512-a2WSpP8X8HTEww/U00bU4mX1QpLINNuz/2KMNpLsdu3BzOpak3AGI1CJYBTXcc4SPhaD0eNRUp7IyQK405L5dQ==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       vite: ^4.0.0 || ^5.0.0
       vue: ^3.2.25
     dependencies:
-      vite: 5.0.3(@types/node@18.0.3)
+      vite: 5.0.4(@types/node@18.0.3)
       vue: 3.3.6(typescript@5.3.2)
     dev: true
 
@@ -3883,7 +3883,7 @@ packages:
       mlly: 1.4.0
       pathe: 1.1.1
       picocolors: 1.0.0
-      vite: 5.0.3(@types/node@18.0.3)
+      vite: 5.0.4(@types/node@18.0.3)
     transitivePeerDependencies:
       - '@types/node'
       - less
@@ -3895,8 +3895,8 @@ packages:
       - terser
     dev: true
 
-  /vite@5.0.3(@types/node@18.0.3):
-    resolution: {integrity: sha512-WgEq8WEKpZ8c0DL4M1+E+kBZEJyjBmGVrul6z8Ljfhv+PPbNF4aGq014DwNYxGz2FGq6NKL0N8usdiESWd2l2w==}
+  /vite@5.0.4(@types/node@18.0.3):
+    resolution: {integrity: sha512-RzAr8LSvM8lmhB4tQ5OPcBhpjOZRZjuxv9zO5UcxeoY2bd3kP3Ticd40Qma9/BqZ8JS96Ll/jeBX9u+LJZrhVg==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
     peerDependencies:
@@ -3984,7 +3984,7 @@ packages:
       strip-literal: 1.0.1
       tinybench: 2.5.0
       tinypool: 0.7.0
-      vite: 5.0.3(@types/node@18.0.3)
+      vite: 5.0.4(@types/node@18.0.3)
       vite-node: 0.34.6(@types/node@18.0.3)
       why-is-node-running: 2.2.2
     transitivePeerDependencies:
