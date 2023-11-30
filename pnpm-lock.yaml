@@ -90,14 +90,14 @@ importers:
         version: 0.14.0(vue@3.3.6)
     devDependencies:
       '@stryker-mutator/core':
-        specifier: 7.3.0
-        version: 7.3.0
+        specifier: 8.0.0
+        version: 8.0.0
       '@stryker-mutator/typescript-checker':
-        specifier: 7.3.0
-        version: 7.3.0(@stryker-mutator/core@7.3.0)(typescript@5.3.2)
+        specifier: 8.0.0
+        version: 8.0.0(@stryker-mutator/core@8.0.0)(typescript@5.3.2)
       '@stryker-mutator/vitest-runner':
-        specifier: 7.3.0
-        version: 7.3.0(@stryker-mutator/core@7.3.0)(vitest@0.34.6)
+        specifier: 8.0.0
+        version: 8.0.0(@stryker-mutator/core@8.0.0)(vitest@0.34.6)
       '@types/dompurify':
         specifier: 3.0.5
         version: 3.0.5
@@ -967,29 +967,29 @@ packages:
     resolution: {integrity: sha512-XJfwUVUKDHF5ugKwIcxEgc9k8b7HbznCp6eUfWgu710hMPNIO4aw4/zB5RogDQz8nd6gyCDpU9O/m6qYEWY6yQ==}
     dev: true
 
-  /@stryker-mutator/api@7.3.0:
-    resolution: {integrity: sha512-0tiQF0E38ypgg2fb2a4wbr2wpu4ugY7HwwsgrI9NttY1EojOS0BtaKHo1DIrj5SVMRXq0kaMgl5h2ohSuysvRA==}
-    engines: {node: '>=16.0.0'}
+  /@stryker-mutator/api@8.0.0:
+    resolution: {integrity: sha512-4R8yieczpgOrOBQYq1d1aRJLcgenltpMH9ugtIYPPVmENFUo+mWm9HmaahLe+TVHnJSb4OZ4lvI7dVIhoBaiSQ==}
+    engines: {node: '>=18.0.0'}
     dependencies:
-      mutation-testing-metrics: 2.0.3
-      mutation-testing-report-schema: 2.0.3
+      mutation-testing-metrics: 3.0.0
+      mutation-testing-report-schema: 3.0.0
       tslib: 2.6.2
       typed-inject: 4.0.0
     dev: true
 
-  /@stryker-mutator/core@7.3.0:
-    resolution: {integrity: sha512-O9m2jEnJXbKBlj27/ps9nGCpm0HtQC0YlNV/aenocmERnySnvqEM6bwxvQ4apK5bad8ZyGJyhDIyJrwoVGmfVQ==}
-    engines: {node: '>=16.0.0'}
+  /@stryker-mutator/core@8.0.0:
+    resolution: {integrity: sha512-dyPs60wtLS9vgghgL5a49k/7KOovOnavXzm5SIBBsBJuxoO+5rvGXRohZaqSoZdb0yWIvp+LFdu6qWcdlJPkoQ==}
+    engines: {node: '>=18.0.0'}
     hasBin: true
     dependencies:
-      '@stryker-mutator/api': 7.3.0
-      '@stryker-mutator/instrumenter': 7.3.0
-      '@stryker-mutator/util': 7.3.0
+      '@stryker-mutator/api': 8.0.0
+      '@stryker-mutator/instrumenter': 8.0.0
+      '@stryker-mutator/util': 8.0.0
       ajv: 8.12.0
       chalk: 5.3.0
       commander: 11.1.0
       diff-match-patch: 1.0.5
-      emoji-regex: 10.2.1
+      emoji-regex: 10.3.0
       execa: 8.0.1
       file-url: 4.0.0
       get-port: 7.0.0
@@ -998,9 +998,9 @@ packages:
       lodash.groupby: 4.6.0
       log4js: 6.9.1
       minimatch: 9.0.3
-      mutation-testing-elements: 2.0.3
-      mutation-testing-metrics: 2.0.3
-      mutation-testing-report-schema: 2.0.3
+      mutation-testing-elements: 3.0.1
+      mutation-testing-metrics: 3.0.0
+      mutation-testing-report-schema: 3.0.0
       npm-run-path: 5.1.0
       progress: 2.0.3
       rxjs: 7.8.1
@@ -1014,51 +1014,52 @@ packages:
       - supports-color
     dev: true
 
-  /@stryker-mutator/instrumenter@7.3.0:
-    resolution: {integrity: sha512-RdfQF08GclNdKldG3rH9YztapPhfTYsc90p8Tev+b6yZJSpk1j8mKZRMjxk/mylDtXFZZ2IVhI9txAt2YYT+OQ==}
-    engines: {node: '>=16.0.0'}
+  /@stryker-mutator/instrumenter@8.0.0:
+    resolution: {integrity: sha512-kS3BdpqDuJeRBDBw2eP68rhUrgtlT5EGERNOwCwUGpfTtUan7y2zX9ZGEblOtMI5yTtyBArFZMtwhPGi+waJ/Q==}
+    engines: {node: '>=18.0.0'}
     dependencies:
       '@babel/core': 7.23.0
       '@babel/generator': 7.23.0
       '@babel/parser': 7.23.0
       '@babel/plugin-proposal-decorators': 7.23.0(@babel/core@7.23.0)
       '@babel/preset-typescript': 7.23.0(@babel/core@7.23.0)
-      '@stryker-mutator/api': 7.3.0
-      '@stryker-mutator/util': 7.3.0
-      angular-html-parser: 4.0.1
+      '@stryker-mutator/api': 8.0.0
+      '@stryker-mutator/util': 8.0.0
+      angular-html-parser: 5.0.2
+      semver: 7.5.4
       weapon-regex: 1.1.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@stryker-mutator/typescript-checker@7.3.0(@stryker-mutator/core@7.3.0)(typescript@5.3.2):
-    resolution: {integrity: sha512-WNYeDRJNeyA6r6eSQLO9HPd0t88QD77Nv422EGzInGT9DIgpRffH46JijFsdcLZtzAq1OACFZZ25bgdHTEjCrQ==}
-    engines: {node: '>=16.0.0'}
+  /@stryker-mutator/typescript-checker@8.0.0(@stryker-mutator/core@8.0.0)(typescript@5.3.2):
+    resolution: {integrity: sha512-8E6yci2yxsEYHy54xOpWSdBrLs2KDt/xl3tvxJc4hAwwIHY/Zni+scJ8kflpEZAashOB8W5Hn8f4aqF1TQ4ZKw==}
+    engines: {node: '>=18.0.0'}
     peerDependencies:
-      '@stryker-mutator/core': ~7.3.0
+      '@stryker-mutator/core': ~8.0.0
       typescript: '>=3.6'
     dependencies:
-      '@stryker-mutator/api': 7.3.0
-      '@stryker-mutator/core': 7.3.0
-      '@stryker-mutator/util': 7.3.0
+      '@stryker-mutator/api': 8.0.0
+      '@stryker-mutator/core': 8.0.0
+      '@stryker-mutator/util': 8.0.0
       semver: 7.5.4
       typescript: 5.3.2
     dev: true
 
-  /@stryker-mutator/util@7.3.0:
-    resolution: {integrity: sha512-bdFvuw7F3LC05dOFqgGjuipLt8ng5uXyjjdKeqqeTowm1wAyeDt0GTQKBuiINSAtcZxN75wTXq4DsCZXb/LMjw==}
+  /@stryker-mutator/util@8.0.0:
+    resolution: {integrity: sha512-geb2JvbYXDs6vOjGV9514PK+L6NiYFQIYhkpKvzfZQWYijNYnLhxXKz/X264a9StTYbGb/ZBADOkzsVde/5zig==}
     dev: true
 
-  /@stryker-mutator/vitest-runner@7.3.0(@stryker-mutator/core@7.3.0)(vitest@0.34.6):
-    resolution: {integrity: sha512-CrG9n0G+iseFOKdHdNhrDhMR8FfVU+72pbSaVAkug7MlVamvnqmjTLZwbus8Mv4VkPid6KU6MmP8kniUfcIhVQ==}
+  /@stryker-mutator/vitest-runner@8.0.0(@stryker-mutator/core@8.0.0)(vitest@0.34.6):
+    resolution: {integrity: sha512-KTbxYRl3HLbcEcFoFvs3FHExJgS99EDmThzaYQ/OXAxFa9bfnzzDiO2gE+Ss+aU+2VlTANkgQxxR2bvmaMEM/w==}
     engines: {node: '>=14.18.0'}
     peerDependencies:
-      '@stryker-mutator/core': ~7.3.0
+      '@stryker-mutator/core': ~8.0.0
       vitest: '>=0.31.2'
     dependencies:
-      '@stryker-mutator/api': 7.3.0
-      '@stryker-mutator/core': 7.3.0
-      '@stryker-mutator/util': 7.3.0
+      '@stryker-mutator/api': 8.0.0
+      '@stryker-mutator/core': 8.0.0
+      '@stryker-mutator/util': 8.0.0
       tslib: 2.6.2
       vitest: 0.34.6(jsdom@23.0.1)
     dev: true
@@ -1509,8 +1510,8 @@ packages:
       uri-js: 4.4.1
     dev: true
 
-  /angular-html-parser@4.0.1:
-    resolution: {integrity: sha512-x9SLf2jNNh3nG+haVIwKX/GVW8PcvSRmkeT9WqTDYSAVuwT9IzwEyVm09FCZpOo/dtFRxE9vaNXqcAf/MIxphg==}
+  /angular-html-parser@5.0.2:
+    resolution: {integrity: sha512-fov2PwgZDgDsvZXPRa0+lbJyakOZOlFb5eiACR2i6RSn9ad5A+84/SwVfj/dUCbUAHH1ta2uvaoAKEijG93Sfg==}
     engines: {node: '>= 14'}
     dependencies:
       tslib: 2.6.2
@@ -1959,8 +1960,8 @@ packages:
     resolution: {integrity: sha512-W1+g9qs9hviII0HAwOdehGYkr+zt7KKdmCcJcjH0mYg6oL8+ioT3Skjmt7BLoAQqXhjf40AXd+HlR4oAWMlXjA==}
     dev: true
 
-  /emoji-regex@10.2.1:
-    resolution: {integrity: sha512-97g6QgOk8zlDRdgq1WxwgTMgEWGVAQvB5Fdpgc1MkNy56la5SKP9GsMXKDOdqwn90/41a8yPwIGk1Y6WVbeMQA==}
+  /emoji-regex@10.3.0:
+    resolution: {integrity: sha512-QpLs9D9v9kArv4lfDEgg1X/gN5XLnf/A6l9cs8SPZLRZR3ZkY9+kwIQTxm+fsSej5UMYGE8fdoaZVIBlqG0XTw==}
     dev: true
 
   /emoji-regex@8.0.0:
@@ -3019,18 +3020,18 @@ packages:
     resolution: {integrity: sha512-ckmWDJjphvd/FvZawgygcUeQCxzvohjFO5RxTjj4eq8kw359gFF3E1brjfI+viLMxss5JrHTDRHZvu2/tuy0Qg==}
     dev: true
 
-  /mutation-testing-elements@2.0.3:
-    resolution: {integrity: sha512-V00F5dVriVZTPoDcflX2Lp+/cA1LrkX9RwPntrrAEmM8OLEUG+jSZIJeYImTGK/opW5yD+q9ugykVjHbw2KQTg==}
+  /mutation-testing-elements@3.0.1:
+    resolution: {integrity: sha512-hsBKkabjD2sjyR2vhdEFPDxZfYLw71geIWjEh4rcZSSQAtyWRfjGf6UbdMjleuyw1ZZTgGt6CImtwRY7s3lrVg==}
     dev: true
 
-  /mutation-testing-metrics@2.0.3:
-    resolution: {integrity: sha512-pvrrE8Qf5xuimkm+TYUwX3g6Op6K4jE2/tD4NX8UZdTzuT/NHwAJw/YUXI7UJSA9M9Jpz9+VCjB31YnAX6wm7Q==}
+  /mutation-testing-metrics@3.0.0:
+    resolution: {integrity: sha512-WslGuCdpqT+6SpeIahMhLrJl5+YbutlOCFKxuULIkAkaHfsWBK8UCq6euE7PiDEx+R1pYZo//kqRbFIOFmdQug==}
     dependencies:
-      mutation-testing-report-schema: 2.0.3
+      mutation-testing-report-schema: 3.0.0
     dev: true
 
-  /mutation-testing-report-schema@2.0.3:
-    resolution: {integrity: sha512-+x6ssyq4xVkUyHbbbbiU1pCla7QHO/VRaxfHsOb4JGCw+56EtCJ4w4wQuQ24J5DYTRCAZ5y2oBk7DwP8UXWbwg==}
+  /mutation-testing-report-schema@3.0.0:
+    resolution: {integrity: sha512-70+ZPYoyedruSGiEcXQnFiTtIusBYlsL/2EMwfR+/HOqBGxBpmI798spqc86ZVYXPVCL5mt2rWjE1dTQwcjpmQ==}
     dev: true
 
   /mute-stream@1.0.0:
