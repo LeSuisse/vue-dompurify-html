@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig, configDefaults } from 'vitest/config';
 
 export default defineConfig({
     build: {
@@ -22,6 +22,7 @@ export default defineConfig({
         coverage: {
             provider: 'v8',
             enabled: true,
+            exclude: [...configDefaults.coverage.exclude, './stryker.conf.js'],
         },
     },
 });
