@@ -6,8 +6,8 @@
         "build": "turbo run build",
         "test": "turbo run test",
         "test-mutation": "turbo run test-mutation",
-        "lint": "eslint '**/*.ts' && prettier --check '**/*.md' '**.json' './.github/'",
-        "lint-fix": "eslint '**/*.ts' --fix && prettier --write '**/*.md' '**/*.json' './.github/'"
+        "lint": "eslint '**/*.ts' '**/*.mts' && prettier --check '**/*.md' '**.json' './.github/'",
+        "lint-fix": "eslint '**/*.ts' '**/*.mts' --fix && prettier --write '**/*.md' '**/*.json' './.github/'"
     },
     "devDependencies": {
         "@typescript-eslint/eslint-plugin": "6.14.0",
