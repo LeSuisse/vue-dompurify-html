@@ -22,7 +22,7 @@ export default defineConfig({
         coverage: {
             provider: 'v8',
             enabled: true,
-            exclude: [...configDefaults.coverage.exclude, './stryker.conf.js'],
+            exclude: [...configDefaults.coverage.exclude, 'stryker.conf.js'],
         },
     },
 });
