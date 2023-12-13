@@ -1,57 +1,50 @@
 import l from "dompurify";
-import { isVue3 as m } from "vue-demi";
-function p(o, i) {
-  const n = o.hooks ?? {};
-  let t;
-  for (t in n) {
-    const e = n[t];
-    e !== void 0 && i.addHook(t, e);
+function m(t, e) {
+  const o = t.hooks ?? {};
+  let n;
+  for (n in o) {
+    const u = o[n];
+    u !== void 0 && e.addHook(n, u);
   }
 }
 function c() {
   return l();
 }
-function v(o = {}, i = c) {
-  const n = i();
-  p(o, n);
-  const t = function(e, r) {
-    const u = r.value;
-    if (r.oldValue === u)
+function p(t = {}, e = c) {
+  const o = e();
+  m(t, o);
+  const n = function(u, i) {
+    const r = i.value;
+    if (i.oldValue === r)
       return;
-    const a = `${u}`, s = r.arg, d = o.namedConfigurations, f = o.default ?? {};
+    const a = `${r}`, s = i.arg, d = t.namedConfigurations, f = t.default ?? {};
     if (d && s !== void 0) {
-      e.innerHTML = n.sanitize(
+      u.innerHTML = o.sanitize(
         a,
         d[s] ?? f
       );
       return;
     }
-    e.innerHTML = n.sanitize(
+    u.innerHTML = o.sanitize(
       a,
       f
     );
   };
-  return m ? {
-    mounted: t,
-    updated: t
-  } : {
-    inserted: t,
-    update: t,
-    unbind: (e) => {
-      e.innerHTML = "";
-    }
+  return {
+    mounted: n,
+    updated: n
   };
 }
-const y = {
-  install(o, i = {}, n = c) {
-    o.directive(
+const k = {
+  install(t, e = {}, o = c) {
+    t.directive(
       "dompurify-html",
-      v(i, n)
+      p(e, o)
     );
   }
 };
 export {
-  v as buildVueDompurifyHTMLDirective,
-  y as default,
-  y as vueDompurifyHTMLPlugin
+  p as buildVueDompurifyHTMLDirective,
+  k as default,
+  k as vueDompurifyHTMLPlugin
 };

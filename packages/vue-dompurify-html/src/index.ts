@@ -1,4 +1,4 @@
-import type { App, Plugin } from 'vue-demi';
+import type { App, Plugin } from 'vue';
 import type {
     DirectiveConfig,
     MinimalDOMPurifyConfig,
