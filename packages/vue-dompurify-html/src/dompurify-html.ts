@@ -1,8 +1,4 @@
-import type {
-    DirectiveHook,
-    ObjectDirective,
-    DirectiveBinding,
-} from 'vue-demi';
+import type { DirectiveHook, ObjectDirective, DirectiveBinding } from 'vue';
 import dompurify from 'dompurify';
 import type {
     DOMPurifyI,
@@ -11,7 +7,6 @@ import type {
     SanitizeAttributeHookEvent,
     SanitizeElementHookEvent,
 } from 'dompurify';
-import { isVue3 } from 'vue-demi';
 
 type MinimalDOMPurifyInstance = Pick<DOMPurifyI, 'sanitize' | 'addHook'>;
 export type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
@@ -134,20 +129,8 @@ export function buildDirective(
         );
     };
 
-    // Stryker disable next-line ConditionalExpression
-    if (isVue3) {
-        return {
-            mounted: updateComponent,
-            updated: updateComponent,
-        };
-        /* c8 ignore next 10 */
-    }
-
     return {
-        inserted: updateComponent,
-        update: updateComponent,
-        unbind: (el: HTMLElement): void => {
-            el.innerHTML = '';
-        },
-    } as ObjectDirective;
+        mounted: updateComponent,
+        updated: updateComponent,
+    };
 }

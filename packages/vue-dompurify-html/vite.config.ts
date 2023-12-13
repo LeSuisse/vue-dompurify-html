@@ -7,18 +7,14 @@ export default defineConfig({
             name: 'VueDOMPurifyHTML',
         },
         rollupOptions: {
-            external: ['dompurify', 'vue-demi'],
+            external: ['dompurify'],
             output: {
                 globals: {
                     dompurify: 'DOMPurify',
-                    'vue-demi': 'VueDemi',
                 },
                 exports: 'named',
             },
         },
-    },
-    optimizeDeps: {
-        exclude: ['vue-demi'],
     },
     test: {
         environment: 'jsdom',

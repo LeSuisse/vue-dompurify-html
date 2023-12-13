@@ -18,10 +18,11 @@ to understand what are the limitations and possibilities.
 npm install vue-dompurify-html
 ```
 
+The current version is only compatible with Vue 3. If you need Vue 2 support use a 4.1.x version.
+
 ## Usage
 
-The code snippets default to Vue 3, you can see setup examples in both Vue 2 and Vue 3 in the [examples/](../../examples)
-folder.
+You can see setup examples in the [examples/](../../examples) folder.
 
 ```js
 import { createApp } from 'vue';
@@ -143,67 +144,3 @@ const vdompurifyHtml = buildVueDompurifyHTMLDirective(<config...>);
 const rawHtml = '<span style="color: red">Hello!</span>';
 </script>
 ```
-
-## Usage with [Nuxt 2](https://nuxtjs.org/)
-
-### Client side
-
-The usage is similar than when directly using Vue.
-
-Define a new Nuxt plugin to import and setup the directive to your liking:
-
-```js
-import Vue from 'vue';
-import VueDOMPurifyHTML from 'vue-dompurify-html';
-
-Vue.use(VueDOMPurifyHTML);
-```
-
-and then tell Nuxt to use it as **client-side plugin** in your Nuxt config:
-
-```js
-export default {
-    plugins: [{ src: '~/plugins/dompurify', mode: 'client' }],
-};
-```
-
-### Server side or static site generation
-
-The usage is similar than when directly using Vue but you need to setup DOMPurify to work with Node. This is also required in case you are using Nuxt's [full static mode](https://nuxtjs.org/announcements/going-full-static/).
-
-Install this package, DOMPurify and [JSDOM](https://github.com/jsdom/jsdom):
-
-```
-npm install vue-dompurify-html dompurify jsdom
-```
-
-In your Nuxt config you will need to setup a "server-side" directive:
-
-```js
-import { buildVueDompurifyHTMLDirective } from 'vue-dompurify-html';
-import { JSDOM } from 'jsdom';
-import createDOMPurify from 'dompurify';
-
-export default {
-    render: {
-        bundleRenderer: {
-            directives: {
-                'dompurify-html': (el, dir) => {
-                    const insertHook = buildVueDompurifyHTMLDirective(
-                        {},
-                        () => {
-                            const window = new JSDOM('').window;
-                            return createDOMPurify(window);
-                        },
-                    ).inserted;
-                    insertHook(el, dir);
-                    el.data.domProps = { innerHTML: el.innerHTML };
-                },
-            },
-        },
-    },
-};
-```
-
-Note that if you are not using [`injectScripts: false`](https://nuxtjs.org/docs/configuration-glossary/configuration-render/#injectscripts)
-in your Nuxt config you will also need to register a client-side plugin as described just before.
