@@ -15,4 +15,4 @@ jobs:
             - run: echo "//registry.npmjs.org/:_authToken=${NODE_AUTH_TOKEN}" > .npmrc
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
-            - run: nix-shell --pure --run "pnpm publish --recursive --provenance --access public --no-git-checks"
+            - run: nix-shell --run "pnpm publish --recursive --provenance --access public --no-git-checks"
