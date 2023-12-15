@@ -1,6 +1,6 @@
 {
     "name": "vue-dompurify-html",
-    "version": "5.0.0",
+    "version": "5.0.1",
     "description": "Safe replacement for the v-html directive",
     "license": "MIT",
     "author": "Thomas Gerbet",
