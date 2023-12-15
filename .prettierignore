@@ -1,2 +1,4 @@
 dist/
 types/
+.nuxt/
+.output/
