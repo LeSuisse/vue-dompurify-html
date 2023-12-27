@@ -58,8 +58,8 @@ importers:
         version: link:../../packages/vue-dompurify-html
     devDependencies:
       '@vitejs/plugin-vue':
-        specifier: 4.5.2
-        version: 4.5.2(vite@5.0.10)(vue@3.3.13)
+        specifier: 5.0.0
+        version: 5.0.0(vite@5.0.10)(vue@3.3.13)
       typescript:
         specifier: 5.3.3
         version: 5.3.3
@@ -2418,17 +2418,6 @@ packages:
       vue: 3.3.13(typescript@5.3.3)
     transitivePeerDependencies:
       - supports-color
-    dev: true
-
-  /@vitejs/plugin-vue@4.5.2(vite@5.0.10)(vue@3.3.13):
-    resolution: {integrity: sha512-UGR3DlzLi/SaVBPX0cnSyE37vqxU3O6chn8l0HJNzQzDia6/Au2A4xKv+iIJW8w2daf80G7TYHhi1pAUjdZ0bQ==}
-    engines: {node: ^14.18.0 || >=16.0.0}
-    peerDependencies:
-      vite: ^4.0.0 || ^5.0.0
-      vue: ^3.2.25
-    dependencies:
-      vite: 5.0.10
-      vue: 3.3.13(typescript@5.3.3)
     dev: true
 
   /@vitejs/plugin-vue@5.0.0(vite@5.0.10)(vue@3.3.13):
