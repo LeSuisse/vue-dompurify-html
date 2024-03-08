@@ -14,7 +14,7 @@ jobs:
         runs-on: ubuntu-22.04
         steps:
             - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-            - uses: cachix/install-nix-action@6004951b182f8860210c8d6f0d808ec5b1a33d28 # v25
+            - uses: cachix/install-nix-action@8887e596b4ee1134dae06b98d573bd674693f47c # v26
             - run: nix-shell --pure --run "pnpm install --frozen-lockfile"
             - name: Typecheck
               run: nix-shell --pure --run "pnpm run typecheck"
