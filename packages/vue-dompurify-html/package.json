@@ -53,12 +53,12 @@
         "@stryker-mutator/typescript-checker": "8.2.6",
         "@stryker-mutator/vitest-runner": "8.2.6",
         "@types/dompurify": "3.0.5",
-        "@vitest/coverage-v8": "1.5.3",
+        "@vitest/coverage-v8": "1.6.0",
         "@vue/test-utils": "2.4.5",
         "jsdom": "24.0.0",
         "typescript": "5.4.5",
         "vite": "5.2.11",
-        "vitest": "1.5.3",
+        "vitest": "1.6.0",
         "vue": "3.4.26"
     }
 }
