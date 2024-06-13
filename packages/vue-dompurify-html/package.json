@@ -7,9 +7,11 @@
     "main": "./dist/vue-dompurify-html.umd.js",
     "module": "./dist/vue-dompurify-html.mjs",
     "types": "types/index.d.ts",
+    "web-types": "./web-types.json",
     "files": [
         "/dist",
-        "/types"
+        "/types",
+        "web-types.json"
     ],
     "exports": {
         ".": {
