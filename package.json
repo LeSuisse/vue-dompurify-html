@@ -19,6 +19,6 @@
         "prettier": "3.3.2",
         "turbo": "2.0.6",
         "typescript": "5.5.3",
-        "typescript-eslint": "7.14.1"
+        "typescript-eslint": "7.16.0"
     }
 }
