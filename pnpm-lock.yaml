@@ -87,19 +87,19 @@ importers:
         version: 8.2.6(@stryker-mutator/core@8.2.6)(typescript@5.5.3)
       '@stryker-mutator/vitest-runner':
         specifier: 8.2.6
-        version: 8.2.6(@stryker-mutator/core@8.2.6)(vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.0)(terser@5.26.0))
+        version: 8.2.6(@stryker-mutator/core@8.2.6)(vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.1)(terser@5.26.0))
       '@types/dompurify':
         specifier: 3.0.5
         version: 3.0.5
       '@vitest/coverage-v8':
         specifier: 2.0.3
-        version: 2.0.3(vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.0)(terser@5.26.0))
+        version: 2.0.3(vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.1)(terser@5.26.0))
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
       jsdom:
-        specifier: 24.1.0
-        version: 24.1.0
+        specifier: 24.1.1
+        version: 24.1.1
       typescript:
         specifier: 5.5.3
         version: 5.5.3
@@ -108,7 +108,7 @@ importers:
         version: 5.3.4(@types/node@20.10.4)(terser@5.26.0)
       vitest:
         specifier: 2.0.3
-        version: 2.0.3(@types/node@20.10.4)(jsdom@24.1.0)(terser@5.26.0)
+        version: 2.0.3(@types/node@20.10.4)(jsdom@24.1.1)(terser@5.26.0)
       vue:
         specifier: 3.4.33
         version: 3.4.33(typescript@5.5.3)
@@ -2670,8 +2670,8 @@ packages:
     resolution: {integrity: sha512-dFcAjpTQFgoLMzC2VwU+C/CbS7uRL0lWmxDITmqm7C+7F0Odmj6s9l6alZc6AELXhrnggM2CeWSXHGOdX2YtwA==}
     engines: {node: '>= 6'}
 
-  https-proxy-agent@7.0.4:
-    resolution: {integrity: sha512-wlwpilI7YdjSkWaQ/7omYBMTliDcmCN8OLihO6I9B86g06lMyAoqgoDpV0XqoaPOKj+0DIdAvnsWfyAAhmimcg==}
+  https-proxy-agent@7.0.5:
+    resolution: {integrity: sha512-1e4Wqeblerz+tMKPIq2EMGiiWW1dIjZOksyHWSUm1rmuvw/how9hBHZ38lAGj5ID4Ik6EdkOw7NmWPy6LAwalw==}
     engines: {node: '>= 14'}
 
   httpxy@0.1.5:
@@ -2886,8 +2886,8 @@ packages:
     resolution: {integrity: sha512-wpxZs9NoxZaJESJGIZTyDEaYpl0FKSA+FB9aJiyemKhMwkxQg63h4T1KJgUGHpTqPDNRcmmYLugrRjJlBtWvRA==}
     hasBin: true
 
-  jsdom@24.1.0:
-    resolution: {integrity: sha512-6gpM7pRXCwIOKxX47cgOyvyQDN/Eh0f1MeKySBV2xGdKtqJBLj8P25eY3EVCWo2mglDDzozR2r2MW4T+JiNUZA==}
+  jsdom@24.1.1:
+    resolution: {integrity: sha512-5O1wWV99Jhq4DV7rCLIoZ/UIhyQeDR7wHVyZAHAshbrvZsLs+Xzz7gtwnlJTJDjleiTKh54F4dXrX70vJQTyJQ==}
     engines: {node: '>=18'}
     peerDependencies:
       canvas: ^2.11.2
@@ -3268,8 +3268,8 @@ packages:
       '@types/node':
         optional: true
 
-  nwsapi@2.2.10:
-    resolution: {integrity: sha512-QK0sRs7MKv0tKe1+5uZIQk/C8XGza4DAnztJG8iD+TpJIORARrCxczA738awHrZoHeTjSSoHqao2teO0dC/gFQ==}
+  nwsapi@2.2.12:
+    resolution: {integrity: sha512-qXDmcVlZV4XRtKFzddidpfVP4oMSGhga+xdMc25mv8kaLUHtgzCDhUxkrN8exkGdTlLNaXj7CV3GtON7zuGZ+w==}
 
   nypm@0.3.9:
     resolution: {integrity: sha512-BI2SdqqTHg2d4wJh8P9A1W+bslg33vOE9IZDY6eR2QC+Pu1iNBVZUqczrd43rJb+fMzHU7ltAYKsEFY/kHMFcw==}
@@ -3762,8 +3762,8 @@ packages:
   rrweb-cssom@0.6.0:
     resolution: {integrity: sha512-APM0Gt1KoXBz0iIkkdB/kfvGOwC4UuJFeG/c+yV7wSc7q96cG/kJ0HiYCnzivD9SB53cLV1MlHFNfOuPaadYSw==}
 
-  rrweb-cssom@0.7.0:
-    resolution: {integrity: sha512-KlSv0pm9kgQSRxXEMgtivPJ4h826YHsuob8pSHcfSZsSXGtvpEAie8S0AnXuObEJ7nhikOb4ahwxDm0H2yW17g==}
+  rrweb-cssom@0.7.1:
+    resolution: {integrity: sha512-TrEMa7JGdVm0UThDJSx7ddw5nVm3UJS9o9CCIZ72B1vSyEZoziDqBYP3XIoi/12lKrJR8rE3jeFHMok2F/Mnsg==}
 
   run-applescript@7.0.0:
     resolution: {integrity: sha512-9by4Ij99JUr/MCFBUkDKLWK3G9HVXmabKz9U5MlIAIuvuzkiOicRYs8XJLxX+xahD+mLiiCYDqF9dKAgtzKP1A==}
@@ -4550,8 +4550,8 @@ packages:
   wrappy@1.0.2:
     resolution: {integrity: sha512-l4Sp/DRseor9wL6EvV2+TuQn63dMkPjZ/sp9XkghTEbV9KlPS1xUsZ3u7/IQO4wxtcFB4bgpQPRcR3QCvezPcQ==}
 
-  ws@8.17.0:
-    resolution: {integrity: sha512-uJq6108EgZMAl20KagGkzCKfMEjxmKvZHG7Tlq0Z6nOky7YF7aq4mOx6xK8TJ/i1LeK4Qus7INktacctDgY8Ow==}
+  ws@8.17.1:
+    resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -4562,8 +4562,8 @@ packages:
       utf-8-validate:
         optional: true
 
-  ws@8.17.1:
-    resolution: {integrity: sha512-6XQFvXTkbfUOZOKKILFG1PDK2NDQs4azKQl26T0YS5CxqWLgXajbPZ+h4gZekJyRqFU8pvnbAbbs/3TgRPy+GQ==}
+  ws@8.18.0:
+    resolution: {integrity: sha512-8VbfWfHLbbwu3+N6OKsOMpBdT4kXPDDB9cJk2bJ6mh9ucxdlnNvH1e+roYkKmN9Nxw2yjz7VzeO9oOz2zJ04Pw==}
     engines: {node: '>=10.0.0'}
     peerDependencies:
       bufferutil: ^4.0.1
@@ -6020,13 +6020,13 @@ snapshots:
 
   '@stryker-mutator/util@8.2.6': {}
 
-  '@stryker-mutator/vitest-runner@8.2.6(@stryker-mutator/core@8.2.6)(vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.0)(terser@5.26.0))':
+  '@stryker-mutator/vitest-runner@8.2.6(@stryker-mutator/core@8.2.6)(vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.1)(terser@5.26.0))':
     dependencies:
       '@stryker-mutator/api': 8.2.6
       '@stryker-mutator/core': 8.2.6
       '@stryker-mutator/util': 8.2.6
       tslib: 2.6.2
-      vitest: 2.0.3(@types/node@20.10.4)(jsdom@24.1.0)(terser@5.26.0)
+      vitest: 2.0.3(@types/node@20.10.4)(jsdom@24.1.1)(terser@5.26.0)
 
   '@trysound/sax@0.2.0': {}
 
@@ -6202,7 +6202,7 @@ snapshots:
       vite: 5.3.4(@types/node@20.10.4)(terser@5.26.0)
       vue: 3.4.33(typescript@5.5.3)
 
-  '@vitest/coverage-v8@2.0.3(vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.0)(terser@5.26.0))':
+  '@vitest/coverage-v8@2.0.3(vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.1)(terser@5.26.0))':
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@bcoe/v8-coverage': 0.2.3
@@ -6217,7 +6217,7 @@ snapshots:
       strip-literal: 2.1.0
       test-exclude: 7.0.1
       tinyrainbow: 1.2.0
-      vitest: 2.0.3(@types/node@20.10.4)(jsdom@24.1.0)(terser@5.26.0)
+      vitest: 2.0.3(@types/node@20.10.4)(jsdom@24.1.1)(terser@5.26.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -7593,7 +7593,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  https-proxy-agent@7.0.4:
+  https-proxy-agent@7.0.5:
     dependencies:
       agent-base: 7.1.0
       debug: 4.3.5
@@ -7806,7 +7806,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  jsdom@24.1.0:
+  jsdom@24.1.1:
     dependencies:
       cssstyle: 4.0.1
       data-urls: 5.0.0
@@ -7814,11 +7814,11 @@ snapshots:
       form-data: 4.0.0
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
-      https-proxy-agent: 7.0.4
+      https-proxy-agent: 7.0.5
       is-potential-custom-element-name: 1.0.1
-      nwsapi: 2.2.10
+      nwsapi: 2.2.12
       parse5: 7.1.2
-      rrweb-cssom: 0.7.0
+      rrweb-cssom: 0.7.1
       saxes: 6.0.0
       symbol-tree: 3.2.4
       tough-cookie: 4.1.4
@@ -7827,7 +7827,7 @@ snapshots:
       whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 14.0.0
-      ws: 8.17.0
+      ws: 8.18.0
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
       - bufferutil
@@ -8338,7 +8338,7 @@ snapshots:
       - vue-tsc
       - xml2js
 
-  nwsapi@2.2.10: {}
+  nwsapi@2.2.12: {}
 
   nypm@0.3.9:
     dependencies:
@@ -8848,7 +8848,7 @@ snapshots:
 
   rrweb-cssom@0.6.0: {}
 
-  rrweb-cssom@0.7.0: {}
+  rrweb-cssom@0.7.1: {}
 
   run-applescript@7.0.0: {}
 
@@ -9493,7 +9493,7 @@ snapshots:
       fsevents: 2.3.3
       terser: 5.26.0
 
-  vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.0)(terser@5.26.0):
+  vitest@2.0.3(@types/node@20.10.4)(jsdom@24.1.1)(terser@5.26.0):
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@vitest/expect': 2.0.3
@@ -9516,7 +9516,7 @@ snapshots:
       why-is-node-running: 2.2.2
     optionalDependencies:
       '@types/node': 20.10.4
-      jsdom: 24.1.0
+      jsdom: 24.1.1
     transitivePeerDependencies:
       - less
       - lightningcss
@@ -9655,9 +9655,9 @@ snapshots:
 
   wrappy@1.0.2: {}
 
-  ws@8.17.0: {}
-
   ws@8.17.1: {}
+
+  ws@8.18.0: {}
 
   xml-name-validator@5.0.0: {}
 
