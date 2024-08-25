@@ -57,7 +57,7 @@
         "@types/dompurify": "3.0.5",
         "@vitest/coverage-v8": "2.0.5",
         "@vue/test-utils": "2.4.6",
-        "jsdom": "24.1.2",
+        "jsdom": "25.0.0",
         "typescript": "5.5.4",
         "vite": "5.4.2",
         "vitest": "2.0.5",
