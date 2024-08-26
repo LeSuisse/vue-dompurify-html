@@ -39,8 +39,8 @@ importers:
   examples/nuxt3:
     devDependencies:
       '@nuxt/devtools':
-        specifier: 1.4.0
-        version: 1.4.0(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
+        specifier: 1.4.1
+        version: 1.4.1(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
       nuxt:
         specifier: 3.13.0
         version: 3.13.0(@opentelemetry/api@1.9.0)(@parcel/watcher@2.4.1)(@types/node@22.0.2)(encoding@0.1.13)(eslint@9.9.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.3)(rollup@4.21.0)(terser@5.26.0)(typescript@5.5.4)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))(vue-tsc@2.0.29(typescript@5.5.4))
@@ -932,17 +932,17 @@ packages:
   '@nuxt/devalue@2.0.2':
     resolution: {integrity: sha512-GBzP8zOc7CGWyFQS6dv1lQz8VVpz5C2yRszbXufwG/9zhStTIH50EtD87NmWbTMwXDvZLNg8GIpb1UFdH93JCA==}
 
-  '@nuxt/devtools-kit@1.4.0':
-    resolution: {integrity: sha512-2Ymwfx68zDRB4xgZ7L2rxRG32skgxoiE0fq2mY4w9u51OW9GClrhmJzU677yJWl0r00YcuFnA3tYrzjIh8dGKg==}
+  '@nuxt/devtools-kit@1.4.1':
+    resolution: {integrity: sha512-6h7T9B0tSZVap13/hf7prEAgIzraj/kyux6/Iif455Trew96jHIFCCboBApUMastYEuCo3l17tgZKe0HW+jrtA==}
     peerDependencies:
       vite: '*'
 
-  '@nuxt/devtools-wizard@1.4.0':
-    resolution: {integrity: sha512-aDUZ8wPP6uIEabtwXIc8FC4rPTeAox+nYIG/ZlDEXth/4izaEb0dm38551BVipCK/QeGlnUXWSsS3wdij4Du6w==}
+  '@nuxt/devtools-wizard@1.4.1':
+    resolution: {integrity: sha512-X9uTh5rgt0pw3UjXcHyl8ZFYmCgw8ITRe9Nr2VLCtNROfKz9yol/ESEhYMwTFiFlqSyfJP6/qtogJBjUt6dzTw==}
     hasBin: true
 
-  '@nuxt/devtools@1.4.0':
-    resolution: {integrity: sha512-xR7sKPoWulJgwDqDED2Ypa7P3/IX5JeanKEBtpb8CQ1B2z0QFJw3Nb74ssdxyDcyoxaYbHY6g5Zc0jrJgSkvxg==}
+  '@nuxt/devtools@1.4.1':
+    resolution: {integrity: sha512-BtmGRAr/pjSE3dBrM7iceNT6OZAQ/MHxq1brkHJDs2VdyZPnqqGS4n3/98saASoRdj0dddsuIElsqC/zIABhgg==}
     hasBin: true
     peerDependencies:
       vite: '*'
@@ -3326,6 +3326,11 @@ packages:
   nwsapi@2.2.12:
     resolution: {integrity: sha512-qXDmcVlZV4XRtKFzddidpfVP4oMSGhga+xdMc25mv8kaLUHtgzCDhUxkrN8exkGdTlLNaXj7CV3GtON7zuGZ+w==}
 
+  nypm@0.3.11:
+    resolution: {integrity: sha512-E5GqaAYSnbb6n1qZyik2wjPDZON43FqOJO59+3OkWrnmQtjggrMOVnsyzfjxp/tS6nlYJBA4zRA5jSM2YaadMg==}
+    engines: {node: ^14.16.0 || >=16.10.0}
+    hasBin: true
+
   nypm@0.3.9:
     resolution: {integrity: sha512-BI2SdqqTHg2d4wJh8P9A1W+bslg33vOE9IZDY6eR2QC+Pu1iNBVZUqczrd43rJb+fMzHU7ltAYKsEFY/kHMFcw==}
     engines: {node: ^14.16.0 || >=16.10.0}
@@ -4229,6 +4234,9 @@ packages:
 
   unimport@3.11.0:
     resolution: {integrity: sha512-mPrvWwy+li8TLUeglC7CIREFAbeEMkJ8X2Bhxg4iLdh+HraxjFyxqWv8V+4lzekoGHChx9ofv1qGOfvHBJBl0A==}
+
+  unimport@3.11.1:
+    resolution: {integrity: sha512-DuB1Uoq01LrrXTScxnwOoMSlTXxyKcULguFxbLrMDFcE/CO0ZWHpEiyhovN0mycPt7K6luAHe8laqvwvuoeUPg==}
 
   universalify@0.1.2:
     resolution: {integrity: sha512-rBJeI5CXAlmy1pV+617WB9J63U6XcazHHF2f2dbJix4XzpUF0RS3Zbj0FGIOCAva5P/d/GBOYaACQ1w+0azUkg==}
@@ -5372,7 +5380,7 @@ snapshots:
 
   '@nuxt/devalue@2.0.2': {}
 
-  '@nuxt/devtools-kit@1.4.0(magicast@0.3.4)(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))':
+  '@nuxt/devtools-kit@1.4.1(magicast@0.3.4)(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))':
     dependencies:
       '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.21.0)
       '@nuxt/schema': 3.13.0(rollup@4.21.0)
@@ -5383,7 +5391,7 @@ snapshots:
       - rollup
       - supports-color
 
-  '@nuxt/devtools-wizard@1.4.0':
+  '@nuxt/devtools-wizard@1.4.1':
     dependencies:
       consola: 3.2.3
       diff: 5.2.0
@@ -5396,11 +5404,11 @@ snapshots:
       rc9: 2.1.2
       semver: 7.6.3
 
-  '@nuxt/devtools@1.4.0(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))':
+  '@nuxt/devtools@1.4.1(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))':
     dependencies:
       '@antfu/utils': 0.7.10
-      '@nuxt/devtools-kit': 1.4.0(magicast@0.3.4)(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
-      '@nuxt/devtools-wizard': 1.4.0
+      '@nuxt/devtools-kit': 1.4.1(magicast@0.3.4)(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
+      '@nuxt/devtools-wizard': 1.4.1
       '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.21.0)
       '@vue/devtools-core': 7.3.3(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
       '@vue/devtools-kit': 7.3.3
@@ -5419,7 +5427,7 @@ snapshots:
       launch-editor: 2.8.1
       local-pkg: 0.5.0
       magicast: 0.3.4
-      nypm: 0.3.9
+      nypm: 0.3.11
       ohash: 1.1.3
       pathe: 1.1.2
       perfect-debounce: 1.0.0
@@ -5430,7 +5438,7 @@ snapshots:
       simple-git: 3.25.0
       sirv: 2.0.4
       tinyglobby: 0.2.5
-      unimport: 3.11.0(rollup@4.21.0)
+      unimport: 3.11.1(rollup@4.21.0)
       vite: 5.4.2(@types/node@22.0.2)(terser@5.26.0)
       vite-plugin-inspect: 0.8.7(@nuxt/kit@3.13.0(magicast@0.3.4)(rollup@4.21.0))(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
       vite-plugin-vue-inspector: 5.1.3(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
@@ -5462,7 +5470,7 @@ snapshots:
       semver: 7.6.3
       ufo: 1.5.4
       unctx: 2.3.1
-      unimport: 3.11.0(rollup@4.21.0)
+      unimport: 3.11.1(rollup@4.21.0)
       untyped: 1.4.2
     transitivePeerDependencies:
       - magicast
@@ -5476,7 +5484,7 @@ snapshots:
       defu: 6.1.4
       hookable: 5.5.3
       pathe: 1.1.2
-      pkg-types: 1.1.3
+      pkg-types: 1.2.0
       scule: 1.3.0
       std-env: 3.7.0
       ufo: 1.5.4
@@ -5534,7 +5542,7 @@ snapshots:
       ohash: 1.1.3
       pathe: 1.1.2
       perfect-debounce: 1.0.0
-      pkg-types: 1.1.3
+      pkg-types: 1.2.0
       postcss: 8.4.41
       rollup-plugin-visualizer: 5.12.0(rollup@4.21.0)
       std-env: 3.7.0
@@ -6620,7 +6628,7 @@ snapshots:
       ohash: 1.1.3
       pathe: 1.1.2
       perfect-debounce: 1.0.0
-      pkg-types: 1.1.3
+      pkg-types: 1.2.0
       rc9: 2.1.2
     optionalDependencies:
       magicast: 0.3.4
@@ -7993,7 +8001,7 @@ snapshots:
     dependencies:
       acorn: 8.12.1
       pathe: 1.1.2
-      pkg-types: 1.1.3
+      pkg-types: 1.2.0
       ufo: 1.5.4
 
   module-details-from-path@1.0.3: {}
@@ -8077,7 +8085,7 @@ snapshots:
       openapi-typescript: 6.7.6
       pathe: 1.1.2
       perfect-debounce: 1.0.0
-      pkg-types: 1.1.3
+      pkg-types: 1.2.0
       pretty-bytes: 6.1.1
       radix3: 1.1.2
       rollup: 4.21.0
@@ -8172,7 +8180,7 @@ snapshots:
   nuxt@3.13.0(@opentelemetry/api@1.9.0)(@parcel/watcher@2.4.1)(@types/node@22.0.2)(encoding@0.1.13)(eslint@9.9.1(jiti@1.21.6))(ioredis@5.4.1)(magicast@0.3.4)(optionator@0.9.3)(rollup@4.21.0)(terser@5.26.0)(typescript@5.5.4)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))(vue-tsc@2.0.29(typescript@5.5.4)):
     dependencies:
       '@nuxt/devalue': 2.0.2
-      '@nuxt/devtools': 1.4.0(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
+      '@nuxt/devtools': 1.4.1(rollup@4.21.0)(vite@5.4.2(@types/node@22.0.2)(terser@5.26.0))
       '@nuxt/kit': 3.13.0(magicast@0.3.4)(rollup@4.21.0)
       '@nuxt/schema': 3.13.0(rollup@4.21.0)
       '@nuxt/telemetry': 2.5.4(magicast@0.3.4)(rollup@4.21.0)
@@ -8278,6 +8286,15 @@ snapshots:
       - xml2js
 
   nwsapi@2.2.12: {}
+
+  nypm@0.3.11:
+    dependencies:
+      citty: 0.1.6
+      consola: 3.2.3
+      execa: 8.0.1
+      pathe: 1.1.2
+      pkg-types: 1.2.0
+      ufo: 1.5.4
 
   nypm@0.3.9:
     dependencies:
@@ -9191,6 +9208,24 @@ snapshots:
     transitivePeerDependencies:
       - rollup
 
+  unimport@3.11.1(rollup@4.21.0):
+    dependencies:
+      '@rollup/pluginutils': 5.1.0(rollup@4.21.0)
+      acorn: 8.12.1
+      escape-string-regexp: 5.0.0
+      estree-walker: 3.0.3
+      fast-glob: 3.3.2
+      local-pkg: 0.5.0
+      magic-string: 0.30.11
+      mlly: 1.7.1
+      pathe: 1.1.2
+      pkg-types: 1.2.0
+      scule: 1.3.0
+      strip-literal: 2.1.0
+      unplugin: 1.12.2
+    transitivePeerDependencies:
+      - rollup
+
   universalify@0.1.2: {}
 
   universalify@0.2.0: {}
@@ -9267,7 +9302,7 @@ snapshots:
       magic-string: 0.30.11
       mlly: 1.7.1
       pathe: 1.1.2
-      pkg-types: 1.1.3
+      pkg-types: 1.2.0
       unplugin: 1.12.2
 
   update-browserslist-db@1.0.16(browserslist@4.23.1):
