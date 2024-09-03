@@ -59,7 +59,7 @@
         "@vue/test-utils": "2.4.6",
         "jsdom": "25.0.0",
         "typescript": "5.5.4",
-        "vite": "5.4.2",
+        "vite": "5.4.3",
         "vitest": "2.0.5",
         "vue": "3.4.38"
     }
