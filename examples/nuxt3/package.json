@@ -10,7 +10,7 @@
         "postinstall": "nuxt prepare"
     },
     "devDependencies": {
-        "@nuxt/devtools": "1.5.1",
+        "@nuxt/devtools": "1.5.2",
         "nuxt": "3.13.2",
         "vue": "3.5.10",
         "vue-dompurify-html": "workspace:*"
