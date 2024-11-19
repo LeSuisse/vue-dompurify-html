@@ -54,7 +54,7 @@
         "@stryker-mutator/core": "8.6.0",
         "@stryker-mutator/typescript-checker": "8.6.0",
         "@stryker-mutator/vitest-runner": "8.6.0",
-        "@types/dompurify": "3.0.5",
+        "@types/dompurify": "3.2.0",
         "@vitest/coverage-v8": "2.1.5",
         "@vue/test-utils": "2.4.6",
         "jsdom": "25.0.1",
