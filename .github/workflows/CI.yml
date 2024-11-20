@@ -28,4 +28,4 @@ jobs:
               run: nix-shell --pure --run "pnpm run test-mutation"
             - name: Dry run release
               run: nix-shell --pure --run "pnpm publish --dry-run --recursive --provenance --access public --no-git-checks"
-            - uses: codecov/codecov-action@5c47607acb93fed5485fdbf7232e8a31425f672a # v5.0.2
+            - uses: codecov/codecov-action@985343d70564a82044c1b7fcb84c2fa05405c1a2 # v5.0.4
