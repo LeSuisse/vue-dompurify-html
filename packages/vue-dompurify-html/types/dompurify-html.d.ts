@@ -1,6 +1,6 @@
 import type { ObjectDirective } from 'vue';
-import type { DOMPurifyI, HookEvent, HookName, SanitizeAttributeHookEvent, SanitizeElementHookEvent } from 'dompurify';
-type MinimalDOMPurifyInstance = Pick<DOMPurifyI, 'sanitize' | 'addHook'>;
+import type { DOMPurify, UponSanitizeElementHookEvent, UponSanitizeAttributeHookEvent } from 'dompurify';
+type MinimalDOMPurifyInstance = Pick<DOMPurify, 'sanitize' | 'addHook'>;
 export type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
 export interface MinimalDOMPurifyConfig {
     ADD_ATTR?: string[] | undefined;
@@ -25,15 +25,20 @@ export interface MinimalDOMPurifyConfig {
         attributeNameCheck?: RegExp | ((lcName: string) => boolean) | null | undefined;
         allowCustomizedBuiltInElements?: boolean | undefined;
     };
+    SANITIZE_NAMED_PROPS?: boolean | undefined;
 }
 export interface DirectiveConfig {
     default?: MinimalDOMPurifyConfig | undefined;
     namedConfigurations?: Record<string, MinimalDOMPurifyConfig> | undefined;
     hooks?: {
-        uponSanitizeElement?: ((currentNode: Element, data: SanitizeElementHookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
-        uponSanitizeAttribute?: ((currentNode: Element, data: SanitizeAttributeHookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
+        uponSanitizeElement?: ((currentNode: Node, hookEvent: UponSanitizeElementHookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
+        uponSanitizeAttribute?: ((currentNode: Element, hookEvent: UponSanitizeAttributeHookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
     } & {
-        [H in HookName]?: ((currentNode: Element, data: HookEvent, config: MinimalDOMPurifyConfig) => void) | undefined;
+        [H in 'beforeSanitizeElements' | 'afterSanitizeElements' | 'uponSanitizeShadowNode']?: ((currentNode: Node, hookEvent: null, config: MinimalDOMPurifyConfig) => void) | undefined;
+    } & {
+        [H in 'beforeSanitizeAttributes' | 'afterSanitizeAttributes']?: ((currentNode: Element, hookEvent: null, config: MinimalDOMPurifyConfig) => void) | undefined;
+    } & {
+        [H in 'beforeSanitizeShadowDOM' | 'afterSanitizeShadowDOM']?: ((currentNode: DocumentFragment, hookEvent: null, config: MinimalDOMPurifyConfig) => void) | undefined;
     };
 }
 export declare function defaultDOMPurifyInstanceBuilder(): MinimalDOMPurifyInstance;
