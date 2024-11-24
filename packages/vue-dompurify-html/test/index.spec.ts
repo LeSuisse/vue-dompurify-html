@@ -3,7 +3,7 @@ import { createApp } from 'vue';
 import type { DOMPurifyInstanceBuilder } from '../src';
 import VueDOMPurifyHTML from '../src';
 import { buildVueDompurifyHTMLDirective } from '../src';
-import type { DOMPurifyI } from 'dompurify';
+import type { DOMPurify } from 'dompurify';
 
 describe('VueDOMPurifyHTML Plugin Install', (): void => {
     it('can be installed', (): void => {
@@ -62,7 +62,7 @@ describe('VueDOMPurifyHTML Plugin Install', (): void => {
                 sanitize(): string {
                     return 'Test';
                 },
-            } as unknown as DOMPurifyI;
+            } as unknown as DOMPurify;
         };
         app.use(VueDOMPurifyHTML, {}, instanceBuilder);
         app.mount(el);

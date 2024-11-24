@@ -3,15 +3,15 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import type { DOMPurifyInstanceBuilder } from '../src/dompurify-html';
 import { buildDirective } from '../src/dompurify-html';
-import type { DOMPurifyI } from 'dompurify';
+import type { DOMPurify } from 'dompurify';
 import { sanitize, addHook } from 'dompurify';
 
 vi.mock('dompurify', async () => {
-    const actual: DOMPurifyI = await vi.importActual('dompurify');
+    const actual: { default: DOMPurify } = await vi.importActual('dompurify');
     const spy = {
         ...actual,
-        sanitize: vi.fn(actual.sanitize),
-        addHook: vi.fn(actual.addHook),
+        sanitize: vi.fn(actual.default.sanitize),
+        addHook: vi.fn(actual.default.addHook),
     };
     return {
         ...spy,
@@ -170,7 +170,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
                 sanitize(): string {
                     return 'Test';
                 },
-            } as unknown as DOMPurifyI;
+            } as unknown as DOMPurify;
         };
 
         const wrapper = mount(component, {
