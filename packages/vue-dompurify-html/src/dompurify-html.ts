@@ -135,7 +135,6 @@ export function buildDirective(
         const arg = binding.arg;
         const namedConfigurations = config.namedConfigurations;
         const defaultConfig = config.default ?? {};
-        // Stryker disable next-line ConditionalExpression: Do not see that transforming arg !== undefined to true is rejected by TS
         if (namedConfigurations && arg !== undefined) {
             el.innerHTML = dompurifyInstance.sanitize(
                 current_value_string,
