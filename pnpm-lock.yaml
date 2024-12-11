@@ -80,14 +80,14 @@ importers:
         version: 3.2.1
     devDependencies:
       '@stryker-mutator/core':
-        specifier: 8.7.0
-        version: 8.7.0
+        specifier: 8.7.1
+        version: 8.7.1
       '@stryker-mutator/typescript-checker':
-        specifier: 8.7.0
-        version: 8.7.0(@stryker-mutator/core@8.7.0)(typescript@5.6.3)
+        specifier: 8.7.1
+        version: 8.7.1(@stryker-mutator/core@8.7.1)(typescript@5.6.3)
       '@stryker-mutator/vitest-runner':
-        specifier: 8.7.0
-        version: 8.7.0(@stryker-mutator/core@8.7.0)(vitest@2.1.8(@types/node@22.7.4)(jsdom@25.0.1)(terser@5.26.0))
+        specifier: 8.7.1
+        version: 8.7.1(@stryker-mutator/core@8.7.1)(vitest@2.1.8(@types/node@22.7.4)(jsdom@25.0.1)(terser@5.26.0))
       '@vitest/coverage-v8':
         specifier: 2.1.8
         version: 2.1.8(vitest@2.1.8(@types/node@22.7.4)(jsdom@25.0.1)(terser@5.26.0))
@@ -1088,31 +1088,31 @@ packages:
     resolution: {integrity: sha512-tlqY9xq5ukxTUZBmoOp+m61cqwQD5pHJtFY3Mn8CA8ps6yghLH/Hw8UPdqg4OLmFW3IFlcXnQNmo/dh8HzXYIQ==}
     engines: {node: '>=18'}
 
-  '@stryker-mutator/api@8.7.0':
-    resolution: {integrity: sha512-zTw/9BC8jPzDmJTj3lyQSWEl3KJ1+zb13OZsdR+ry1QHtC2azc7B2mJPfPOACVCr3gQw8w8YjBRQUW+pN1gGWw==}
+  '@stryker-mutator/api@8.7.1':
+    resolution: {integrity: sha512-56vxcVxIfW0jxJhr7HB9Zx6Xr5/M95RG9MUK1DtbQhlmQesjpfBBsrPLOPzBJaITPH/vOYykuJ69vgSAMccQyw==}
     engines: {node: '>=18.0.0'}
 
-  '@stryker-mutator/core@8.7.0':
-    resolution: {integrity: sha512-AQ24MUiVBA152LhG865uH6ThreZwAnBomOgb+pcTKYBkR1x1EO14JzUDItt0j39fAxlzodTU3qQE93pEmXZpxA==}
+  '@stryker-mutator/core@8.7.1':
+    resolution: {integrity: sha512-r2AwhHWkHq6yEe5U8mAzPSWewULbv9YMabLHRzLjZnjj+Ipxtg+Zo22rrUc2Zl7mnYvb9w34bdlEzGz6MKgX2g==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
-  '@stryker-mutator/instrumenter@8.7.0':
-    resolution: {integrity: sha512-eLV0zZEr+czVAswCevsVNcXJZ/SpJsOvhWSD084iWNUDUtCIkXZmlj/TpsMn1LioCl9xZvjjcxFnskX11U2VIg==}
+  '@stryker-mutator/instrumenter@8.7.1':
+    resolution: {integrity: sha512-HSq4VHXesQCMR3hr6bn41DAeJ0yuP2vp9KSnls2TySNawFVWOCaKXpBX29Skj3zJQh7dnm7HuQg8HuXvJK15oA==}
     engines: {node: '>=18.0.0'}
 
-  '@stryker-mutator/typescript-checker@8.7.0':
-    resolution: {integrity: sha512-c7CG71u8pRYA76JQF5SswsHWWhZVrw4dg4fLJv1B0Ch0hKvXtX7wZtDevUD51OiLo7X4B1XxJprpg/Ux17LZGg==}
+  '@stryker-mutator/typescript-checker@8.7.1':
+    resolution: {integrity: sha512-ZliTju52pOR9Xnh1AjGn4Oet7lTWjbDbi6RfoBGAPzVSZSYcZNnupr3tBtDJX4p2qVYYfYvmhoAKYXbe30dWBQ==}
     engines: {node: '>=18.0.0'}
     peerDependencies:
       '@stryker-mutator/core': ~8.7.0
       typescript: '>=3.6'
 
-  '@stryker-mutator/util@8.7.0':
-    resolution: {integrity: sha512-h93j89Kioo57+6rZcd2jY7sCF8+QW4stWPjrs6kxq7MFHPx1bTuowUhdh82PJlFR5IZNEIbSh8kHAE8Gd8PLpw==}
+  '@stryker-mutator/util@8.7.1':
+    resolution: {integrity: sha512-Oj/sIHZI1GLfGOHKnud4Gw0ZRufm7ONoQYNnhcaAYEXTWraYVcV7mue/th8fZComTHvDPA8Ge8U16FvWYEb8dg==}
 
-  '@stryker-mutator/vitest-runner@8.7.0':
-    resolution: {integrity: sha512-TxV0F+2xcZjZB4C6dasxF5QexiRDWxVkhVXCNCGNXCdUgHIha7wczHitSs8sgHghZNVGohmSmlKRR3E2dyVk6g==}
+  '@stryker-mutator/vitest-runner@8.7.1':
+    resolution: {integrity: sha512-vNRTM6MEy+0hNK5UhJ44euEIRjluDV43UROcMAKIMbT9ELdp8XgM/tA5GrTcp5QadnvrBwvEcCRQk+ARL+e0sg==}
     engines: {node: '>=14.18.0'}
     peerDependencies:
       '@stryker-mutator/core': ~8.7.0
@@ -5434,19 +5434,19 @@ snapshots:
 
   '@sindresorhus/merge-streams@4.0.0': {}
 
-  '@stryker-mutator/api@8.7.0':
+  '@stryker-mutator/api@8.7.1':
     dependencies:
       mutation-testing-metrics: 3.3.0
       mutation-testing-report-schema: 3.3.0
       tslib: 2.7.0
       typed-inject: 4.0.0
 
-  '@stryker-mutator/core@8.7.0':
+  '@stryker-mutator/core@8.7.1':
     dependencies:
       '@inquirer/prompts': 6.0.1
-      '@stryker-mutator/api': 8.7.0
-      '@stryker-mutator/instrumenter': 8.7.0
-      '@stryker-mutator/util': 8.7.0
+      '@stryker-mutator/api': 8.7.1
+      '@stryker-mutator/instrumenter': 8.7.1
+      '@stryker-mutator/util': 8.7.1
       ajv: 8.17.1
       chalk: 5.3.0
       commander: 12.1.0
@@ -5471,7 +5471,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@stryker-mutator/instrumenter@8.7.0':
+  '@stryker-mutator/instrumenter@8.7.1':
     dependencies:
       '@babel/core': 7.25.2
       '@babel/generator': 7.25.0
@@ -5479,29 +5479,29 @@ snapshots:
       '@babel/plugin-proposal-decorators': 7.24.7(@babel/core@7.25.2)
       '@babel/plugin-proposal-explicit-resource-management': 7.24.7(@babel/core@7.25.2)
       '@babel/preset-typescript': 7.24.7(@babel/core@7.25.2)
-      '@stryker-mutator/api': 8.7.0
-      '@stryker-mutator/util': 8.7.0
+      '@stryker-mutator/api': 8.7.1
+      '@stryker-mutator/util': 8.7.1
       angular-html-parser: 6.0.2
       semver: 7.6.3
       weapon-regex: 1.3.2
     transitivePeerDependencies:
       - supports-color
 
-  '@stryker-mutator/typescript-checker@8.7.0(@stryker-mutator/core@8.7.0)(typescript@5.6.3)':
+  '@stryker-mutator/typescript-checker@8.7.1(@stryker-mutator/core@8.7.1)(typescript@5.6.3)':
     dependencies:
-      '@stryker-mutator/api': 8.7.0
-      '@stryker-mutator/core': 8.7.0
-      '@stryker-mutator/util': 8.7.0
+      '@stryker-mutator/api': 8.7.1
+      '@stryker-mutator/core': 8.7.1
+      '@stryker-mutator/util': 8.7.1
       semver: 7.6.3
       typescript: 5.6.3
 
-  '@stryker-mutator/util@8.7.0': {}
+  '@stryker-mutator/util@8.7.1': {}
 
-  '@stryker-mutator/vitest-runner@8.7.0(@stryker-mutator/core@8.7.0)(vitest@2.1.8(@types/node@22.7.4)(jsdom@25.0.1)(terser@5.26.0))':
+  '@stryker-mutator/vitest-runner@8.7.1(@stryker-mutator/core@8.7.1)(vitest@2.1.8(@types/node@22.7.4)(jsdom@25.0.1)(terser@5.26.0))':
     dependencies:
-      '@stryker-mutator/api': 8.7.0
-      '@stryker-mutator/core': 8.7.0
-      '@stryker-mutator/util': 8.7.0
+      '@stryker-mutator/api': 8.7.1
+      '@stryker-mutator/core': 8.7.1
+      '@stryker-mutator/util': 8.7.1
       tslib: 2.7.0
       vitest: 2.1.8(@types/node@22.7.4)(jsdom@25.0.1)(terser@5.26.0)
 
