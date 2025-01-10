@@ -3,11 +3,13 @@ import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { mount } from '@vue/test-utils';
 import type { DOMPurifyInstanceBuilder } from '../src/dompurify-html';
 import { buildDirective } from '../src/dompurify-html';
-import type { DOMPurify } from 'dompurify';
-import { sanitize, addHook } from 'dompurify';
+import type { DOMPurify } from 'isomorphic-dompurify';
+import { sanitize, addHook } from 'isomorphic-dompurify';
 
-vi.mock('dompurify', async () => {
-    const actual: { default: DOMPurify } = await vi.importActual('dompurify');
+vi.mock('isomorphic-dompurify', async () => {
+    const actual: { default: DOMPurify } = await vi.importActual(
+        'isomorphic-dompurify',
+    );
     const spy = {
         ...actual,
         sanitize: vi.fn(actual.default.sanitize),

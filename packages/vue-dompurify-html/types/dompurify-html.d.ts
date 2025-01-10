@@ -1,5 +1,5 @@
 import type { ObjectDirective } from 'vue';
-import type { DOMPurify, UponSanitizeElementHookEvent, UponSanitizeAttributeHookEvent } from 'dompurify';
+import type { DOMPurify, UponSanitizeElementHookEvent, UponSanitizeAttributeHookEvent } from 'isomorphic-dompurify';
 type MinimalDOMPurifyInstance = Pick<DOMPurify, 'sanitize' | 'addHook'>;
 export type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
 export interface MinimalDOMPurifyConfig {

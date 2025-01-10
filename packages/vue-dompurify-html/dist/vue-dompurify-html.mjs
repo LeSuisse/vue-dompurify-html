@@ -1,4 +1,4 @@
-import l from "dompurify";
+import l from "isomorphic-dompurify";
 function m(t, e) {
   const o = t.hooks ?? {};
   let n;

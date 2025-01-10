@@ -3,7 +3,7 @@ import { createApp } from 'vue';
 import type { DOMPurifyInstanceBuilder } from '../src';
 import VueDOMPurifyHTML from '../src';
 import { buildVueDompurifyHTMLDirective } from '../src';
-import type { DOMPurify } from 'dompurify';
+import type { DOMPurify } from 'isomorphic-dompurify';
 
 describe('VueDOMPurifyHTML Plugin Install', (): void => {
     it('can be installed', (): void => {

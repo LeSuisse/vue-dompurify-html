@@ -1,11 +1,11 @@
 import type { DirectiveHook, ObjectDirective, DirectiveBinding } from 'vue';
-import dompurify from 'dompurify';
+import dompurify from 'isomorphic-dompurify';
 import type {
     DOMPurify,
     UponSanitizeElementHookEvent,
     UponSanitizeAttributeHookEvent,
     HookName,
-} from 'dompurify';
+} from 'isomorphic-dompurify';
 
 type MinimalDOMPurifyInstance = Pick<DOMPurify, 'sanitize' | 'addHook'>;
 export type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
@@ -112,6 +112,7 @@ function setUpHooks(
 }
 
 export function defaultDOMPurifyInstanceBuilder(): MinimalDOMPurifyInstance {
+    // @ts-expect-error This expression is not callable. Type 'typeof _default' has no call signatures.
     return dompurify();
 }
 
