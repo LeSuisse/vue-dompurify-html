@@ -1,50 +1,50 @@
-import l from "isomorphic-dompurify";
-function m(t, e) {
-  const o = t.hooks ?? {};
-  let n;
-  for (n in o) {
-    const u = o[n];
-    u !== void 0 && e.addHook(n, u);
+import c from "isomorphic-dompurify";
+function f(n, r) {
+  const t = n.hooks ?? {};
+  let o;
+  for (o in t) {
+    const e = t[o];
+    e !== void 0 && r.addHook(o, e);
   }
 }
-function c() {
-  return l();
+function d() {
+  return c();
 }
-function p(t = {}, e = c) {
-  const o = e();
-  m(t, o);
-  const n = function(u, i) {
-    const r = i.value;
-    if (i.oldValue === r)
-      return;
-    const a = `${r}`, s = i.arg, d = t.namedConfigurations, f = t.default ?? {};
-    if (d && s !== void 0) {
-      u.innerHTML = o.sanitize(
-        a,
-        d[s] ?? f
-      );
-      return;
-    }
-    u.innerHTML = o.sanitize(
-      a,
-      f
-    );
+function a(n, r = {}, t) {
+  const o = n.value;
+  if (n.oldValue === o)
+    return;
+  const e = `${o}`, i = n.arg, u = r.namedConfigurations, s = r.default ?? {};
+  return u && i !== void 0 ? t.sanitize(
+    e,
+    u[i] ?? s
+  ) : t.sanitize(e, s);
+}
+function l(n = {}, r = d) {
+  const t = r();
+  f(n, t);
+  const o = function(e, i) {
+    const u = a(i, n, t);
+    u !== void 0 && (e.innerHTML = u);
   };
   return {
-    mounted: n,
-    updated: n
+    mounted: o,
+    updated: o,
+    getSSRProps: (e) => ({
+      innerHTML: a(e, n, c)
+    })
   };
 }
-const k = {
-  install(t, e = {}, o = c) {
-    t.directive(
+const p = {
+  install(n, r = {}, t = d) {
+    n.directive(
       "dompurify-html",
-      p(e, o)
+      l(r, t)
     );
   }
 };
 export {
-  p as buildVueDompurifyHTMLDirective,
-  k as default,
-  k as vueDompurifyHTMLPlugin
+  l as buildVueDompurifyHTMLDirective,
+  p as default,
+  p as vueDompurifyHTMLPlugin
 };
