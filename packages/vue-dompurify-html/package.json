@@ -45,7 +45,6 @@
         "test-mutation": "stryker run"
     },
     "dependencies": {
-        "dompurify": "^3.2.1",
         "isomorphic-dompurify": "^2.20.0"
     },
     "peerDependencies": {
