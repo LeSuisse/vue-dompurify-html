@@ -1,11 +1,11 @@
 import type { DirectiveHook, ObjectDirective, DirectiveBinding } from 'vue';
-import dompurify from 'dompurify';
+import dompurify from 'isomorphic-dompurify';
 import type {
     DOMPurify,
     UponSanitizeElementHookEvent,
     UponSanitizeAttributeHookEvent,
     HookName,
-} from 'dompurify';
+} from 'isomorphic-dompurify';
 
 type MinimalDOMPurifyInstance = Pick<DOMPurify, 'sanitize' | 'addHook'>;
 export type DOMPurifyInstanceBuilder = () => MinimalDOMPurifyInstance;
@@ -112,7 +112,35 @@ function setUpHooks(
 }
 
 export function defaultDOMPurifyInstanceBuilder(): MinimalDOMPurifyInstance {
+    // @ts-expect-error This expression is not callable. Type 'typeof _default' has no call signatures.
     return dompurify();
+}
+
+function _getInnerHTML(
+    binding: DirectiveBinding<HTMLElement>,
+    config: DirectiveConfig = {},
+    dompurifyInstance: MinimalDOMPurifyInstance,
+): string | undefined {
+    const current_value = binding.value;
+    if (binding.oldValue === current_value) {
+        return;
+    }
+
+    const current_value_string = `${current_value}`;
+    const arg = binding.arg;
+    const namedConfigurations = config.namedConfigurations;
+    const defaultConfig = config.default ?? {};
+
+    // Returned named config
+    if (namedConfigurations && arg !== undefined) {
+        return dompurifyInstance.sanitize(
+            current_value_string,
+            namedConfigurations[arg] ?? defaultConfig,
+        );
+    }
+
+    // Returned default config
+    return dompurifyInstance.sanitize(current_value_string, defaultConfig);
 }
 
 export function buildDirective(
@@ -127,29 +155,22 @@ export function buildDirective(
         el: HTMLElement,
         binding: DirectiveBinding<HTMLElement>,
     ): void {
-        const current_value = binding.value;
-        if (binding.oldValue === current_value) {
-            return;
+        const innerHTML = _getInnerHTML(binding, config, dompurifyInstance);
+
+        if (innerHTML !== undefined) {
+            el.innerHTML = innerHTML;
         }
-        const current_value_string = `${current_value}`;
-        const arg = binding.arg;
-        const namedConfigurations = config.namedConfigurations;
-        const defaultConfig = config.default ?? {};
-        if (namedConfigurations && arg !== undefined) {
-            el.innerHTML = dompurifyInstance.sanitize(
-                current_value_string,
-                namedConfigurations[arg] ?? defaultConfig,
-            );
-            return;
-        }
-        el.innerHTML = dompurifyInstance.sanitize(
-            current_value_string,
-            defaultConfig,
-        );
     };
 
     return {
         mounted: updateComponent,
         updated: updateComponent,
+        getSSRProps: (binding) => {
+            const innerHTML = _getInnerHTML(binding, config, dompurify);
+
+            return {
+                innerHTML,
+            };
+        },
     };
 }

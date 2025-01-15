@@ -2,6 +2,8 @@
     <h1>Global directive</h1>
     <div v-dompurify-html="rawHtml">Expect text with color</div>
     <div v-dompurify-html:plaintext="rawHtml">Expect only plaintext</div>
+    <div v-dompurify-html="ssrHtml" />
+    <div v-dompurify-html:plaintext="ssrHtml" />
     <h1>Directive local to a component</h1>
     <div v-clean-html="rawHtml">Expect text with color</div>
 </template>
@@ -11,6 +13,8 @@ import { ref } from "vue";
 import { buildVueDompurifyHTMLDirective } from 'vue-dompurify-html';
 
 const rawHtml = ref('<span style="color: red">Hello!</span><img src=a onerror="alert(1)">');
+
+const ssrHtml = useState(() => '<span style="color: red">Hello SSR!</span><img src=a onerror="alert(1)">');
 
 const vCleanHtml = buildVueDompurifyHTMLDirective();
 </script>

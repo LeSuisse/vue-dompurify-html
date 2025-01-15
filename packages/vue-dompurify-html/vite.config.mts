@@ -7,7 +7,7 @@ export default defineConfig({
             name: 'VueDOMPurifyHTML',
         },
         rollupOptions: {
-            external: ['dompurify'],
+            external: ['isomorphic-dompurify'],
             output: {
                 globals: {
                     dompurify: 'DOMPurify',
