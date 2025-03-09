@@ -123,33 +123,45 @@ export function buildDirective(
 
     setUpHooks(config, dompurifyInstance);
 
-    const updateComponent: DirectiveHook = function (
-        el: HTMLElement,
+    const sanitizeContentFromBindingValue = function (
         binding: DirectiveBinding<HTMLElement>,
-    ): void {
+    ): string | undefined {
         const current_value = binding.value;
         if (binding.oldValue === current_value) {
-            return;
+            return undefined;
         }
         const current_value_string = `${current_value}`;
         const arg = binding.arg;
         const namedConfigurations = config.namedConfigurations;
         const defaultConfig = config.default ?? {};
         if (namedConfigurations && arg !== undefined) {
-            el.innerHTML = dompurifyInstance.sanitize(
+            return dompurifyInstance.sanitize(
                 current_value_string,
                 namedConfigurations[arg] ?? defaultConfig,
             );
+        }
+        return dompurifyInstance.sanitize(current_value_string, defaultConfig);
+    };
+
+    const updateComponent: DirectiveHook = function (
+        el: HTMLElement,
+        binding: DirectiveBinding<HTMLElement>,
+    ): void {
+        const sanitized_content = sanitizeContentFromBindingValue(binding);
+        if (sanitized_content === undefined) {
             return;
         }
-        el.innerHTML = dompurifyInstance.sanitize(
-            current_value_string,
-            defaultConfig,
-        );
+
+        el.innerHTML = sanitized_content;
     };
 
     return {
         mounted: updateComponent,
         updated: updateComponent,
+        getSSRProps(binding: DirectiveBinding<HTMLElement>) {
+            return {
+                innerHTML: sanitizeContentFromBindingValue(binding),
+            };
+        },
     };
 }
