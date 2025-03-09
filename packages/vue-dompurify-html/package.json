@@ -15,9 +15,9 @@
     ],
     "exports": {
         ".": {
+            "types": "./types/index.d.ts",
             "import": "./dist/vue-dompurify-html.mjs",
-            "require": "./dist/vue-dompurify-html.umd.js",
-            "types": "./types/index.d.ts"
+            "require": "./dist/vue-dompurify-html.umd.js"
         }
     },
     "repository": {
