@@ -1,45 +1,45 @@
 import l from "dompurify";
-function m(t, e) {
-  const o = t.hooks ?? {};
-  let n;
-  for (n in o) {
-    const u = o[n];
-    u !== void 0 && e.addHook(n, u);
+function m(t, o) {
+  const n = t.hooks ?? {};
+  let e;
+  for (e in n) {
+    const u = n[e];
+    u !== void 0 && o.addHook(e, u);
   }
 }
 function c() {
   return l();
 }
-function p(t = {}, e = c) {
-  const o = e();
-  m(t, o);
-  const n = function(u, i) {
+function p(t = {}, o = c) {
+  const n = o();
+  m(t, n);
+  const e = function(u, i) {
     const r = i.value;
     if (i.oldValue === r)
       return;
     const a = `${r}`, s = i.arg, d = t.namedConfigurations, f = t.default ?? {};
     if (d && s !== void 0) {
-      u.innerHTML = o.sanitize(
+      u.innerHTML = n.sanitize(
         a,
         d[s] ?? f
       );
       return;
     }
-    u.innerHTML = o.sanitize(
+    u.innerHTML = n.sanitize(
       a,
       f
     );
   };
   return {
-    mounted: n,
-    updated: n
+    mounted: e,
+    updated: e
   };
 }
 const k = {
-  install(t, e = {}, o = c) {
+  install(t, o = {}, n = c) {
     t.directive(
       "dompurify-html",
-      p(e, o)
+      p(o, n)
     );
   }
 };
