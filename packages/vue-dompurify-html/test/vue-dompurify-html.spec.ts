@@ -5,6 +5,7 @@ import type { DOMPurifyInstanceBuilder } from '../src/dompurify-html';
 import { buildDirective } from '../src/dompurify-html';
 import type { DOMPurify } from 'dompurify';
 import { sanitize, addHook } from 'dompurify';
+import type { DirectiveBinding, VNode } from 'vue';
 
 vi.mock('dompurify', async () => {
     const actual: { default: DOMPurify } = await vi.importActual('dompurify');
@@ -173,10 +174,12 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             } as unknown as DOMPurify;
         };
 
+        const directive = buildDirective({}, instanceBuilder);
+
         const wrapper = mount(component, {
             global: {
                 directives: {
-                    'dompurify-html': buildDirective({}, instanceBuilder),
+                    'dompurify-html': directive,
                 },
             },
             props: {
@@ -185,6 +188,15 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         });
 
         expect(wrapper.html()).toBe('<p>Test</p>');
+
+        const ssr_props = directive?.getSSRProps?.(
+            {
+                value: '<pre>Hello<script></script></pre>',
+                oldValue: null,
+            } as DirectiveBinding,
+            {} as VNode,
+        );
+        expect(ssr_props).toStrictEqual({ innerHTML: 'Test' });
     });
 
     it('fallback to default (unconfigured) profile when the requested configuration does not exist', (): void => {

@@ -48,7 +48,7 @@
         "dompurify": "^3.2.1"
     },
     "peerDependencies": {
-        "vue": "^3.0.0"
+        "vue": "^3.4.36"
     },
     "devDependencies": {
         "@stryker-mutator/core": "8.7.1",

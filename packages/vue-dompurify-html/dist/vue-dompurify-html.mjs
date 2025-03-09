@@ -1,45 +1,46 @@
 import l from "dompurify";
-function m(t, o) {
+function m(t, i) {
   const n = t.hooks ?? {};
-  let e;
-  for (e in n) {
-    const u = n[e];
-    u !== void 0 && o.addHook(e, u);
+  let o;
+  for (o in n) {
+    const u = n[o];
+    u !== void 0 && i.addHook(o, u);
   }
 }
 function c() {
   return l();
 }
-function p(t = {}, o = c) {
-  const n = o();
+function p(t = {}, i = c) {
+  const n = i();
   m(t, n);
-  const e = function(u, i) {
-    const r = i.value;
-    if (i.oldValue === r)
+  const o = function(e) {
+    const s = e.value;
+    if (e.oldValue === s)
       return;
-    const a = `${r}`, s = i.arg, d = t.namedConfigurations, f = t.default ?? {};
-    if (d && s !== void 0) {
-      u.innerHTML = n.sanitize(
-        a,
-        d[s] ?? f
-      );
-      return;
-    }
-    u.innerHTML = n.sanitize(
-      a,
-      f
-    );
+    const r = `${s}`, a = e.arg, d = t.namedConfigurations, f = t.default ?? {};
+    return d && a !== void 0 ? n.sanitize(
+      r,
+      d[a] ?? f
+    ) : n.sanitize(r, f);
+  }, u = function(e, s) {
+    const r = o(s);
+    r !== void 0 && (e.innerHTML = r);
   };
   return {
-    mounted: e,
-    updated: e
+    mounted: u,
+    updated: u,
+    getSSRProps(e) {
+      return {
+        innerHTML: o(e)
+      };
+    }
   };
 }
 const k = {
-  install(t, o = {}, n = c) {
+  install(t, i = {}, n = c) {
     t.directive(
       "dompurify-html",
-      p(o, n)
+      p(i, n)
     );
   }
 };
