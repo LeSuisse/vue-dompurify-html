@@ -12,6 +12,10 @@ You should take a look at the
 [DOMPurify Security Goals & Threat Model](https://github.com/cure53/DOMPurify/wiki/Security-Goals-&-Threat-Model)
 to understand what are the limitations and possibilities.
 
+## SSR
+
+This package is compatible with SSR. Main issue is described in [this issue](https://github.com/LeSuisse/vue-dompurify-html/issues/1917). If that will be fixed, please use the original one.
+
 ## Installation
 
 ```
