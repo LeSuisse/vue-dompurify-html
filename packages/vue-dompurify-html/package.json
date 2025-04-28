@@ -1,11 +1,11 @@
 {
     "name": "vue-dompurify-html-ssr",
-    "version": "5.2.1",
+    "version": "5.2.2",
     "description": "Safe replacement for the v-html directive",
     "license": "MIT",
     "author": "Thomas Gerbet",
-    "main": "./dist/vue-dompurify-html.umd.js",
-    "module": "./dist/vue-dompurify-html.mjs",
+    "main": "./dist/vue-dompurify-html-ssr.umd.js",
+    "module": "./dist/vue-dompurify-html-ssr.mjs",
     "types": "types/index.d.ts",
     "web-types": "./web-types.json",
     "files": [
@@ -15,8 +15,8 @@
     ],
     "exports": {
         ".": {
-            "import": "./dist/vue-dompurify-html.mjs",
-            "require": "./dist/vue-dompurify-html.umd.js",
+            "import": "./dist/vue-dompurify-html-ssr.mjs",
+            "require": "./dist/vue-dompurify-html-ssr.umd.js",
             "types": "./types/index.d.ts"
         }
     },
