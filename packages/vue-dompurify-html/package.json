@@ -1,5 +1,5 @@
 {
-    "name": "vue-dompurify-html",
+    "name": "vue-dompurify-html-ssr",
     "version": "5.2.0",
     "description": "Safe replacement for the v-html directive",
     "license": "MIT",
