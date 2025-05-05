@@ -1,6 +1,6 @@
 {
     "name": "vue-dompurify-html",
-    "version": "5.2.0",
+    "version": "5.3.0",
     "description": "Safe replacement for the v-html directive",
     "license": "MIT",
     "author": "Thomas Gerbet",
@@ -45,7 +45,7 @@
         "test-mutation": "stryker run"
     },
     "dependencies": {
-        "dompurify": "^3.2.1"
+        "dompurify": "^3.2.5"
     },
     "peerDependencies": {
         "vue": "^3.4.36"
