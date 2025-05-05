@@ -12,6 +12,7 @@ export interface MinimalDOMPurifyConfig {
     FORBID_ATTR?: string[] | undefined;
     FORBID_CONTENTS?: string[] | undefined;
     FORBID_TAGS?: string[] | undefined;
+    FORCE_BODY?: boolean | undefined;
     ALLOWED_URI_REGEXP?: RegExp | undefined;
     ALLOW_UNKNOWN_PROTOCOLS?: boolean | undefined;
     USE_PROFILES?: false | {
