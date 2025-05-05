@@ -3,3 +3,6 @@ packages:
   - examples/*
 onlyBuiltDependencies:
   - esbuild
+overrides:
+  esbuild@<=0.24.2: '>=0.25.0'
+  serialize-javascript@>=6.0.0 <6.0.2: '>=6.0.2'
