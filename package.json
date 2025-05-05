@@ -7,12 +7,11 @@
         "build": "turbo run build",
         "test": "turbo run test",
         "test-mutation": "turbo run test-mutation",
-        "lint": "eslint '**/*.ts' '**/*.mts' && prettier --check '**/*.md' '**.json' './.github/'",
-        "lint-fix": "eslint '**/*.ts' '**/*.mts' --fix && prettier --write '**/*.md' '**/*.json' './.github/'"
+        "lint": "eslint --flag unstable_native_nodejs_ts_config '**/*.ts' '**/*.mts' && prettier --check '**/*.md' '**.json' './.github/'",
+        "lint-fix": "eslint --flag unstable_native_nodejs_ts_config '**/*.ts' '**/*.mts' --fix && prettier --write '**/*.md' '**/*.json' './.github/'"
     },
     "devDependencies": {
         "@eslint/js": "9.26.0",
-        "@types/eslint__js": "8.42.3",
         "eslint": "9.26.0",
         "eslint-config-prettier": "10.1.2",
         "eslint-plugin-prettier": "5.3.1",

@@ -1,43 +1,43 @@
 import l from "dompurify";
 function m(t, i) {
   const n = t.hooks ?? {};
-  let o;
-  for (o in n) {
-    const u = n[o];
-    u !== void 0 && i.addHook(o, u);
+  let e;
+  for (e in n) {
+    const r = n[e];
+    r !== void 0 && i.addHook(e, r);
   }
 }
-function c() {
+function f() {
   return l();
 }
-function p(t = {}, i = c) {
+function p(t = {}, i = f) {
   const n = i();
   m(t, n);
-  const o = function(e) {
-    const s = e.value;
-    if (e.oldValue === s)
+  const e = function(o) {
+    const s = o.value;
+    if (o.oldValue === s)
       return;
-    const r = `${s}`, a = e.arg, d = t.namedConfigurations, f = t.default ?? {};
+    const u = `${s}`, a = o.arg, d = t.namedConfigurations, c = t.default ?? {};
     return d && a !== void 0 ? n.sanitize(
-      r,
-      d[a] ?? f
-    ) : n.sanitize(r, f);
-  }, u = function(e, s) {
-    const r = o(s);
-    r !== void 0 && (e.innerHTML = r);
+      u,
+      d[a] ?? c
+    ) : n.sanitize(u, c);
+  }, r = function(o, s) {
+    const u = e(s);
+    u !== void 0 && (o.innerHTML = u);
   };
   return {
-    mounted: u,
-    updated: u,
-    getSSRProps(e) {
+    mounted: r,
+    updated: r,
+    getSSRProps(o) {
       return {
-        innerHTML: o(e)
+        innerHTML: e(o)
       };
     }
   };
 }
 const k = {
-  install(t, i = {}, n = c) {
+  install(t, i = {}, n = f) {
     t.directive(
       "dompurify-html",
       p(i, n)
