@@ -5,11 +5,13 @@
   }
 ) {} }:
 
-pkgs.mkShell {
+pkgs.mkShellNoCC {
   buildInputs = [
     pkgs.nodejs-slim
     pkgs.pnpm
     pkgs.cacert
     pkgs.ps
   ];
+
+  NODE_OPTIONS = "--experimental-strip-types";
 }
