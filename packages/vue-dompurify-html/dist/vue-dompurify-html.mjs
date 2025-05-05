@@ -1,4 +1,4 @@
-import l from "dompurify";
+import p from "dompurify";
 function m(t, i) {
   const n = t.hooks ?? {};
   let e;
@@ -7,45 +7,47 @@ function m(t, i) {
     r !== void 0 && i.addHook(e, r);
   }
 }
-function f() {
-  return l();
+function l() {
+  return p();
 }
-function p(t = {}, i = f) {
+function v(t = {}, i = l) {
   const n = i();
   m(t, n);
   const e = function(o) {
     const s = o.value;
     if (o.oldValue === s)
       return;
-    const u = `${s}`, a = o.arg, d = t.namedConfigurations, c = t.default ?? {};
-    return d && a !== void 0 ? n.sanitize(
+    const u = `${s}`, d = o.arg, c = t.namedConfigurations, f = t.default ?? {};
+    return c && d !== void 0 ? n.sanitize(
       u,
-      d[a] ?? c
-    ) : n.sanitize(u, c);
+      c[d] ?? f
+    ) : n.sanitize(u, f);
   }, r = function(o, s) {
     const u = e(s);
     u !== void 0 && (o.innerHTML = u);
-  };
-  return {
+  }, a = {
     mounted: r,
-    updated: r,
+    updated: r
+  };
+  return t.enableSSRPropsSupport ? {
+    ...a,
     getSSRProps(o) {
       return {
         innerHTML: e(o)
       };
     }
-  };
+  } : a;
 }
-const k = {
-  install(t, i = {}, n = f) {
+const y = {
+  install(t, i = {}, n = l) {
     t.directive(
       "dompurify-html",
-      p(i, n)
+      v(i, n)
     );
   }
 };
 export {
-  p as buildVueDompurifyHTMLDirective,
-  k as default,
-  k as vueDompurifyHTMLPlugin
+  v as buildVueDompurifyHTMLDirective,
+  y as default,
+  y as vueDompurifyHTMLPlugin
 };

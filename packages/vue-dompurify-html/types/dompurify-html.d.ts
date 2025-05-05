@@ -41,6 +41,7 @@ export interface DirectiveConfig {
     } & {
         [H in 'beforeSanitizeShadowDOM' | 'afterSanitizeShadowDOM']?: ((currentNode: DocumentFragment, hookEvent: null, config: MinimalDOMPurifyConfig) => void) | undefined;
     };
+    enableSSRPropsSupport?: boolean | undefined;
 }
 export declare function defaultDOMPurifyInstanceBuilder(): MinimalDOMPurifyInstance;
 export declare function buildDirective(config?: DirectiveConfig, buildDOMPurifyInstance?: DOMPurifyInstanceBuilder): ObjectDirective<HTMLElement>;

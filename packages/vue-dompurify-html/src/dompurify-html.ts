@@ -94,6 +94,7 @@ export interface DirectiveConfig {
               ) => void)
             | undefined;
     };
+    enableSSRPropsSupport?: boolean | undefined;
 }
 
 function setUpHooks(
@@ -156,13 +157,21 @@ export function buildDirective(
         el.innerHTML = sanitized_content;
     };
 
-    return {
+    const directive = {
         mounted: updateComponent,
         updated: updateComponent,
-        getSSRProps(binding: DirectiveBinding<HTMLElement>) {
-            return {
-                innerHTML: sanitizeContentFromBindingValue(binding),
-            };
-        },
     };
+
+    if (config.enableSSRPropsSupport) {
+        return {
+            ...directive,
+            getSSRProps(binding: DirectiveBinding<HTMLElement>) {
+                return {
+                    innerHTML: sanitizeContentFromBindingValue(binding),
+                };
+            },
+        };
+    }
+
+    return directive;
 }

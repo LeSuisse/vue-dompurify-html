@@ -50,6 +50,13 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
         expect(wrapper.html()).toBe('<p>\n<pre>Hello After Update</pre>\n</p>');
     });
 
+    it('does not set SSR props hook by default', () => {
+        expect(buildDirective().getSSRProps).toBeUndefined();
+        expect(
+            buildDirective({ enableSSRPropsSupport: true }).getSSRProps,
+        ).toBeDefined();
+    });
+
     it('can be used with a default config', (): void => {
         const component = {
             template: '<p v-dompurify-html="rawHtml"></p>',
@@ -174,7 +181,10 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             } as unknown as DOMPurify;
         };
 
-        const directive = buildDirective({}, instanceBuilder);
+        const directive = buildDirective(
+            { enableSSRPropsSupport: true },
+            instanceBuilder,
+        );
 
         const wrapper = mount(component, {
             global: {
