@@ -18,3 +18,5 @@ jobs:
               env:
                   NODE_AUTH_TOKEN: ${{ secrets.NPMJS_PUBLISH_TOKEN }}
             - run: nix-shell --run "pnpm publish --recursive --provenance --access public --no-git-checks"
+              env:
+                  NPM_CONFIG_PROVENANCE: true
