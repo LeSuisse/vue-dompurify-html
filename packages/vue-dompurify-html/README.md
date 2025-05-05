@@ -147,13 +147,20 @@ const rawHtml = '<span style="color: red">Hello!</span>';
 
 ## Usage with [Nuxt 3](https://nuxtjs.org/)
 
-In your Nuxt folder, create a new plugin `plugins/dompurify-html.ts` with the following content:
+In your Nuxt folder, add the [`isomorphic-dompurify` dependency](https://github.com/kkomelin/isomorphic-dompurify)
+and create a new plugin `plugins/dompurify-html.ts` with the following content:
 
 ```js
 import VueDOMPurifyHTML from 'vue-dompurify-html';
+import { JSDOM } from 'jsdom';
+import DOMPurify from 'isomorphic-dompurify';
 
 export default defineNuxtPlugin((nuxtApp) => {
-    nuxtApp.vueApp.use(VueDOMPurifyHTML);
+    nuxtApp.vueApp.use(
+        VueDOMPurifyHTML,
+        { enableSSRPropsSupport: true },
+        () => DOMPurify,
+    );
 });
 ```
 
