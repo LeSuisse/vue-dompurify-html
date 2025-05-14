@@ -1,6 +1,6 @@
 {
   "name": "vue-dompurify-html",
-  "version": "2.6.0",
+  "version": "2.6.1",
   "description": "Safe replacement for the v-html directive",
   "license": "MIT",
   "author": "Thomas Gerbet",
@@ -33,14 +33,14 @@
     "lint-fix": "eslint --ignore-pattern 'node_modules/' --ignore-pattern 'dist/' '**/*.ts' --fix"
   },
   "dependencies": {
-    "dompurify": "^2.3.4",
+    "dompurify": "^2.5.8",
     "jest-environment-jsdom": "^29.0.0"
   },
   "peerDependencies": {
     "vue": "^2.0.0"
   },
   "devDependencies": {
-    "@types/dompurify": "2.3.4",
+    "@types/dompurify": "^2.4.0",
     "@types/jest": "^28.1.0",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
