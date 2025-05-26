@@ -12,7 +12,7 @@
     "devDependencies": {
         "@nuxt/devtools": "2.4.1",
         "nuxt": "3.17.4",
-        "vue": "3.5.14",
+        "vue": "3.5.15",
         "vue-dompurify-html": "workspace:*"
     },
     "dependencies": {
