@@ -11,8 +11,8 @@
         "lint-fix": "eslint --flag unstable_native_nodejs_ts_config '**/*.ts' '**/*.mts' --fix && prettier --write '**/*.md' '**/*.json' './.github/'"
     },
     "devDependencies": {
-        "@eslint/js": "9.27.0",
-        "eslint": "9.27.0",
+        "@eslint/js": "9.28.0",
+        "eslint": "9.28.0",
         "eslint-config-prettier": "10.1.5",
         "eslint-plugin-prettier": "5.4.1",
         "prettier": "3.5.3",
