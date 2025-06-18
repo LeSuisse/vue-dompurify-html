@@ -166,6 +166,3 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 You can use the same configuration options than the Vue setup. You can see a complete example
 with some advanced configuration in the [Nuxt 3 example](../../examples/nuxt3/).
-
-**Note:** due to [current limitations](https://github.com/vuejs/core/issues/8112), the content processed by the
-directive are only processed client side.
