@@ -91,8 +91,8 @@ importers:
         specifier: 9.1.1
         version: 9.1.1(@stryker-mutator/core@9.1.1)(typescript@5.9.3)
       '@stryker-mutator/vitest-runner':
-        specifier: 9.1.1
-        version: 9.1.1(@stryker-mutator/core@9.1.1)(vitest@3.2.4(jiti@2.5.1)(jsdom@27.0.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.0))
+        specifier: 9.2.0
+        version: 9.2.0(@stryker-mutator/core@9.1.1)(vitest@3.2.4(jiti@2.5.1)(jsdom@27.0.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.0))
       '@vitest/coverage-v8':
         specifier: 3.2.4
         version: 3.2.4(vitest@3.2.4(jiti@2.5.1)(jsdom@27.0.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.0))
@@ -1476,6 +1476,10 @@ packages:
     resolution: {integrity: sha512-rcN3GDz8MusRVdyRA4n3Z90/aVb3xbhaBK0hIcD+d62o6U47l/grGFA3bLAVM++cyCAoRYu6UkaUxu3BeOZnOg==}
     engines: {node: '>=20.0.0'}
 
+  '@stryker-mutator/api@9.2.0':
+    resolution: {integrity: sha512-34dalOkATPR9Qh+cO0VFeway0FlfoDrDD1b9mrw3rIF6pJVEjRHlFHiEmdt1G2DewG9pL5guyPy65kkTQIekpQ==}
+    engines: {node: '>=20.0.0'}
+
   '@stryker-mutator/core@9.1.1':
     resolution: {integrity: sha512-KB+J+J/lHh8zbLPdGOSgcpBA/X1Di2vJt0HCdMdIGJgdTITTb0+b2J7NNfzchnUIsi24rm+whPVZRiah8M/stg==}
     engines: {node: '>=20.0.0'}
@@ -1495,11 +1499,14 @@ packages:
   '@stryker-mutator/util@9.1.1':
     resolution: {integrity: sha512-F2LR61gWgxBj0dUnkmGS0XydIapIRu+ii2X7Tt+FrcyfQrpykCvV3TZqQJ2aRkg8VFn5dkjtL9cQKEepWHoBFg==}
 
-  '@stryker-mutator/vitest-runner@9.1.1':
-    resolution: {integrity: sha512-4lLrGGzdYnKui4E/H08C9IwNbtxhH4ty+nA5SmO16lZbeF+62UFm/tCXTWVUUaPFHKaiBA4ftLUgeBLwebtBKw==}
+  '@stryker-mutator/util@9.2.0':
+    resolution: {integrity: sha512-wJuWqXLq/8PKjPUBqHU/N0pshFWPhFA7muVrsNiTVPjHK5DYLkjOrzUl8cUJjusHX35INDr/2uM66kWaYuQu3g==}
+
+  '@stryker-mutator/vitest-runner@9.2.0':
+    resolution: {integrity: sha512-wTRLQl5OZoLUYK+bdc9eqWQHKjVmJu8GakjCwBmTwCX2ohzL/tqXZRUGMwcodsC1omEtPmktGNs6e2nfk0j5QA==}
     engines: {node: '>=14.18.0'}
     peerDependencies:
-      '@stryker-mutator/core': ~9.1.0
+      '@stryker-mutator/core': ~9.2.0
       vitest: '>=2.0.0'
 
   '@tybys/wasm-util@0.10.0':
@@ -6120,6 +6127,13 @@ snapshots:
       tslib: 2.8.1
       typed-inject: 5.0.0
 
+  '@stryker-mutator/api@9.2.0':
+    dependencies:
+      mutation-testing-metrics: 3.5.1
+      mutation-testing-report-schema: 3.5.1
+      tslib: 2.8.1
+      typed-inject: 5.0.0
+
   '@stryker-mutator/core@9.1.1':
     dependencies:
       '@inquirer/prompts': 7.5.1
@@ -6179,11 +6193,13 @@ snapshots:
 
   '@stryker-mutator/util@9.1.1': {}
 
-  '@stryker-mutator/vitest-runner@9.1.1(@stryker-mutator/core@9.1.1)(vitest@3.2.4(jiti@2.5.1)(jsdom@27.0.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.0))':
+  '@stryker-mutator/util@9.2.0': {}
+
+  '@stryker-mutator/vitest-runner@9.2.0(@stryker-mutator/core@9.1.1)(vitest@3.2.4(jiti@2.5.1)(jsdom@27.0.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.0))':
     dependencies:
-      '@stryker-mutator/api': 9.1.1
+      '@stryker-mutator/api': 9.2.0
       '@stryker-mutator/core': 9.1.1
-      '@stryker-mutator/util': 9.1.1
+      '@stryker-mutator/util': 9.2.0
       tslib: 2.8.1
       vitest: 3.2.4(jiti@2.5.1)(jsdom@27.0.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.0)
 
