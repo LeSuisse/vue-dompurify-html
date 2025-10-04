@@ -51,8 +51,8 @@
         "vue": "^3.4.36"
     },
     "devDependencies": {
-        "@stryker-mutator/core": "9.1.1",
-        "@stryker-mutator/typescript-checker": "9.1.1",
+        "@stryker-mutator/core": "9.2.0",
+        "@stryker-mutator/typescript-checker": "9.2.0",
         "@stryker-mutator/vitest-runner": "9.2.0",
         "@vitest/coverage-v8": "3.2.4",
         "@vue/test-utils": "2.4.6",
