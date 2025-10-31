@@ -92,16 +92,16 @@ importers:
         version: 9.3.0(@stryker-mutator/core@9.3.0)(typescript@5.9.3)
       '@stryker-mutator/vitest-runner':
         specifier: 9.3.0
-        version: 9.3.0(@stryker-mutator/core@9.3.0)(vitest@4.0.5(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1))
+        version: 9.3.0(@stryker-mutator/core@9.3.0)(vitest@4.0.5(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1))
       '@vitest/coverage-v8':
         specifier: 4.0.5
-        version: 4.0.5(vitest@4.0.5(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1))
+        version: 4.0.5(vitest@4.0.5(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1))
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
       jsdom:
-        specifier: 27.0.1
-        version: 27.0.1(postcss@8.5.6)
+        specifier: 27.1.0
+        version: 27.1.0(postcss@8.5.6)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -110,7 +110,7 @@ importers:
         version: 7.1.12(jiti@2.6.1)(terser@5.26.0)(yaml@2.8.1)
       vitest:
         specifier: 4.0.5
-        version: 4.0.5(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1)
+        version: 4.0.5(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1)
       vue:
         specifier: 3.5.21
         version: 3.5.21(typescript@5.9.3)
@@ -120,6 +120,9 @@ packages:
   '@aashutoshrathi/word-wrap@1.2.6':
     resolution: {integrity: sha512-1Yjs2SvM8TflER/OD3cOjhWWOZb58A2t7wpE2S9XfBYTiIl+XFhQG2bjy4Pu1I+EAlCNUzRDYDdFwFYUKvXcIA==}
     engines: {node: '>=0.10.0'}
+
+  '@acemir/cssom@0.9.19':
+    resolution: {integrity: sha512-Pp2gAQXPZ2o7lt4j0IMwNRXqQ3pagxtDj5wctL5U2Lz4oV0ocDNlkgx4DpxfyKav4S/bePuI+SMqcBSUHLy9kg==}
 
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
@@ -131,8 +134,8 @@ packages:
   '@asamuzakjp/css-color@4.0.4':
     resolution: {integrity: sha512-cKjSKvWGmAziQWbCouOsFwb14mp1betm8Y7Fn+yglDMUUu3r9DCbJ9iJbeFDenLMqFbIMC0pQP8K+B8LAxX3OQ==}
 
-  '@asamuzakjp/dom-selector@6.7.2':
-    resolution: {integrity: sha512-ccKogJI+0aiDhOahdjANIc9SDixSud1gbwdVrhn7kMopAtLXqsz9MKmQQtIl6Y5aC2IYq+j4dz/oedL2AVMmVQ==}
+  '@asamuzakjp/dom-selector@6.7.3':
+    resolution: {integrity: sha512-kiGFeY+Hxf5KbPpjRLf+ffWbkos1aGo8MBfd91oxS3O57RgU3XhZrt/6UzoVF9VMpWbC3v87SRc9jxGrc9qHtQ==}
 
   '@asamuzakjp/nwsapi@2.3.9':
     resolution: {integrity: sha512-n8GuYSrI9bF7FFZ/SjhwevlHc8xaVlb/7HmHelnc/PZXBD2ZR49NnN9sMMuDdEGPeeRQ5d0hqlSlEpgCX3Wl0Q==}
@@ -2409,8 +2412,8 @@ packages:
     resolution: {integrity: sha512-9+vem03dMXG7gDmZ62uqmRiMRNtinIZ9ZyuF6BdxzfOD+FdN5hretzynkn0ReS2DO2GSw76RWHs0UmJPI2zUjw==}
     engines: {node: '>=18'}
 
-  cssstyle@5.3.1:
-    resolution: {integrity: sha512-g5PC9Aiph9eiczFpcgUhd9S4UUO3F+LHGRIi5NUMZ+4xtoIYbHNZwZnWA2JsFGe8OU8nl4WyaEFiZuGuxlutJQ==}
+  cssstyle@5.3.2:
+    resolution: {integrity: sha512-zDMqXh8Vs1CdRYZQ2M633m/SFgcjlu8RB8b/1h82i+6vpArF507NSYIWJHGlJaTWoS+imcnctmEz43txhbVkOw==}
     engines: {node: '>=20'}
 
   csstype@3.1.3:
@@ -2471,9 +2474,6 @@ packages:
 
   decache@4.6.2:
     resolution: {integrity: sha512-2LPqkLeu8XWHU8qNCS3kcF6sCcb5zIzvWaAHYSvPfwhdd7mHuah29NssMzrTYyHN4F5oFy2ko9OBYxegtU0FEw==}
-
-  decimal.js@10.5.0:
-    resolution: {integrity: sha512-8vDa8Qxvr/+d94hSh5P3IJwI5t8/c0KsMp+g8bNw9cY2icONa5aPfvKeieW1WlG0WQYwwhJ7mjui2xtiePQSXw==}
 
   decimal.js@10.6.0:
     resolution: {integrity: sha512-YpgQiITW3JXGntzdUmyUR1V812Hn8T1YVXhCu+wO3OpS4eU9l4YdD3qjyiKdV6mvV29zapkMeD390UVEf2lkUg==}
@@ -3197,9 +3197,9 @@ packages:
       canvas:
         optional: true
 
-  jsdom@27.0.1:
-    resolution: {integrity: sha512-SNSQteBL1IlV2zqhwwolaG9CwhIhTvVHWg3kTss/cLE7H/X4644mtPQqYvCfsSrGQWt9hSZcgOXX8bOZaMN+kA==}
-    engines: {node: '>=20'}
+  jsdom@27.1.0:
+    resolution: {integrity: sha512-Pcfm3eZ+eO4JdZCXthW9tCDT3nF4K+9dmeZ+5X39n+Kqz0DDIABRP5CAEOHRFZk8RGuC2efksTJxrjp8EXCunQ==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
     peerDependenciesMeta:
@@ -3312,10 +3312,6 @@ packages:
 
   lru-cache@10.4.3:
     resolution: {integrity: sha512-JNAzZcXrCt42VGLuYz0zfAzDfAvJWW6AfYlDBQyDV5DClI2m5sAmK+OIO7s59XfsRsWHp02jAJrRadPRGTt6SQ==}
-
-  lru-cache@11.2.1:
-    resolution: {integrity: sha512-r8LA6i4LP4EeWOhqBaZZjDWwehd1xUJPCJd9Sv300H0ZmcUER4+JPh7bqqZeqs1o5pgtgvXm+d9UGrB5zZGDiQ==}
-    engines: {node: 20 || >=22}
 
   lru-cache@11.2.2:
     resolution: {integrity: sha512-F9ODfyqML2coTIsQpSkRHnLSZMtkU8Q+mSfcaIyKwy58u+8k5nvAYeiNhsyMARvzNcXJ9QfWVrcPsC9e9rAxtg==}
@@ -4983,6 +4979,8 @@ snapshots:
 
   '@aashutoshrathi/word-wrap@1.2.6': {}
 
+  '@acemir/cssom@0.9.19': {}
+
   '@ampproject/remapping@2.3.0':
     dependencies:
       '@jridgewell/gen-mapping': 0.3.12
@@ -4994,7 +4992,7 @@ snapshots:
       '@csstools/css-color-parser': 3.1.0(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4
-      lru-cache: 11.2.1
+      lru-cache: 11.2.2
 
   '@asamuzakjp/css-color@4.0.4':
     dependencies:
@@ -5002,9 +5000,9 @@ snapshots:
       '@csstools/css-color-parser': 3.1.0(@csstools/css-parser-algorithms@3.0.5(@csstools/css-tokenizer@3.0.4))(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-parser-algorithms': 3.0.5(@csstools/css-tokenizer@3.0.4)
       '@csstools/css-tokenizer': 3.0.4
-      lru-cache: 11.2.1
+      lru-cache: 11.2.2
 
-  '@asamuzakjp/dom-selector@6.7.2':
+  '@asamuzakjp/dom-selector@6.7.3':
     dependencies:
       '@asamuzakjp/nwsapi': 2.3.9
       bidi-js: 1.0.3
@@ -6644,13 +6642,13 @@ snapshots:
 
   '@stryker-mutator/util@9.3.0': {}
 
-  '@stryker-mutator/vitest-runner@9.3.0(@stryker-mutator/core@9.3.0)(vitest@4.0.5(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1))':
+  '@stryker-mutator/vitest-runner@9.3.0(@stryker-mutator/core@9.3.0)(vitest@4.0.5(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1))':
     dependencies:
       '@stryker-mutator/api': 9.3.0
       '@stryker-mutator/core': 9.3.0
       '@stryker-mutator/util': 9.3.0
       tslib: 2.8.1
-      vitest: 4.0.5(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1)
+      vitest: 4.0.5(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1)
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -6822,7 +6820,7 @@ snapshots:
       vite: 7.1.12(jiti@2.6.1)(terser@5.26.0)(yaml@2.8.1)
       vue: 3.5.22(typescript@5.9.3)
 
-  '@vitest/coverage-v8@4.0.5(vitest@4.0.5(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1))':
+  '@vitest/coverage-v8@4.0.5(vitest@4.0.5(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1))':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.5
@@ -6835,7 +6833,7 @@ snapshots:
       magicast: 0.3.5
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.5(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1)
+      vitest: 4.0.5(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1)
     transitivePeerDependencies:
       - supports-color
 
@@ -7546,7 +7544,7 @@ snapshots:
       '@asamuzakjp/css-color': 2.8.2
       rrweb-cssom: 0.8.0
 
-  cssstyle@5.3.1(postcss@8.5.6):
+  cssstyle@5.3.2(postcss@8.5.6):
     dependencies:
       '@asamuzakjp/css-color': 4.0.4
       '@csstools/css-syntax-patches-for-csstree': 1.0.14(postcss@8.5.6)
@@ -7583,8 +7581,6 @@ snapshots:
     dependencies:
       callsite: 1.0.0
     optional: true
-
-  decimal.js@10.5.0: {}
 
   decimal.js@10.6.0: {}
 
@@ -8338,7 +8334,7 @@ snapshots:
     dependencies:
       cssstyle: 4.2.1
       data-urls: 5.0.0
-      decimal.js: 10.5.0
+      decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
@@ -8361,10 +8357,11 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  jsdom@27.0.1(postcss@8.5.6):
+  jsdom@27.1.0(postcss@8.5.6):
     dependencies:
-      '@asamuzakjp/dom-selector': 6.7.2
-      cssstyle: 5.3.1(postcss@8.5.6)
+      '@acemir/cssom': 0.9.19
+      '@asamuzakjp/dom-selector': 6.7.3
+      cssstyle: 5.3.2(postcss@8.5.6)
       data-urls: 6.0.0
       decimal.js: 10.6.0
       html-encoding-sniffer: 4.0.0
@@ -8372,7 +8369,6 @@ snapshots:
       https-proxy-agent: 7.0.6
       is-potential-custom-element-name: 1.0.1
       parse5: 8.0.0
-      rrweb-cssom: 0.8.0
       saxes: 6.0.0
       symbol-tree: 3.2.4
       tough-cookie: 6.0.0
@@ -8493,8 +8489,6 @@ snapshots:
   lodash@4.17.21: {}
 
   lru-cache@10.4.3: {}
-
-  lru-cache@11.2.1: {}
 
   lru-cache@11.2.2: {}
 
@@ -10142,7 +10136,7 @@ snapshots:
       terser: 5.26.0
       yaml: 2.8.1
 
-  vitest@4.0.5(jiti@2.6.1)(jsdom@27.0.1(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1):
+  vitest@4.0.5(jiti@2.6.1)(jsdom@27.1.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.1):
     dependencies:
       '@vitest/expect': 4.0.5
       '@vitest/mocker': 4.0.5(vite@7.1.12(jiti@2.6.1)(terser@5.26.0)(yaml@2.8.1))
@@ -10165,7 +10159,7 @@ snapshots:
       vite: 7.1.12(jiti@2.6.1)(terser@5.26.0)(yaml@2.8.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      jsdom: 27.0.1(postcss@8.5.6)
+      jsdom: 27.1.0(postcss@8.5.6)
     transitivePeerDependencies:
       - jiti
       - less
