@@ -56,7 +56,7 @@
         "@stryker-mutator/vitest-runner": "9.4.0",
         "@vitest/coverage-v8": "4.0.15",
         "@vue/test-utils": "2.4.6",
-        "jsdom": "27.2.0",
+        "jsdom": "27.3.0",
         "typescript": "5.9.3",
         "vite": "7.2.7",
         "vitest": "4.0.15",
