@@ -136,7 +136,7 @@ export function buildDirective(
         const arg = binding.arg;
         const namedConfigurations = config.namedConfigurations;
         const defaultConfig = config.default ?? {};
-        if (namedConfigurations && arg !== undefined) {
+        if (namedConfigurations) {
             return dompurifyInstance.sanitize(
                 current_value_string,
                 namedConfigurations[arg] ?? defaultConfig,

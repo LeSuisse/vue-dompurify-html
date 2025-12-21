@@ -1,33 +1,33 @@
 import p from "dompurify";
-function m(t, i) {
+function m(t, r) {
   const n = t.hooks ?? {};
   let e;
   for (e in n) {
-    const r = n[e];
-    r !== void 0 && i.addHook(e, r);
+    const i = n[e];
+    i !== void 0 && r.addHook(e, i);
   }
 }
-function l() {
+function f() {
   return p();
 }
-function v(t = {}, i = l) {
-  const n = i();
+function v(t = {}, r = f) {
+  const n = r();
   m(t, n);
   const e = function(o) {
     const s = o.value;
     if (o.oldValue === s)
       return;
-    const u = `${s}`, d = o.arg, c = t.namedConfigurations, f = t.default ?? {};
-    return c && d !== void 0 ? n.sanitize(
+    const u = `${s}`, l = o.arg, c = t.namedConfigurations, d = t.default ?? {};
+    return c ? n.sanitize(
       u,
-      c[d] ?? f
-    ) : n.sanitize(u, f);
-  }, r = function(o, s) {
+      c[l] ?? d
+    ) : n.sanitize(u, d);
+  }, i = function(o, s) {
     const u = e(s);
     u !== void 0 && (o.innerHTML = u);
   }, a = {
-    mounted: r,
-    updated: r
+    mounted: i,
+    updated: i
   };
   return t.enableSSRPropsSupport ? {
     ...a,
@@ -39,10 +39,10 @@ function v(t = {}, i = l) {
   } : a;
 }
 const y = {
-  install(t, i = {}, n = l) {
+  install(t, r = {}, n = f) {
     t.directive(
       "dompurify-html",
-      v(i, n)
+      v(r, n)
     );
   }
 };
