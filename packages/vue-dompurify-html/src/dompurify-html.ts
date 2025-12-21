@@ -133,10 +133,10 @@ export function buildDirective(
             return undefined;
         }
         const current_value_string = `${current_value}`;
-        const arg = binding.arg;
+        const arg = binding.arg?.toString();
         const namedConfigurations = config.namedConfigurations;
         const defaultConfig = config.default ?? {};
-        if (namedConfigurations && arg !== undefined) {
+        if (namedConfigurations && arg) {
             return dompurifyInstance.sanitize(
                 current_value_string,
                 namedConfigurations[arg] ?? defaultConfig,
