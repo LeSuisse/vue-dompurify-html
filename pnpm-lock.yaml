@@ -97,16 +97,16 @@ importers:
         version: 9.4.0(@stryker-mutator/core@9.4.0)(typescript@5.9.3)
       '@stryker-mutator/vitest-runner':
         specifier: 9.4.0
-        version: 9.4.0(@stryker-mutator/core@9.4.0)(vitest@4.0.16(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2))
+        version: 9.4.0(@stryker-mutator/core@9.4.0)(vitest@4.0.16(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2))
       '@vitest/coverage-v8':
         specifier: 4.0.16
-        version: 4.0.16(vitest@4.0.16(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2))
+        version: 4.0.16(vitest@4.0.16(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2))
       '@vue/test-utils':
         specifier: 2.4.6
         version: 2.4.6
       jsdom:
-        specifier: 27.3.0
-        version: 27.3.0(postcss@8.5.6)
+        specifier: 27.4.0
+        version: 27.4.0(postcss@8.5.6)
       typescript:
         specifier: 5.9.3
         version: 5.9.3
@@ -115,7 +115,7 @@ importers:
         version: 7.3.0(jiti@2.6.1)(terser@5.26.0)(yaml@2.8.2)
       vitest:
         specifier: 4.0.16
-        version: 4.0.16(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2)
+        version: 4.0.16(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2)
       vue:
         specifier: 3.5.26
         version: 3.5.26(typescript@5.9.3)
@@ -721,6 +721,15 @@ packages:
   '@eslint/plugin-kit@0.4.1':
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@exodus/bytes@1.6.0':
+    resolution: {integrity: sha512-y32mI9627q5LR/L8fLc4YyDRJQOi+jK0D9okzLilAdiU3F9we3zC7Y7CFrR/8vAvUyv7FgBAYcNHtvbmhKCFcw==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+    peerDependencies:
+      '@exodus/crypto': ^1.0.0-rc.4
+    peerDependenciesMeta:
+      '@exodus/crypto':
+        optional: true
 
   '@fastify/busboy@3.1.1':
     resolution: {integrity: sha512-5DGmA8FTdB2XbDeEwc/5ZXBl6UbBAyBOOLlPuBnZ/N1SwdH9Ii+cOX3tBROlDgcTXxjOYnLMVoKk9+FXAw0CJw==}
@@ -2778,6 +2787,10 @@ packages:
     resolution: {integrity: sha512-Y22oTqIU4uuPgEemfz7NDJz6OeKf12Lsu+QC+s3BVpda64lTiMYCyGwg5ki4vFxkMwQdeZDl2adZoqUgdFuTgQ==}
     engines: {node: '>=18'}
 
+  html-encoding-sniffer@6.0.0:
+    resolution: {integrity: sha512-CV9TW3Y3f8/wT0BRFc1/KAVQ3TUHiXmaAb6VW9vtiMFf7SLoMd1PdAc4W3KFOFETBJUb90KatHqlsZMWV+R9Gg==}
+    engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
+
   html-escaper@2.0.2:
     resolution: {integrity: sha512-H2iMtd0I4Mt5eYiapRdIDjp+XzelXQ0tFE4JS7YFwFevXXMmOp9myNrUvCg0D6ws8iqkRPBfKHgbwig1SmlLfg==}
 
@@ -3013,8 +3026,8 @@ packages:
       canvas:
         optional: true
 
-  jsdom@27.3.0:
-    resolution: {integrity: sha512-GtldT42B8+jefDUC4yUKAvsaOrH7PDHmZxZXNgF2xMmymjUbRYJvpAybZAKEmXDGTM0mCsz8duOa4vTm5AY2Kg==}
+  jsdom@27.4.0:
+    resolution: {integrity: sha512-mjzqwWRD9Y1J1KUi7W97Gja1bwOOM5Ug0EZ6UDK3xS7j7mndrkwozHtSblfomlzyB4NepioNt+B2sOSzczVgtQ==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=24.0.0}
     peerDependencies:
       canvas: ^3.0.0
@@ -5261,6 +5274,8 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
+  '@exodus/bytes@1.6.0': {}
+
   '@fastify/busboy@3.1.1':
     optional: true
 
@@ -6195,13 +6210,13 @@ snapshots:
 
   '@stryker-mutator/util@9.4.0': {}
 
-  '@stryker-mutator/vitest-runner@9.4.0(@stryker-mutator/core@9.4.0)(vitest@4.0.16(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2))':
+  '@stryker-mutator/vitest-runner@9.4.0(@stryker-mutator/core@9.4.0)(vitest@4.0.16(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2))':
     dependencies:
       '@stryker-mutator/api': 9.4.0
       '@stryker-mutator/core': 9.4.0
       '@stryker-mutator/util': 9.4.0
       tslib: 2.8.1
-      vitest: 4.0.16(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2)
+      vitest: 4.0.16(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2)
 
   '@tybys/wasm-util@0.10.1':
     dependencies:
@@ -6359,7 +6374,7 @@ snapshots:
       vite: 7.3.0(jiti@2.6.1)(terser@5.26.0)(yaml@2.8.2)
       vue: 3.5.26(typescript@5.9.3)
 
-  '@vitest/coverage-v8@4.0.16(vitest@4.0.16(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2))':
+  '@vitest/coverage-v8@4.0.16(vitest@4.0.16(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2))':
     dependencies:
       '@bcoe/v8-coverage': 1.0.2
       '@vitest/utils': 4.0.16
@@ -6372,7 +6387,7 @@ snapshots:
       obug: 2.1.1
       std-env: 3.10.0
       tinyrainbow: 3.0.3
-      vitest: 4.0.16(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2)
+      vitest: 4.0.16(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2)
     transitivePeerDependencies:
       - supports-color
 
@@ -7556,6 +7571,12 @@ snapshots:
     dependencies:
       whatwg-encoding: 3.1.1
 
+  html-encoding-sniffer@6.0.0:
+    dependencies:
+      '@exodus/bytes': 1.6.0
+    transitivePeerDependencies:
+      - '@exodus/crypto'
+
   html-escaper@2.0.2: {}
 
   http-errors@2.0.0:
@@ -7793,14 +7814,15 @@ snapshots:
       - supports-color
       - utf-8-validate
 
-  jsdom@27.3.0(postcss@8.5.6):
+  jsdom@27.4.0(postcss@8.5.6):
     dependencies:
       '@acemir/cssom': 0.9.28
       '@asamuzakjp/dom-selector': 6.7.6
+      '@exodus/bytes': 1.6.0
       cssstyle: 5.3.4(postcss@8.5.6)
       data-urls: 6.0.0
       decimal.js: 10.6.0
-      html-encoding-sniffer: 4.0.0
+      html-encoding-sniffer: 6.0.0
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
       is-potential-custom-element-name: 1.0.1
@@ -7810,12 +7832,12 @@ snapshots:
       tough-cookie: 6.0.0
       w3c-xmlserializer: 5.0.0
       webidl-conversions: 8.0.0
-      whatwg-encoding: 3.1.1
       whatwg-mimetype: 4.0.0
       whatwg-url: 15.1.0
       ws: 8.18.3
       xml-name-validator: 5.0.0
     transitivePeerDependencies:
+      - '@exodus/crypto'
       - bufferutil
       - postcss
       - supports-color
@@ -9473,7 +9495,7 @@ snapshots:
       terser: 5.26.0
       yaml: 2.8.2
 
-  vitest@4.0.16(jiti@2.6.1)(jsdom@27.3.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2):
+  vitest@4.0.16(jiti@2.6.1)(jsdom@27.4.0(postcss@8.5.6))(terser@5.26.0)(yaml@2.8.2):
     dependencies:
       '@vitest/expect': 4.0.16
       '@vitest/mocker': 4.0.16(vite@7.3.0(jiti@2.6.1)(terser@5.26.0)(yaml@2.8.2))
@@ -9496,7 +9518,7 @@ snapshots:
       vite: 7.3.0(jiti@2.6.1)(terser@5.26.0)(yaml@2.8.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      jsdom: 27.3.0(postcss@8.5.6)
+      jsdom: 27.4.0(postcss@8.5.6)
     transitivePeerDependencies:
       - jiti
       - less
