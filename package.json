@@ -1,7 +1,7 @@
 {
     "private": true,
     "name": "root-vue-dompurify-html-repo",
-    "packageManager": "pnpm@10.28.1",
+    "packageManager": "pnpm@10.28.2",
     "scripts": {
         "typecheck": "turbo run typecheck",
         "build": "turbo run build",
