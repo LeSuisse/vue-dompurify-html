@@ -16,6 +16,6 @@
         "vue-dompurify-html": "workspace:*"
     },
     "dependencies": {
-        "isomorphic-dompurify": "^2.24.0"
+        "isomorphic-dompurify": "^3.0.0"
     }
 }
