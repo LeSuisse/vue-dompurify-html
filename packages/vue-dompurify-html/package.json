@@ -45,7 +45,7 @@
         "test-mutation": "stryker run"
     },
     "dependencies": {
-        "dompurify": "^3.2.5"
+        "dompurify": "^3.3.1"
     },
     "peerDependencies": {
         "vue": "^3.4.36"
