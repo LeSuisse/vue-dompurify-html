@@ -1,31 +1,11 @@
-import type { Mock } from 'vitest';
-import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { describe, it, expect, vi } from 'vitest';
 import { mount } from '@vue/test-utils';
 import type { DOMPurifyInstanceBuilder } from '../src/dompurify-html';
 import { buildDirective } from '../src/dompurify-html';
-import type { DOMPurify } from 'dompurify';
-import { sanitize, addHook } from 'dompurify';
+import DOMPurify from 'dompurify';
 import type { DirectiveBinding, VNode } from 'vue';
 
-vi.mock('dompurify', async () => {
-    const actual: { default: DOMPurify } = await vi.importActual('dompurify');
-    const spy = {
-        ...actual,
-        sanitize: vi.fn(actual.default.sanitize),
-        addHook: vi.fn(actual.default.addHook),
-    };
-    return {
-        ...spy,
-        default: () => spy,
-    };
-});
-
 describe('VueDOMPurifyHTML Test Suite', (): void => {
-    beforeEach(() => {
-        (sanitize as Mock).mockClear();
-        (addHook as Mock).mockClear();
-    });
-
     it('can be used', async (): Promise<void> => {
         const component = {
             template: '<p v-dompurify-html="rawHtml"></p>',
@@ -178,7 +158,7 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
                 sanitize(): string {
                     return 'Test';
                 },
-            } as unknown as DOMPurify;
+            } as unknown as typeof DOMPurify;
         };
 
         const directive = buildDirective(
@@ -306,10 +286,21 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             props: ['rawHtml'],
         };
 
+        const sanitize = vi.fn(DOMPurify.sanitize);
+        const instanceBuilder: DOMPurifyInstanceBuilder = () => {
+            return {
+                ...DOMPurify,
+                sanitize,
+            } as unknown as typeof DOMPurify;
+        };
+
         const wrapper = mount(component, {
             global: {
                 directives: {
-                    'dompurify-html': buildDirective(),
+                    'dompurify-html': buildDirective(
+                        undefined,
+                        instanceBuilder,
+                    ),
                 },
             },
             props: {
@@ -401,7 +392,6 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
 
         expect(uponSanitizeElement).toHaveBeenCalled();
         expect(afterSanitizeElements).toHaveBeenCalled();
-        expect(addHook).toBeCalledTimes(2);
     });
 
     it('does not rerender when input not changed', async (): Promise<void> => {
@@ -410,10 +400,21 @@ describe('VueDOMPurifyHTML Test Suite', (): void => {
             props: ['rawHtml'],
         };
 
+        const sanitize = vi.fn(DOMPurify.sanitize);
+        const instanceBuilder: DOMPurifyInstanceBuilder = () => {
+            return {
+                ...DOMPurify,
+                sanitize,
+            } as unknown as typeof DOMPurify;
+        };
+
         const wrapper = mount(component, {
             global: {
                 directives: {
-                    'dompurify-html': buildDirective(),
+                    'dompurify-html': buildDirective(
+                        undefined,
+                        instanceBuilder,
+                    ),
                 },
             },
             props: {

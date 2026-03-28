@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "esnext",
         "module": "esnext",
-        "moduleResolution": "Node",
+        "moduleResolution": "bundler",
         "isolatedModules": true,
         "skipLibCheck": true,
         "strict": true,
