@@ -106,10 +106,8 @@ function setUpHooks(
     let hookName: HookName;
     for (hookName in hooks) {
         const hook = hooks[hookName];
-        if (hook !== undefined) {
-            // @ts-expect-error Overload cannot be properly identified, in any cases they will be adjusted https://github.com/cure53/DOMPurify/pull/1031
-            dompurifyInstance.addHook(hookName, hook);
-        }
+        // @ts-expect-error Overload cannot be properly identified, in any cases they will be adjusted https://github.com/cure53/DOMPurify/pull/1031
+        dompurifyInstance.addHook(hookName, hook);
     }
 }
 

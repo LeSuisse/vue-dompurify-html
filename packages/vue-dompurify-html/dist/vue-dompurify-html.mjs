@@ -1,53 +1,41 @@
-import p from "dompurify";
-function m(t, r) {
-  const n = t.hooks ?? {};
-  let e;
-  for (e in n) {
-    const i = n[e];
-    i !== void 0 && r.addHook(e, i);
-  }
+import e from "dompurify";
+//#region src/dompurify-html.ts
+function t(e, t) {
+	let n = e.hooks ?? {}, r;
+	for (r in n) {
+		let e = n[r];
+		t.addHook(r, e);
+	}
 }
-function l() {
-  return p();
+function n() {
+	return e();
 }
-function v(t = {}, r = l) {
-  const n = r();
-  m(t, n);
-  const e = function(o) {
-    const s = o.value;
-    if (o.oldValue === s)
-      return;
-    const u = `${s}`, c = o.arg?.toString(), d = t.namedConfigurations, f = t.default ?? {};
-    return d && c ? n.sanitize(
-      u,
-      d[c] ?? f
-    ) : n.sanitize(u, f);
-  }, i = function(o, s) {
-    const u = e(s);
-    u !== void 0 && (o.innerHTML = u);
-  }, a = {
-    mounted: i,
-    updated: i
-  };
-  return t.enableSSRPropsSupport ? {
-    ...a,
-    getSSRProps(o) {
-      return {
-        innerHTML: e(o)
-      };
-    }
-  } : a;
+function r(e = {}, r = n) {
+	let i = r();
+	t(e, i);
+	let a = function(t) {
+		let n = t.value;
+		if (t.oldValue === n) return;
+		let r = `${n}`, a = t.arg?.toString(), o = e.namedConfigurations, s = e.default ?? {};
+		return o && a ? i.sanitize(r, o[a] ?? s) : i.sanitize(r, s);
+	}, o = function(e, t) {
+		let n = a(t);
+		n !== void 0 && (e.innerHTML = n);
+	}, s = {
+		mounted: o,
+		updated: o
+	};
+	return e.enableSSRPropsSupport ? {
+		...s,
+		getSSRProps(e) {
+			return { innerHTML: a(e) };
+		}
+	} : s;
 }
-const y = {
-  install(t, r = {}, n = l) {
-    t.directive(
-      "dompurify-html",
-      v(r, n)
-    );
-  }
-};
-export {
-  v as buildVueDompurifyHTMLDirective,
-  y as default,
-  y as vueDompurifyHTMLPlugin
-};
+//#endregion
+//#region src/index.ts
+var i = { install(e, t = {}, i = n) {
+	e.directive("dompurify-html", r(t, i));
+} };
+//#endregion
+export { r as buildVueDompurifyHTMLDirective, i as default, i as vueDompurifyHTMLPlugin };
