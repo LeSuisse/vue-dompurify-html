@@ -9,7 +9,7 @@
         "@vitejs/plugin-vue": "6.0.7",
         "typescript": "6.0.3",
         "vite": "8.0.16",
-        "vue-tsc": "3.3.4"
+        "vue-tsc": "3.3.5"
     },
     "scripts": {
         "typecheck": "vue-tsc --noEmit",
