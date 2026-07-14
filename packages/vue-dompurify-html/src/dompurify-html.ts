@@ -34,15 +34,9 @@ export interface MinimalDOMPurifyConfig {
         | undefined;
     CUSTOM_ELEMENT_HANDLING?: {
         tagNameCheck?:
-            | RegExp
-            | ((tagName: string) => boolean)
-            | null
-            | undefined;
+            RegExp | ((tagName: string) => boolean) | null | undefined;
         attributeNameCheck?:
-            | RegExp
-            | ((lcName: string) => boolean)
-            | null
-            | undefined;
+            RegExp | ((lcName: string) => boolean) | null | undefined;
         allowCustomizedBuiltInElements?: boolean | undefined;
     };
     SANITIZE_NAMED_PROPS?: boolean | undefined;
@@ -67,10 +61,12 @@ export interface DirectiveConfig {
               ) => void)
             | undefined;
     } & {
-        [H in
-            | 'beforeSanitizeElements'
-            | 'afterSanitizeElements'
-            | 'uponSanitizeShadowNode']?:
+        [
+            H in
+                | 'beforeSanitizeElements'
+                | 'afterSanitizeElements'
+                | 'uponSanitizeShadowNode'
+        ]?:
             | ((
                   currentNode: Node,
                   hookEvent: null,
