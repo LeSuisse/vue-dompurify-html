@@ -3,5 +3,6 @@
     "extends": ["config:js-lib"],
     "prHourlyLimit": 0,
     "automerge": false,
-    "ignorePaths": ["**/node_modules/**"]
+    "ignorePaths": ["**/node_modules/**"],
+    "minimumReleaseAge": "1 day"
 }
