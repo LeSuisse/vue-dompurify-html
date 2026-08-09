@@ -1,7 +1,7 @@
 { pkgs ? import (
   fetchTarball {
-    url = "https://github.com/NixOS/nixpkgs/archive/6cdc7fc76e8bf7fde9fa43a849fcaaa70e230dee.tar.gz";
-    sha256 = "sha256-FmieJB8/OUvNxbkboi7+IGfIuSXY3nF/hZQm8kD0r50=";
+    url = "https://github.com/NixOS/nixpkgs/archive/70ce234312134a463ba7728e94da2486a1d237ac.tar.gz";
+    sha256 = "sha256-X44cn5rzytELc3NNoQsh0aLkjWA/QzPfc6HPQmsG3sU=";
   }
 ) {} }:
 
@@ -12,6 +12,4 @@ pkgs.mkShellNoCC {
     pkgs.cacert
     pkgs.ps
   ];
-
-  NODE_OPTIONS = "--experimental-strip-types";
 }
