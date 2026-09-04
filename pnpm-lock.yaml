@@ -48,8 +48,8 @@ importers:
   examples/nuxt3:
     dependencies:
       isomorphic-dompurify:
-        specifier: ^3.0.0
-        version: 3.20.0
+        specifier: ^4.0.0
+        version: 4.1.0
     devDependencies:
       '@nuxt/devtools':
         specifier: 3.4.2
@@ -2513,9 +2513,6 @@ packages:
     resolution: {integrity: sha512-cgwlv/1iFQiFnU96XXgROh8xTeetsnJiDsTc7TYCLFd9+/WNkIqPTxiM/8pSd8VIrhXGTf1Ny1q1hquVqDJB5w==}
     engines: {node: '>= 4'}
 
-  dompurify@3.4.12:
-    resolution: {integrity: sha512-zQvGet8Z2sWbQhCmfFz/T5QWH2oBmjnqK3qvOjaqaNLrLEF912WamU+ohnTp0TCep/MFVHpdJuCZEdFOdTnEFg==}
-
   dompurify@3.4.13:
     resolution: {integrity: sha512-2vmYIoqjze2d+kakP8S/nS5shfsl587kzwEjcGlTdiksUVgFHnFCsLYDVj/JNqJVOQZGSYBTmuycv0PodwmnMQ==}
 
@@ -3067,10 +3064,9 @@ packages:
     resolution: {integrity: sha512-FFUtZMpoZ8RqHS3XeXEmHWLA4thH+ZxCv2lOiPIn1Xc7CxrqhWzNSDzD+/chS/zbYezmiwWLdQC09JdQKmthOw==}
     engines: {node: '>=20'}
 
-  isomorphic-dompurify@3.20.0:
-    resolution: {integrity: sha512-WH3UcdmOrqLJF6qHaGnGINNMRwkQXVtvxlhEdygP3FdbuPjfFEsvjaqA5E16uYlNvAT5uGqK4MPvJBvtTtriEA==}
+  isomorphic-dompurify@4.1.0:
+    resolution: {integrity: sha512-vjQwQSxyEkJHO6g+KIDlWj8swAzUB01pJu9GU9cLGHjE10d59GFzJkgtB2Lj5WTOoq9JeHlYjR/FFuqeopPO0Q==}
     engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0}
-    deprecated: Raised the minimum Node.js version (breaking) without a major bump. Use 4.x for the same code with correct semver, or pin 3.19.0 for Node < 22.22.2.
 
   istanbul-lib-coverage@3.2.2:
     resolution: {integrity: sha512-O8dpsF+r0WV/8MNRKfnmrtCWhuKjxrq2w+jpzBL5UZKTi2LeVWnWOmWRxFlesJONmc+wLAGvKQZEOanko0LFTg==}
@@ -7394,10 +7390,6 @@ snapshots:
     dependencies:
       domelementtype: 2.3.0
 
-  dompurify@3.4.12:
-    optionalDependencies:
-      '@types/trusted-types': 2.0.7
-
   dompurify@3.4.13:
     optionalDependencies:
       '@types/trusted-types': 2.0.7
@@ -7955,9 +7947,9 @@ snapshots:
 
   isexe@4.0.0: {}
 
-  isomorphic-dompurify@3.20.0:
+  isomorphic-dompurify@4.1.0:
     dependencies:
-      dompurify: 3.4.12
+      dompurify: 3.4.13
       jsdom: 30.0.1
     transitivePeerDependencies:
       - '@noble/hashes'
