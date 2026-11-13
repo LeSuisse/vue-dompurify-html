@@ -232,8 +232,8 @@ importers:
         version: link:../../packages/vue-dompurify-html
     devDependencies:
       '@vitejs/plugin-vue':
-        specifier: 6.0.10
-        version: 6.0.10(vite@8.3.8)(vue@3.5.45(@typescript/typescript6@6.0.2))
+        specifier: 6.0.11
+        version: 6.0.11(vite@8.3.8)(vue@3.5.45(@typescript/typescript6@6.0.2))
       typescript:
         specifier: npm:@typescript/typescript6@6.0.2
         version: '@typescript/typescript6@6.0.2'
@@ -2332,12 +2332,12 @@ packages:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
       vue: ^3.0.0
 
-  '@vitejs/plugin-vue@6.0.10':
-    resolution: {integrity: sha512-b80aUQh3n+qEzzZm5oQp3rT2QImeCx58K6eFl/RkJ3d65KW0kTuv5lNsLRVAjbW9YRUpo/wzmvzMgV34bTAItA==}
+  '@vitejs/plugin-vue@6.0.11':
+    resolution: {integrity: sha512-m48lskIUJGlB6qUiYhDMI8nd2ngeidz2U4nKTjqI13cFMu5rH8JeEILPkDtK9Fk/TjBA2pkj8AlbenqDaKu+ww==}
     engines: {node: ^20.19.0 || >=22.12.0}
     peerDependencies:
       vite: ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
-      vue: ^3.2.25 || ^3.6.0-rc.10
+      vue: ^3.2.25 || ^3.6.0-rc.15
 
   '@vitest/coverage-v8@5.1.0':
     resolution: {integrity: sha512-OY9aShBQG5KOIw2zCo9fDoCHI9RHliNHJ//nM7m6jGg41Hyke9JOGWmeMlK74xYErsxMoK8mIB3gAeEyFVA7LA==}
@@ -6560,7 +6560,7 @@ snapshots:
   '@nuxt/vite-builder@4.6.4(3fe2ee6a6d387dd76b91f39c608b2630)':
     dependencies:
       '@nuxt/kit': 4.6.4(@nuxt/schema@4.6.4)(confbox@0.3.1)(dotenv@17.4.2)(giget@3.3.1)(jiti@2.7.0)(magic-string@1.4.5)(mlly@1.8.2)(oxc-parser@0.140.0)(rolldown@1.2.18)(unplugin@3.7.0(esbuild@0.28.2)(rolldown@1.2.18)(rollup@4.67.4)(vite@8.3.8))
-      '@vitejs/plugin-vue': 6.0.10(vite@8.3.8)(vue@3.5.45(@typescript/typescript6@6.0.2))
+      '@vitejs/plugin-vue': 6.0.11(vite@8.3.8)(vue@3.5.45(@typescript/typescript6@6.0.2))
       '@vitejs/plugin-vue-jsx': 5.1.6(supports-color@10.2.2)(vite@8.3.8)(vue@3.5.45(@typescript/typescript6@6.0.2))
       autoprefixer: 10.6.2(postcss@8.5.32)
       clickable-path: 0.1.1
@@ -7399,7 +7399,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vitejs/plugin-vue@6.0.10(vite@8.3.8)(vue@3.5.45(@typescript/typescript6@6.0.2))':
+  '@vitejs/plugin-vue@6.0.11(vite@8.3.8)(vue@3.5.45(@typescript/typescript6@6.0.2))':
     dependencies:
       '@rolldown/pluginutils': 1.0.1
       vite: 8.3.8(@vitejs/devtools@0.8.0)(esbuild@0.28.2)(jiti@2.7.0)(terser@5.51.2)(yaml@2.9.0)
