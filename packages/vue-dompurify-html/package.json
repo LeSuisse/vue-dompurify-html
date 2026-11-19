@@ -55,7 +55,7 @@
         "@stryker-mutator/typescript-checker": "10.1.1",
         "@stryker-mutator/vitest-runner": "10.1.1",
         "@vitest/coverage-v8": "5.1.1",
-        "@vue/test-utils": "2.5.1",
+        "@vue/test-utils": "2.6.0",
         "jsdom": "31.0.1",
         "typescript": "npm:@typescript/typescript6@6.0.2",
         "@typescript/native": "npm:typescript@7.0.2",
