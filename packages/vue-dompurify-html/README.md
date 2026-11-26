@@ -152,7 +152,6 @@ and create a new plugin `plugins/dompurify-html.ts` with the following content:
 
 ```js
 import VueDOMPurifyHTML from 'vue-dompurify-html';
-import { JSDOM } from 'jsdom';
 import DOMPurify from 'isomorphic-dompurify';
 
 export default defineNuxtPlugin((nuxtApp) => {
@@ -163,6 +162,8 @@ export default defineNuxtPlugin((nuxtApp) => {
     );
 });
 ```
+
+With this setup, the `v-dompurify-html` template directive will emit HTML during SSR too.
 
 You can use the same configuration options than the Vue setup. You can see a complete example
 with some advanced configuration in the [Nuxt 3 example](../../examples/nuxt3/).
